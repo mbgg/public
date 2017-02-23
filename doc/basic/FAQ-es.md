@@ -17,6 +17,8 @@ Depende de la proyección que quieras para tu punto de acceso:
 
 ### ¿Que es un Ap?
 
+### ¿Que es un Trasto?
+
 ### ¿Qué significan los puntos y estrellas del mapa de conexión?
 Los colores significan:
 
