@@ -14,9 +14,9 @@ With a new server is expected to have this way 8 redundant _good_ VMs, and up to
 # As of 2017-02-21
 
 Telvent
-- Mikrotik RB ?
-- Atom
-    - CPU: [Intel D525MW](http://ark.intel.com/products/48952/Intel-Desktop-Board-D525MW)
+- Router: [Mikrotik RB1100AHx2](https://routerboard.com/RB1100AHx2)
+- Server
+    - CPU: [Intel Atom D525](https://ark.intel.com/products/49490)
     - RAM: 4 GiB
     - Motherboard: [Intel D525MW](http://ark.intel.com/products/48952/Intel-Desktop-Board-D525MW)
     - Disks: HGST 465 GiB and WDC 465 GiB
