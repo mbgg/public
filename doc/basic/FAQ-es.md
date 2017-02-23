@@ -40,3 +40,5 @@ Los simbolos significan:
 ### ¿Puedo conectar mi antena de 5 Ghz a un nodo de 2.4 Ghz o al revés?
 
 ### ¿Cómo averiguo el tipo de antena que tiene y a que frequencia trabaja el nodo al que quiero conectarme?
+
+### ¿Que puede hacer un instalador por mí?
