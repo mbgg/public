@@ -1,6 +1,6 @@
 # Wiki
 
-La wiki està [activa](https://github.com/guifi-exo/public/wiki)!
+La [wiki](https://github.com/guifi-exo/public/wiki) s'acabarà migrant a [doc](https://github.com/guifi-exo/doc)
 
 # Llicència
 
