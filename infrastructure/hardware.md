@@ -2,9 +2,12 @@ Note: Inverse chronological order
 
 # Migration going on
 
-With a new server is expected to have this way 8 redundant _good_ VMs, and up to 16. _Good_ VMs are considered to have 16 GB disk capacity and 8 GB de RAM.
-- Chassis: Travla C147, Mini-ITX for two motherboards, 2x250W. Rack 1U
-- Motherboard: 2 x Asus P10S-I. Socket 1151. Mini-ITX
+Trax1 and Trax2 (Trabla Asus Xeon) are expected to have this way 8 redundant _good_ VMs, and up to 16. _Good_ VMs are considered to have 16 GB disk capacity and 8 GB de RAM.
+- Shared chassis: Travla C147, Mini-ITX for two motherboards, 2x250W. 0.5 U
+
+Each node (2):
+
+- Motherboard: Asus P10S-I. Socket 1151. Mini-ITX
 - CPU: INTEL XEON E3-1220V5 4CORE BOX 3.0GHZ 8MB LGA1151
 - RAM: 16GB 2Rx8 2G x 64-Bit PC4-2133 CL15 288-Pin DIMM 115,00 4 460,00
 - Disks: Intel® Solid-State Drive DC S3610 200GB SATA 6Gb/s 7mm 2.5"
