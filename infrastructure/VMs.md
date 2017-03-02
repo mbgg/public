@@ -1,23 +1,23 @@
 Clúster Trax. Serveis:
-- VM rproxy (HAProxy o nginx?)
-- VM public
+- VM **rproxy** (HAProxy o nginx?)
+- VM **public**
     - Academia (Drupal) - proxy
     - Blog (Wordpress) - proxy
     - git web (gogs.io) - proxy
-- VM privada
+- VM **privada**
     - Django Admin - proxy
     - LDAP (slapd)
     - OpenVPN - proxy?
     - Cacti - proxy
     - git web (gogs.io) - proxy
-- VM shop.exo.cat (Prestashop) - proxy
-- VM rt (Real-Time)
+- VM **shop.exo.cat** (Prestashop) - proxy
+- VM **rt** (Real-Time)
     - meet.guifi.net (jitsi)
     - xat.guifi.net (rocketchat)
     - ? (matrix)
     - streaming (?) - pública
-- VM vrouter (Mikrotik)
-- VM core
+- VM **vrouter** (Mikrotik)
+- VM **core**
     - DNS (ns.exo.cat)
     - NTP (ntp.exo.cat)
     - SMTP? (mailer.exo.cat?)
