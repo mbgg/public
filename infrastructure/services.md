@@ -2,6 +2,10 @@
 
 ## reverse proxy
 
+reverse proxy: haproxy
+
+gestió de certificats: certbot (letsencrypt)
+
 Port | Servei | Descripció
 ---- | ------ | ----------
 80/tcp | HTTP | força sempre redirecció a 443
