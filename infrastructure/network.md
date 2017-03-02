@@ -1,4 +1,4 @@
-# Networking general
+# Networking
 
 ## Pla de VLANs
 

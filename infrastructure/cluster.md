@@ -2,8 +2,13 @@
 
 2017-03-02
 
+- HA policy
 - Trax1 i Trax2
 - Trax3 (Atom)
+
+## HA policy
+
+Volem fer només HA del router virtual, és a dir, que en cas que caigui el Trax que conté el router virtual, arrenqui el router virtual a l'altre Trax
 
 ## Trax1 i Trax2
 

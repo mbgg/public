@@ -9,7 +9,7 @@ Clúster Trax. Serveis:
     - auth.exo.cat LDAP (slapd)
     - OpenVPN
     - noc.exo.cat/cacti Cacti
-    - private.exo.cat (gogs.io)
+    - privat.exo.cat (gogs.io)
     - data.exo.cat
 - VM **shop.exo.cat** (Prestashop)
 - VM **rt** (Real-Time)
