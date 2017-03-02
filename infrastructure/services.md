@@ -30,7 +30,65 @@ només gestió de certificats (a revisar)
 - xat.guifi.net
 - matrix.exo.cat
 
-## matrix
+## academia.exo.cat
+
+software: drupal
+
+## exo.cat
+
+software: wordpress
+
+- reduïr número de plugins; que sigui fàcil tenir-lo a la última versió
+- agafar el calendari de data.exo.cat i incrustar-lo
+
+## public.exo.cat
+
+software: gogs.io
+
+tot lo que hi ha al github ara (public, doc), github es convertiria llavors en un mirror d'aquest repositori
+
+## db.exo.cat
+
+software: django admin
+
+informació integrada
+
+https://github.com/guifi-org/exoadmin
+
+## noc.exo.cat
+
+software: cacti
+
+- en un futur es pot plantejar tenir també weathermap, smokeping
+
+## privat.exo.cat
+
+software: gogs.io
+
+repositoris que contenen informació personal
+
+## data.exo.cat
+
+software: nextcloud
+
+- calendari eXO
+- gestió de documents personals
+
+## shop.exo.cat
+
+software: prestashop
+
+## meet.guifi.net
+
+software: jitsi-meet
+
+## xat.guifi.net
+
+software: rocketchat
+
+## matrix.exo.cat
+
+software: matrix + riot
 
 requeriments:
 - com es faria integració ldap amb guifi
