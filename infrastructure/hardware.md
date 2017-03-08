@@ -11,6 +11,10 @@ Each node (2):
 - CPU: INTEL XEON E3-1220V5 4CORE BOX 3.0GHZ 8MB LGA1151
 - RAM: 16GB 2Rx8 2G x 64-Bit PC4-2133 CL15 288-Pin DIMM 115,00 4 460,00
 - Disks: Intel® Solid-State Drive DC S3610 200GB SATA 6Gb/s 7mm 2.5"
+    - Spec: http://www.intel.com/content/www/us/en/solid-state-drives/ssd-dc-s3610-spec.html
+    - Misc. Disk options:
+        - 2.5'' HD (x2)
+        - 3.5'' HD (x1)
 - CPU Fan: [Dynatron K199G 115X Rack 1U Activo](http://www.dynatron-corp.com/?product=k199)
 - Extra: Module [ASMB8-iKVM IPMI 2.0 Management Upgrade Kit with KVM](https://www.asus.com/us/Commercial-Servers-Workstations/ASMB7IKVM/) for IPMI access
 
