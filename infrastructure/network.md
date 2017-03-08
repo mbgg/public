@@ -35,9 +35,9 @@ Assignada | 127 | ipmi | VLAN interna de IPMI | 192.168.127.0/24
 
 VID | vmbr0 | ipmi | gateway | notes
 --- | ----- | ---- | ------- | -----
-96 | 192.168.96.11/24 | - | -
-97 | 192.168.97.11/24 | - | -
-98 | 192.168.98.11/24 | - | 192.168.98.13
+96 | 192.168.96.11/24 | - | - | -
+97 | 192.168.97.11/24 | - | - | -
+98 | 192.168.98.11/24 | - | 192.168.98.13 | -
 127 | - | 192.168.127.11/24 | - | vlan interna, connectada a mikrotik/trax3
 
 ### trax2
@@ -49,6 +49,25 @@ VID | vmbr0 | ipmi | gateway | notes
 98 | 192.168.98.12/24 | - | 192.168.98.13 | -
 127 | - | 192.168.127.12/24 | - | vlan interna, connectada a mikrotik/trax3
 
+### mikrotik (provisional)
+
+VID | vmbr0 | ipmi | gateway | notes
+--- | ----- | ---- | ------- | -----
+102 | 10.253.4.28/22 | 10.253.4.21 | -
+127 | - | 192.168.127.13/24 | - | vlan interna, connectada a mikrotik/trax3
+
+### trax3
+
+VID | loopback | vmbr0 | ipmi | gateway | notes
+--- | -------- | ----- | ---- | ------- | -----
+96 | 192.168.96.13/24 | - | - | -
+97 | 192.168.97.13/24 | - | - | -
+98 | 192.168.98.13/24 | - | 192.168.98.13 | -
+102 | 10.253.4.29/22 | 10.253.4.21 | pendent de confirmar amb FXOLN
+127 | - | 192.168.127.13/24 | - | vlan interna, connectada a mikrotik/trax3
+- | 109.69.10.96 | - | - | loopback
+
+
 ### VMs?
 
 ## Gateways
@@ -58,3 +77,5 @@ De situació temporal a situació definitiva
 trax1 i trax2 surten per Mikrotik a través de VLAN98
 
 després ho faran per atom (trax3) a travé de la mateixa VLAN98
+
+la justificació d'això és que no trobem eficient que vagi de la màquina host a la màquina virtual de routing per tornar a sortir al host
