@@ -94,3 +94,13 @@ requeriments:
 - com es faria integració ldap amb guifi
 - si hi ha alguna característica important que perdem de rocketchat, especialment de comoditat pels usuaris més relaxats
 - sé que es poden enllaçar rocketchat i matrix; el tema es fer-ho possible de veritat. així doncs, la migració no seria tant greu. hi hauria un període que funcionarien tots dos
+
+## extra (review needed)
+
+- [HTTPS](service-https) (English) - com fer HTTPs amb Letsencrypt per als nostres serveis
+- [rocketchat](service-rocketchat) - com fer un rocketchat
+- [meet-jitsi](service-meet-jitsi) - com fer un meet jitsi
+- [speedtest](service-speedtest) - Autor: Oriol. codi font no publicat
+- [El rosco de Llorenç](http://dsg.ac.upc.edu/qmpmon) - monitor de xarxes mesh qMp. Autor: Llorenç. codi font no publicat
+- [Mapes qMp de Barcelona](http://sants.guifi.net/maps) - Autor: Oriol. codi font no publicat
+
