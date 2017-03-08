@@ -1,6 +1,12 @@
 # Networking
 
-## Pla de VLANs
+## Pla de VLANs amb FXOLN
+
+Estats de les VLANs:
+
+- Provisional: en fase de disseny, pendent d'aprovar disseny, pendent de demanar a FXOLN
+- Assignada: aplicada per XFOLN; preparada per utilitzar
+- En producció: en ús
 
 Estat | VID | Codi | Descripció | Subnet
 ----- | ------- | ---- | ---------- | ------
@@ -10,11 +16,9 @@ En producció | 92 | gfiptp2 | troncal per wifi amb Ermita | 172.25.45.8/29
 En producció | 93 | gfiptp3 | troncal per wifi amb Can Bruixa | 172.25.40.64/30
 En producció | 10 | gfiptp4 | troncal amb FXOLN (BGP de 10.0.0.0/8) | 172.25.34.48/30
 En producció | 102 | ix | Internet Exchange amb FXOLN | 10.253.4.0/22
-Provisional | 96 | pve | tràfic clúster proxmox | 192.168.96.0/24
-Provisional | 97 | gfs | tràfic clúster gluster | 192.168.97.0/24
-Provisional | 98 | rproxy | concentrador de HTTPS (reverse proxy, etc) | 192.168.98.0/24
-Provisional | 99 | inetsrv | servers accessibles des d'Internet | 192.168.99.0/24
-Provisional | 100 | ctrl | control, gestió | 192.168.100.0/24
-Provisional | 94-95 | - | no definida | -
-Provisional | 101 | -
-
+Assignada | 94 | inetsrv | servers accessibles des d'Internet | 192.168.94.0/24
+Assignada | 95 | rproxy | concentrador de HTTPS (reverse proxy, etc) | 192.168.95.0/24
+Assignada | 96 | pve | tràfic clúster proxmox | 192.168.96.0/24
+Assignada | 97 | gfs | tràfic clúster gluster | 192.168.97.0/24
+Assignada | 98 | ctrl | control, gestió | 192.168.98.0/24
+Assignada | 128 | operador | ens la dona FXOLN no sabem per què serveix
