@@ -53,7 +53,7 @@ VID | vmbr0 | ipmi | gateway | notes
 
 VID | vmbr0 | ipmi | gateway | notes
 --- | ----- | ---- | ------- | -----
-102 | 10.253.4.28/22 | 10.253.4.21 | -
+102 | 10.253.4.28/22 | - | 10.253.4.21 | -
 127 | - | 192.168.127.13/24 | - | vlan interna, connectada a mikrotik/trax3
 
 ### trax3
@@ -63,8 +63,8 @@ VID | loopback | vmbr0 | ipmi | gateway | notes
 96 | 192.168.96.13/24 | - | - | -
 97 | 192.168.97.13/24 | - | - | -
 98 | 192.168.98.13/24 | - | 192.168.98.13 | -
-102 | 10.253.4.29/22 | 10.253.4.21 | pendent de confirmar amb FXOLN
-127 | - | 192.168.127.13/24 | - | vlan interna, connectada a mikrotik/trax3
+102 | 10.253.4.29/22 | 10.253.4.21 | - | pendent de confirmar amb FXOLN
+127 | - | 192.168.127.13/24 | - | - | vlan interna, connectada a mikrotik/trax3
 - | 109.69.10.96 | - | - | loopback
 
 
