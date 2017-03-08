@@ -3,9 +3,9 @@
 ## debian installation
 
 - boot 8.7 64 bit install
-- primary partitions
-    - 1 swap 4096 MB (swap)
-    - 2 root 16384 MB (xfs, label: root, mount options: noatime, bootable flag)
+- primary partitions in `/dev/sda`
+    - /dev/sda1 swap 4096 MB (swap)
+    - /dev/sda2 root 16384 MB (xfs, label: root, mount options: noatime, bootable flag)
     - brick (rest) MB
     - debian repo: ftp2.de.debian.org
 
