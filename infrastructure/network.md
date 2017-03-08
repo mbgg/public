@@ -27,14 +27,14 @@ Assignada | 128 | operador | la dona FXOLN, no sabem per què serveix | -
 
 Estat | VID | Codi | Descripció | Subnet
 ----- | --- | ---- | ---------- | ------
-? | 127 | ipmi | VLAN interna de IPMI | 192.168.127.0/24
+Assignada | 127 | ipmi | VLAN interna de IPMI | 192.168.127.0/24
 
 ## Adreçament IPs en el maquinari
 
 ### trax1
 
 VID | vmbr0 | ipmi | gateway | notes
---- | ----- | ---- | -------
+--- | ----- | ---- | ------- | -----
 96 | 192.168.96.11/24 | - | -
 97 | 192.168.97.11/24 | - | -
 98 | 192.168.98.11/24 | - | 192.168.98.13
@@ -43,7 +43,7 @@ VID | vmbr0 | ipmi | gateway | notes
 ### trax2
 
 VID | vmbr0 | ipmi | gateway | notes
---- | ----- | ---- | -------
+--- | ----- | ---- | ------- | -----
 96 | 192.168.96.12/24 | - | - | -
 97 | 192.168.97.12/24 | - | - | -
 98 | 192.168.98.12/24 | - | 192.168.98.13 | -
