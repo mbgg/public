@@ -8,7 +8,7 @@ eXO is a non-profit association and a telecomunicaction operator acting within t
 
 # Wiki
 
-La [wiki](https://github.com/guifi-exo/public/wiki) s'acabarà migrant a [doc](https://github.com/guifi-exo/doc)
+eXO promotes documentation of guifi.net project through its [doc git repository](https://github.com/guifi-exo/doc)
 
 # Llicència
 
