@@ -21,4 +21,4 @@ Assignada | 95 | rproxy | concentrador de HTTPS (reverse proxy, etc) | 192.168.9
 Assignada | 96 | pve | tràfic clúster proxmox | 192.168.96.0/24
 Assignada | 97 | gfs | tràfic clúster gluster | 192.168.97.0/24
 Assignada | 98 | ctrl | control, gestió | 192.168.98.0/24
-Assignada | 128 | operador | ens la dona FXOLN no sabem per què serveix
+Assignada | 128 | operador | la dona FXOLN, no sabem per què serveix | -
