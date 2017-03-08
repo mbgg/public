@@ -89,7 +89,6 @@ and prepare volume for gluster. Format an XFS partition with 512bytes of size fo
 
 `mkfs.xfs -f -i size=512 -n size=8192  /dev/sda3`
 
-```
 ## final network config
 
 Comprovar que el entorn proxmox és operatiu des de un navegador https://192.168.200.91:8006
