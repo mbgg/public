@@ -4,6 +4,9 @@ Note: Inverse chronological order
 
 Trax1 and Trax2 (Trabla Asus Xeon) are expected to have this way 8 redundant _good_ VMs, and up to 16. _Good_ VMs are considered to have 16 GB disk capacity and 8 GB de RAM.
 - Shared chassis: Travla C147, Mini-ITX for two motherboards, 2x250W. 0.5 U
+    - Misc. Disk options:
+        - 2.5'' HD (x2)
+        - 3.5'' HD (x1)
 
 Each node (2):
 
@@ -12,9 +15,6 @@ Each node (2):
 - RAM: 16GB 2Rx8 2G x 64-Bit PC4-2133 CL15 288-Pin DIMM 115,00 4 460,00
 - Disks: Intel® Solid-State Drive DC S3610 200GB SATA 6Gb/s 7mm 2.5"
     - Spec: http://www.intel.com/content/www/us/en/solid-state-drives/ssd-dc-s3610-spec.html
-    - Misc. Disk options:
-        - 2.5'' HD (x2)
-        - 3.5'' HD (x1)
 - CPU Fan: [Dynatron K199G 115X Rack 1U Activo](http://www.dynatron-corp.com/?product=k199)
 - Extra: Module [ASMB8-iKVM IPMI 2.0 Management Upgrade Kit with KVM](https://www.asus.com/us/Commercial-Servers-Workstations/ASMB7IKVM/) for IPMI access
 
