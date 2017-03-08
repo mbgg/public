@@ -81,22 +81,14 @@ install gluster server and client
 
 `apt-get install glusterfs-server glusterfs-client`
 
-create partition?
+create a primary partition. Last partition was in 20.5GB according to command `parted /dev/sda p` so we do:
 
-parted -a optimal /dev/sda3 mkpart primary 0% -1
+`parted /dev/sda mkpart primary 20.5GB 100%`
 
-prepare volume for gluster. Format an XFS partition with 512bytes of size for inodes forthe extended attributes of gluster and blocksize of 8192 to minimize iops to access inodes
+and prepare volume for gluster. Format an XFS partition with 512bytes of size for inodes forthe extended attributes of gluster and blocksize of 8192 to minimize iops to access inodes
 
-Ajust al RAID5 amb segments de 128k i dos discs de dades ???
+`mkfs.xfs -f -i size=512 -n size=8192  /dev/sda3`
 
-```
-mkfs.xfs -f -i size=512 -n size=8192 -d su=128k,sw=2 /dev/vg1/brick1
-mkfs.xfs -f -i size=512 -n size=8192 -d su=128k,sw=2 /dev/vg1/brick2
-```
-
-```
-mkfs.xfs -f -i size=512 -n size=8192 -d su=128k,sw=2 /dev/sda3
-mkfs.xfs -f -i size=512 -n size=8192 -d su=128k,sw=2 /dev/sda3
 ```
 ## final network config
 
