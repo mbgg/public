@@ -17,6 +17,7 @@ Each node (2):
     - Spec: http://www.intel.com/content/www/us/en/solid-state-drives/ssd-dc-s3610-spec.html
 - CPU Fan: [Dynatron K199G 115X Rack 1U Activo](http://www.dynatron-corp.com/?product=k199)
 - Extra: Module [ASMB8-iKVM IPMI 2.0 Management Upgrade Kit with KVM](https://www.asus.com/us/Commercial-Servers-Workstations/ASMB7IKVM/) for IPMI access
+    - Manual: http://dlcdnet.asus.com/pub/ASUS/server/accessory/ASMB8/E10970_ASMB8-iKVM_UM_V2_WEB.pdf?_ga=1.24437948.746187932.1462889111
 
 # As of 2017-02-21
 

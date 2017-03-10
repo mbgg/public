@@ -95,6 +95,12 @@ requeriments:
 - si hi ha alguna característica important que perdem de rocketchat, especialment de comoditat pels usuaris més relaxats
 - sé que es poden enllaçar rocketchat i matrix; el tema es fer-ho possible de veritat. així doncs, la migració no seria tant greu. hi hauria un període que funcionarien tots dos
 
+## fw.exo.cat
+
+firmware compiler. FTP directory: Images for qMp, OpenWRT, Lede, etc.
+
+would be nice to have one based on templated system of ansible
+
 ## extra (review needed)
 
 - [HTTPS](service-https) (English) - com fer HTTPs amb Letsencrypt per als nostres serveis
