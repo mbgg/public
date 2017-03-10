@@ -52,7 +52,8 @@ allow-vmbr0 ctrl
 iface ctrl inet static
         address     192.168.98.11
         netmask     255.255.255.0
-        gateway     192.168.98.1
+#        és el gateway a fase final
+#        gateway     192.168.98.1
         ovs_type    OVSIntPort
         ovs_bridge  vmbr0
         ovs_options tag=98
