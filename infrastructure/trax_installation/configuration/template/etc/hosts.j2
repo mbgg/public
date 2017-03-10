@@ -1,6 +1,7 @@
 127.0.0.1        localhost
-{{ item.vlan96.ip }}    {{ item.hostname }}
-{{ item.vlan97.ip }}    gfs{{ item.number }}
+# src http://docs.ansible.com/ansible/playbooks_filters_ipaddr.html#getting-information-from-host-prefix-values
+{{ item.vlan96.ip | ipaddr('address') }}    {{ item.hostname }}
+{{ item.vlan97.ip | ipaddr('address') }}    {{ item.gluster }}
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
