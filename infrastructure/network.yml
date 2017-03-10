@@ -46,7 +46,7 @@ vplan: # vlan plan
     notes: Internet Exchange amb FXOLN
   vlan94:
     type: fxoln
-    code: inetsrv
+    code: dmz
     subnet: 192.168.94.0/24
     notes: servers accessibles des d'Internet
   vlan95:
@@ -79,52 +79,83 @@ vplan: # vlan plan
     subnet: 192.168.127.0/24
     notes: VLAN interna de IPMI
 
+# TODO !  http://docs.ansible.com/ansible/playbooks_filters_ipaddr.html
+vms:
+  - hostname: vrouter
+    vlan94:
+      ip: 109.69.10.126/27 
+    vlan98:
+      ip: 192.168.98.1/24
+    vlan102:
+      ip: 10.253.4.28/22
+      gateway: 10.253.4.21
+  - hostname: rproxy
+    vlan94:
+      ip: 109.69.10.113/27 
+      gateway: 109.69.10.126
+    vlan95:
+      ip: 192.168.95.20/24
+  - hostname: ctrlvpn
+    vlan95:
+      ip: 192.168.95.21/24
+    vlan98:
+      ip: 192.168.98.21/24
+      gateway: 192.168.98.1
+
+# TODO !  http://docs.ansible.com/ansible/playbooks_filters_ipaddr.html
 trax:
   - hostname: trax1
-    number: 1
+    gluster: gfs1
     vlan96:
-      ip: 192.168.96.11
-      vmbr0: 192.168.96.11/24
+      ip: 192.168.96.11/24
+      iface: vmbr0
     vlan97:
-      ip: 192.168.97.11
-      vmbr0: 192.168.97.11/24
+      ip: 192.168.97.11/24
+      iface: vmbr0
     vlan98:
-      vmbr0: 192.168.98.11/24
-      gateway: 192.168.98.13
+      ip: 192.168.98.11/24
+      gateway: 192.168.98.1
     vlan127: # vlan interna, connectada a mikrotik/trax3
       ipmi: 192.168.127.11/24
   - hostname: trax2
-    number: 2
+    gluster: gfs2
     vlan96:
-      ip: 192.168.96.12
-      vmbr0: 192.168.96.12/24
+      ip: 192.168.96.12/24
+      iface: vmbr0
     vlan97:
-      ip: 192.168.97.12
-      vmbr0: 192.168.97.12/24
+      ip: 192.168.97.12/24
+      iface: vmbr0
     vlan98:
-      vmbr0: 192.168.98.12/24
-      gateway: 192.168.98.13
+      ip: 192.168.98.12/24
+      iface: vmbr0
+      gateway: 192.168.98.1
     vlan127: # vlan interna, connectada a mikrotik/trax3
       ipmi: 192.168.127.12/24
 
 support: # nodes that support the cluster
   - hostname: mikrotik # provisional
     vlan102:
-      vmbr0: 10.253.4.28/22 # TODO: canviar nom de vmbr0
+      ip: 10.253.4.28/22
+      iface: vmbr0
       gateway: 10.253.4.21
     vlan127:
-      vmbr0: 192.168.127.13/24
+      ip: 192.168.127.13/24
+      iface: vmbr0
   - hostname: trax3
     loopback: 109.69.10.96
     vlan96:
-      vmbr0: 192.168.96.13/24
+      ip: 192.168.96.13/24
+      iface: vmbr0
     vlan97:
-      vmbr0: 192.168.97.13/24
+      ip: 192.168.97.13/24
+      iface: vmbr0
     vlan98:
-      vmbr0: 192.168.98.13/24
+      ip: 192.168.98.13/24
+      iface: vmbr0
       gateway: 192.168.98.13
     vlan102: # pendent de confirmar amb FXOLN
-      vmbr0: 10.253.4.29/22
+      ip: 10.253.4.29/22
+      iface: vmbr0
       gateway: 10.253.4.21
     vlan127: # vlan interna, connectada a mikrotik/trax3
       ipmi: 192.168.127.13/24
