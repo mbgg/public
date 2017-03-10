@@ -1,5 +1,6 @@
 127.0.0.1       localhost
-{{ip host}}     {{ hostname }}
+192.168.96.12    trax2
+192.168.97.12    gfs2
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
