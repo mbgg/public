@@ -1,0 +1,58 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+allow-hotplug eth0
+allow-hotplug eth1
+# ipmi?
+# allow-hotplug eth2
+
+allow-vmbr0 bond0
+iface bond0 inet manual
+        ovs_bonds   eth0 eth1
+        ovs_type    OVSBond
+        ovs_bridge  vmbr0
+        ovs_options lacp=active other_config:lacp-time=fast bond_mode=balance-tcp
+#       preguntar ramon perquè desactivat
+#       ovs_options bond_mode=active-backup
+
+allow-ovs vmbr0
+
+auto vmbr0
+iface vmbr0 inet static
+        # datalab (temp)
+        address   192.168.1.11
+        netmask   255.255.255.0
+        gateway   192.168.1.1
+        ovs_type  OVSBridge
+        ovs_ports pve gfs ctrl bond0
+
+allow-vmbr0 pve
+iface pve inet static
+        address     192.168.96.11
+        netmask     255.255.255.0
+        ovs_type    OVSIntPort
+        ovs_bridge  vmbr0
+        ovs_options tag=96
+
+allow-vmbr0 gfs
+iface gfs inet static
+        address     192.168.97.11
+        netmask     255.255.255.0
+        ovs_type    OVSIntPort
+        ovs_bridge  vmbr0
+        ovs_options tag=97
+
+allow-vmbr0 ctrl
+iface ctrl inet static
+        address     192.168.98.11
+        netmask     255.255.255.0
+        gateway     192.168.98.1
+        ovs_type    OVSIntPort
+        ovs_bridge  vmbr0
+        ovs_options tag=98
