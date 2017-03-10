@@ -75,9 +75,7 @@ after installing proxmox, delete the repository it creates:
 
 ## gluster installation
 
-install latest stable version of gluster (3.8 at the moment)
-
-install gluster server and client
+install latest stable version of gluster server and client (3.8 at the moment)
 
 `apt-get install glusterfs-server glusterfs-client`
 
@@ -88,6 +86,18 @@ create a primary partition. Last partition was in 20.5GB according to command `p
 and prepare volume for gluster. Format an XFS partition with 512bytes of size for inodes forthe extended attributes of gluster and blocksize of 8192 to minimize iops to access inodes
 
 `mkfs.xfs -f -i size=512 -n size=8192  /dev/sda3`
+
+create mount point for brick1 (glusterfs)
+
+`mkdir /brick1`
+
+get UUID of /brick1 in our case /dev/sda3 and add it to `/etc/fstab` (check configuration of this file in template)
+
+`mount -a`
+
+Check XFS:
+
+`xfs_info /dev/sda3`
 
 ## final network config
 
