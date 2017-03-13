@@ -1,5 +1,5 @@
 127.0.0.1        localhost
-# src http://docs.ansible.com/ansible/playbooks_filters_ipaddr.html#getting-information-from-host-prefix-values
+
 {{ item.vlan96.ip | ipaddr('address') }}    {{ item.hostname }}
 {{ item.vlan97.ip | ipaddr('address') }}    {{ item.gluster }}
 
