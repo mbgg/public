@@ -7,8 +7,8 @@
 # <file system> <mount point>   <type>  <options>       <dump>  <pass>
 
 # swap 
-UUID={{ UUID2 }} none            swap    sw              0       0
+UUID=381626ef-a2d3-455b-b4c8-fa2a3d1c8803 none swap sw 0 0
 # root
-UUID={{ UUID1 }} /               xfs     noatime         0       1
+UUID=ecd28199-f7ac-442a-8ae0-0a32932cf30c / xfs noatime 0 1
 # glusterfs
-UUID={{ UUID3 }} /brick1 xfs noatime 0 0
+UUID=48f6cbb7-ed10-4b3f-a9fc-c25644940a25 /brick1 xfs noatime 0 0

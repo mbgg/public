@@ -7,9 +7,53 @@ source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
 
-# The primary network interface
-allow-hotplug eth0
-iface eth0 inet static
-        address {{ ip_address }}
-        netmask {{ netmask }}
-        gateway {{ gateway }}
+auto eth0
+iface eth0 inet manual
+auto eth1
+iface eth1 inet manual
+
+allow-vmbr0 bond0
+iface bond0 inet manual
+        ovs_bonds   eth0 eth1
+        ovs_type    OVSBond
+        ovs_bridge  vmbr0
+        ovs_options lacp=active other_config:lacp-time=fast bond_mode=balance-tcp
+#       enable this if switch does not support LACP
+#       ovs_options bond_mode=active-backup
+
+allow-ovs vmbr0
+
+auto vmbr0
+iface vmbr0 inet static
+        # temp
+        address   192.168.1.12
+        netmask   255.255.255.0
+        gateway   192.168.1.1
+        ovs_type  OVSBridge
+        ovs_ports pve gfs ctrl bond0
+
+allow-vmbr0 pve
+iface pve inet static
+        address     192.168.96.12
+        netmask     255.255.255.0
+        ovs_type    OVSIntPort
+        ovs_bridge  vmbr0
+        ovs_options tag=96
+
+allow-vmbr0 gfs
+iface gfs inet static
+        address     192.168.97.12
+        netmask     255.255.255.0
+        ovs_type    OVSIntPort
+        ovs_bridge  vmbr0
+        ovs_options tag=97
+
+allow-vmbr0 ctrl
+iface ctrl inet static
+        address     192.168.98.12
+        netmask     255.255.255.0
+# gateway definitiu, de moment estem en fase temporal
+#        gateway     192.168.98.1
+        ovs_type    OVSIntPort
+        ovs_bridge  vmbr0
+        ovs_options tag=98
