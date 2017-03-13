@@ -1,42 +1,22 @@
 - hosts: all
   remote_user: root
   vars_files:
-    - "../../network.yml"
-  vars:
-    traxs:
-      - { hostname: trax1 }
-      - { hostname: trax2 }
+    - "../../db/network.yml"
+    - "../../db/storage.yml"
   tasks:
 
 #  - debug:
 #      msg: "{{ item.vlan97.vmbr0 }}"
 #    with_items: "{{ trax }}"
 
-# done by rsync
-#  - name: copy files
-#    copy:
-#      src: template/etc/
-#      dest: "{{ item.hostname }}/etc"
-#    with_items: "{{ trax }}"
-
-#  - name: Ensures /etc/hosts dir exists
-#    file: path={{ item.hostname }}/etc/ state=directory
-#    with_items: "{{ trax }}"
-
-
-
-
   - name: /etc/hosts
     template: src="template/etc/hosts.j2" dest="{{ item.hostname }}/etc/hosts"
-    with_items: "{{ trax }}"
+    with_items: "{{ trax_network }}"
 
+  - name: /etc/network/interfaces
+    template: src="template/etc/network/interfaces.j2" dest="{{ item.hostname }}/etc/network/interfaces"
+    with_items: "{{ trax_network }}"
 
-
-
-#    # TODO: separate file
-#  - name: /etc/fstab
-#    template: src=configuration/template/etc/fstab.j2 dest=configuration/{{ item.hostname }}/etc/fstab
-#    with_items: "{{ trax }}"
-#
-#    # TODO: network stuff
-#  - name: /etc/network/interfaces
+  - name: /etc/fstab
+    template: src="template/etc/fstab.j2" dest="{{ item.hostname }}/etc/fstab"
+    with_items: "{{ trax_storage }}"

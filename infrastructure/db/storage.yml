@@ -1,3 +1,5 @@
+---
+
 trax_storage:
   - hostname: trax1
     swap:
@@ -14,6 +16,7 @@ trax_storage:
       fs_mntops: noatime
       fs_freq: 0
       fs_passno: 1
+      boot: yes
     glusterfs:
       fs_spec: 48f6cbb7-ed10-4b3f-a9fc-c25644940a25
       fs_file: /brick1
@@ -36,6 +39,7 @@ trax_storage:
       fs_mntops: noatime
       fs_freq: 0
       fs_passno: 1
+      boot: yes
     glusterfs:
       fs_spec: TODO
       fs_file: /brick1
