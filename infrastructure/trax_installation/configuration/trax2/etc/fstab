@@ -11,4 +11,4 @@ UUID=d06762eb-fd17-41b1-baa1-ee8de07ac36a none swap sw 0 0
 # root
 UUID=058107ee-2b84-4e12-89a9-b466185a2806 / xfs noatime 0 1
 # glusterfs
-UUID=TODO /brick1 xfs noatime 0 0
+UUID=42a7d581-91b7-45cc-a39e-ab58be122f94 /brick1 xfs noatime 0 0

@@ -41,7 +41,7 @@ trax_storage:
       fs_passno: 1
       boot: yes
     glusterfs:
-      fs_spec: TODO
+      fs_spec: 42a7d581-91b7-45cc-a39e-ab58be122f94
       fs_file: /brick1
       fs_vfstype: xfs
       fs_mntops: noatime
