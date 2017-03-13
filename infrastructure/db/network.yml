@@ -79,7 +79,6 @@ vplan: # vlan plan
     subnet: 192.168.127.0/24
     notes: VLAN interna de IPMI
 
-# TODO !  http://docs.ansible.com/ansible/playbooks_filters_ipaddr.html
 vms:
   - hostname: vrouter
     vlan94:
@@ -102,9 +101,10 @@ vms:
       ip: 192.168.98.21/24
       gateway: 192.168.98.1
 
-# TODO !  http://docs.ansible.com/ansible/playbooks_filters_ipaddr.html
-trax:
+trax_network:
   - hostname: trax1
+    temp:
+      ip: 192.168.1.11/24
     gluster: gfs1
     vlan96:
       ip: 192.168.96.11/24
@@ -118,6 +118,9 @@ trax:
     vlan127: # vlan interna, connectada a mikrotik/trax3
       ipmi: 192.168.127.11/24
   - hostname: trax2
+    ipv6_linklocal: fe80::3ad5:47ff:fec9:6b37
+    temp:
+      ip: 192.168.1.12/24
     gluster: gfs2
     vlan96:
       ip: 192.168.96.12/24

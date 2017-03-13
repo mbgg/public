@@ -1,0 +1,14 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+
+# swap 
+UUID={{ item.swap.fs_spec }} {{ item.swap.fs_file }} {{ item.swap.fs_vfstype }} {{ item.swap.fs_mntops }} {{ item.swap.fs_freq }} {{ item.swap.fs_passno }}
+# root
+UUID={{ item.root.fs_spec }} {{ item.root.fs_file }} {{ item.root.fs_vfstype }} {{ item.root.fs_mntops }} {{ item.root.fs_freq }} {{ item.root.fs_passno }}
+# glusterfs
+UUID={{ item.glusterfs.fs_spec }} {{ item.glusterfs.fs_file }} {{ item.glusterfs.fs_vfstype }} {{ item.glusterfs.fs_mntops }} {{ item.glusterfs.fs_freq }} {{ item.glusterfs.fs_passno }}

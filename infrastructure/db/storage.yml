@@ -1,0 +1,45 @@
+trax_storage:
+  - hostname: trax1
+    swap:
+      fs_spec: 381626ef-a2d3-455b-b4c8-fa2a3d1c8803
+      fs_file: none
+      fs_vfstype: swap
+      fs_mntops: sw
+      fs_freq: 0
+      fs_passno: 0
+    root:
+      fs_spec: ecd28199-f7ac-442a-8ae0-0a32932cf30c
+      fs_file: /
+      fs_vfstype: xfs
+      fs_mntops: noatime
+      fs_freq: 0
+      fs_passno: 1
+    glusterfs:
+      fs_spec: 48f6cbb7-ed10-4b3f-a9fc-c25644940a25
+      fs_file: /brick1
+      fs_vfstype: xfs
+      fs_mntops: noatime
+      fs_freq: 0
+      fs_passno: 0
+  - hostname: trax2
+    swap:
+      fs_spec: d06762eb-fd17-41b1-baa1-ee8de07ac36a
+      fs_file: none
+      fs_vfstype: swap
+      fs_mntops: sw
+      fs_freq: 0
+      fs_passno: 0
+    root:
+      fs_spec: 058107ee-2b84-4e12-89a9-b466185a2806
+      fs_file: /
+      fs_vfstype: xfs
+      fs_mntops: noatime
+      fs_freq: 0
+      fs_passno: 1
+    glusterfs:
+      fs_spec: TODO
+      fs_file: /brick1
+      fs_vfstype: xfs
+      fs_mntops: noatime
+      fs_freq: 0
+      fs_passno: 0
