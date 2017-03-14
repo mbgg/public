@@ -34,7 +34,7 @@ checker:
 
 install utilities
 
-`apt-get install ipmitool inxi smartmontools ethtool ssh tcpdump iperf3 iotop iftop nmap mtr sudo parted`
+`apt-get install ipmitool inxi smartmontools ethtool ssh tcpdump iperf3 iotop iftop nmap mtr sudo parted curl tmux screen vim`
 
 detect sensors
 
