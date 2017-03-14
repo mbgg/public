@@ -219,12 +219,14 @@ create gluster volume, in our case:
 
 apply this customizations
 
+note: shard block size should be 64 for less than 1TB. In the other example, we used 512MB
+
 ```
 # is preferred to use nfs from linux kernel
 gluster volume set vmstore nfs.disable on
 # sharding to manage balanced big files and fast self-heal
 gluster volume set vmstore features.shard enable
-gluster volume set vmstore features.shard-block-size 512MB
+gluster volume set vmstore features.shard-block-size 64MB
 gluster volume set vmstore data-self-heal-algorithm full
 # parameters to optimize virtualization
 gluster volume set vmstore performance.readdir-ahead off
@@ -249,7 +251,9 @@ start gluster volume, in our case:
 
 `gluster volume status`
 
-Now you can **define vmstore as GlusterFS in proxmox through its web interface**
+Now you can **define vmstore as GlusterFS in proxmox through its web interface**. If you perform this, you cannot change gluster parameters unless you destroy the gluster cluster
+
+### destroy gluster cluster
 
 # TODO: no funciona `ipmitool`
 
