@@ -251,8 +251,6 @@ start gluster volume, in our case:
 
 Now you can **define vmstore as GlusterFS in proxmox through its web interface**
 
-# TODO: template config that generates specific config for cluster members
-
 # TODO: no funciona `ipmitool`
 
 # TODO: Move to another doc section
