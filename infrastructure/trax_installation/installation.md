@@ -11,7 +11,7 @@
 
 ## first configurations
 
-check that you have `/etc/network/interfaces` as in configuration
+check that you have `/etc/network/interfaces` as in configuration (at this moment, we only need access to internet)
 
 in our case:
 ```
@@ -55,6 +55,8 @@ We need two repositories:
 
 check that you have `/etc/apt/sources.list` as in configuration
 
+note: when you install proxmox, it will add a repository that gives error, after installing proxmox `rm /etc/apt/sources.list.d/pve-enterprise.list` or try to keep repositories as appear in this template or examples
+
 `apt-get update && apt-get dist-upgrade`
 
 **IMPORTANT**: change from loopback to the ip of the temporal/principal network interface in the file `/etc/hosts` this way (example): `127.0.1.1 eXOpve1` per `192.168.200.91 eXOpve1`. Check configuration of `/etc/hosts`
@@ -91,43 +93,163 @@ create mount point for brick1 (glusterfs)
 
 `mkdir /brick1`
 
-get UUID of /brick1 in our case /dev/sda3 and add it to `/etc/fstab` (check configuration of this file in template)
+get UUID of /brick1 in our case /dev/sda3 and add it to `/etc/fstab` (check configuration of this file in template). Be sure you don't have error with the following, fix them before your next reboot:
 
 `mount -a`
 
-Check XFS:
+Check XFS is OK:
 
 `xfs_info /dev/sda3`
 
-## final network config
+## previous steps before cluster installation
 
-Comprovar que el entorn proxmox és operatiu des de un navegador https://192.168.200.91:8006
+### cluster networking
 
-Configurar el fitxer /etc/network/interfaces per usar el OVS sobre eth1, amb vlan 96 per el servei proxmox i vlan 97 per el servei gluster. La vlan 96 es per fer el live migration en el clúster proxmox. La vlan 97 es per fer la rèplica del glusterfs.
+before we start clusters check that you have `/etc/network/interfaces` and `/etc/hosts` as in configuration
 
-Configurar el fitxer /etc/hosts amb les ip's del segment dedicat als serveis pve: 192.168.96.91 eXOpve1 i 192.168.96.92 eXOpve2 en els dos nodes igual
+VLAN 96 is for proxmox service, specially, for its live migration operation
+
+VLAN 97 is for gluster service, specially for replica operation
+
+If you can reach your nodes via HTTTP check availability of proxmox web management application. Example for our trax1: https://192.168.96.11:8006
+
+This network configuration requires reboot. If you are working remotely, be sure what you do or you will loose access.
+
+### time synchronization
+
+Check that timesync is working, it is fundamental for proxmox and gluster clusters:
+
+`systemctl status time-sync.target`
+
+Try to select the closest NTP server you can
 
 ## proxmox cluster installation
 
-Reiniciar (cal reconfigurar la xarxa i la configuració general del proxmox)
+Create cluster proxmox, in our case (from trax1):
 
-comprovar que el timesync està funcionant: fonamental per el cluster proxmox i el gluster: systemctl status time-sync.target
+`pvcme create trax`
 
-crear el cluster proxmox que li diem eXOpve, IMPORTANT això només s'ha de fer una vegada en el primer node, MAI en els dos a risc de crear dos cluster independents
+**IMPORTANT** create only one cluster and only in the first node, if you do this more times in the others you can create independent clusters!
 
-pvcme create eXOpve
+Check that is working:
 
-comprovar que està funcionant
+`pvecm status`
 
+In the other node (trax2), add with the hostname of the other node that have the cluster:
+
+`pvecm add trax1`
+
+Check that the cluster is running correctly now and after reboot:
+
+```
 pvcme status
+reboot
+pvcme status
+```
 
-en el altre equip fer: pvecm add eXOpve1. IMPORTANT només s'ha de fer una vegada en el segon node quan el cluster ja està creat en el primer node
+extra: https://pve.proxmox.com/wiki/Proxmox_VE_4.x_Cluster
 
-comprovar que el cluster té quorom i dos nodes: pvcme status
+## extra1: start again the cluster
 
-reiniciar (els dos nodes): reboot
+In my case following the guide, I put the first node in cluster with the wrong IP in `/etc/hosts`. After putting the right IP it said:
 
-comprovar que el cluster té quorom i dos nodes: pvcme status
+```
+pvecm status
+Cannot initialize CMAP service
+```
+
+so I deleted this way:
+
+```
+systemctl stop pvestatd.service
+systemctl stop pvedaemon.service
+systemctl stop pve-cluster.service
+rm -rf /var/lib/pve-cluster
+rm -rf /etc/corosync
+systemctl start pve-cluster.service
+```
+
+after that said:
+
+```
+pvecm status
+Corosync config '/etc/pve/corosync.conf' does not exist - is this node part of a cluster?
+Cannot initialize CMAP service
+```
+
+If your problem is somehow different but similar, check official guide: https://pve.proxmox.com/wiki/Proxmox_VE_4.x_Cluster#Re-installing_a_cluster_node
+
+## extra2: problem adding node
+
+This command failed:
+
+```
+pvecm add trax1
+unable to copy ssh ID: exit code 1
+```
+
+Because in `/etc/hosts` of trax2 was missing the entry for trax1:
+
+`192.168.96.11    trax1`
+
+## gluster cluster installation
+
+from one of your nodes, register the other one. For example from trax1 we register gfs2:
+
+`gluster peer probe gfs1`
+
+No worries: if trax1 registers gfs1, has no effect, is localhost
+
+Check if gluster is working with these two commands:
+
+```
+gluster peer status
+gluster pool list
+```
+
+prepare the gluster volume, in our case:
+
+```
+mkdir /brick1/vmstore
+```
+
+create gluster volume, in our case:
+
+`gluster volume create vmstore replica 2 transport tcp gfs1:/brick1/vmstore gfs2:/brick1/vmstore`
+
+apply this customizations
+
+```
+# is preferred to use nfs from linux kernel
+gluster volume set vmstore nfs.disable on
+# sharding to manage balanced big files and fast self-heal
+gluster volume set vmstore features.shard enable
+gluster volume set vmstore features.shard-block-size 512MB
+gluster volume set vmstore data-self-heal-algorithm full
+# parameters to optimize virtualization
+gluster volume set vmstore performance.readdir-ahead off
+gluster volume set vmstore performance.quick-read off
+gluster volume set vmstore performance.read-ahead off
+gluster volume set vmstore cluster.readdir-optimize on
+gluster volume set vmstore performance.quick-read off
+gluster volume set vmstore performance.read-ahead off
+gluster volume set vmstore performance.io-cache off
+gluster volume set vmstore performance.stat-prefetch off
+```
+
+check gluster volume options:
+
+`gluster volume get vmstore all | less`
+
+start gluster volume, in our case:
+
+`gluster volume start vmstore`
+
+`reboot` and check that gluster volume is working correctly:
+
+`gluster volume status`
+
+Now you can **define vmstore as GlusterFS in proxmox through its web interface**
 
 # TODO: template config that generates specific config for cluster members
 
