@@ -32,9 +32,9 @@ checker:
 
 `service systemd-timesyncd status`
 
-install utilities
+install utilities (should we use `--no-install-recommends`?)
 
-`apt-get install ipmitool inxi smartmontools ethtool ssh tcpdump iperf3 iotop iftop nmap mtr sudo parted curl tmux screen vim`
+`apt-get install ipmitool inxi smartmontools ethtool ssh tcpdump iperf3 iotop iftop nmap mtr sudo parted curl tmux screen vim etckeeper`
 
 detect sensors
 
@@ -149,7 +149,15 @@ pvcme status
 
 extra: https://pve.proxmox.com/wiki/Proxmox_VE_4.x_Cluster
 
+## ipmi and proxmox high availability
+
+With IPMI there is high availability in proxmox cluster out of the box. (src https://pve.proxmox.com/wiki/High_Availability_Cluster_4.x)
+
+By default ipmi was not working, we needed to load the modules. Check template of `/etc/modules`. This reference helped: http://serverfault.com/questions/480371/ipmitool-cant-find-dev-ipmi0-or-dev-ipmidev-0/480374#480374
+
 ## extra1: start again the cluster
+
+Sometime you will need to recreate the proxmox cluster
 
 In my case following the guide, I put the first node in cluster with the wrong IP in `/etc/hosts`. After putting the right IP it said:
 
@@ -166,6 +174,9 @@ systemctl stop pvedaemon.service
 systemctl stop pve-cluster.service
 rm -rf /var/lib/pve-cluster
 rm -rf /etc/corosync
+rm /etc/ssh/ssh_known_hosts
+systemctl start pvestatd.service
+systemctl start pvedaemon.service
 systemctl start pve-cluster.service
 ```
 
@@ -223,6 +234,7 @@ note: shard block size should be 64 for less than 1TB. In the other example, we 
 
 ```
 # is preferred to use nfs from linux kernel
+# note: if nfs is enabled you cannot mount gluster on proxmox interface
 gluster volume set vmstore nfs.disable on
 # sharding to manage balanced big files and fast self-heal
 gluster volume set vmstore features.shard enable
@@ -253,36 +265,25 @@ start gluster volume, in our case:
 
 Now you can **define vmstore as GlusterFS in proxmox through its web interface**. If you perform this, you cannot change gluster parameters unless you destroy the gluster cluster
 
-### destroy gluster cluster
+### add glusterfs volume with config file
 
-# TODO: no funciona `ipmitool`
+if you disable nfs on gluster, you have to configure storage by config file
 
-# TODO: Move to another doc section
+put this in `/etc/pve/storage.cfg`
 
-no muntar cluster proxmox i gluster fins tenir IPs definitives
-
-gluster necessita extended attributes (per això ho posem al xfs)
-
-benchmark
-
-throughput ssd trax1
 ```
-dd if=/dev/zero of=/kk bs=1024k count=4k conv=fsync
-4096+0 records in
-4096+0 records out
-4294967296 bytes (4.3 GB) copied, 19.4548 s, 221 MB/s
+dir: local
+        disable
+        path /var/lib/vz
+        maxfiles 0
+        content images,rootdir,vztmpl,iso
+
+glusterfs: vmstore
+        volume vmstore
+        path /mnt/pve/vmstore
+        content backup,images,iso,vztmpl
+        maxfiles 5
+        server 127.0.0.1
 ```
-ext4 vs xfs
 
-vàrios processos en paral·lel (més paral·lelitzable): xfs
-un usuari: ext4
-
-
-
-do partition one liner
-
-parted
-
-sfdisk
-
-src http://serverfault.com/questions/258152/fdisk-partition-in-single-line
+src https://pve.proxmox.com/wiki/Storage#_storage_configuration
