@@ -1,3 +1,24 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Installation 2017-03-07](#installation-2017-03-07)
+  - [debian installation](#debian-installation)
+  - [first configurations](#first-configurations)
+  - [proxmox installation](#proxmox-installation)
+  - [gluster installation](#gluster-installation)
+  - [previous steps before cluster installation](#previous-steps-before-cluster-installation)
+    - [cluster networking](#cluster-networking)
+    - [time synchronization](#time-synchronization)
+  - [proxmox cluster installation](#proxmox-cluster-installation)
+  - [ipmi and proxmox high availability](#ipmi-and-proxmox-high-availability)
+  - [extra1: start again the cluster](#extra1-start-again-the-cluster)
+  - [extra2: problem adding node](#extra2-problem-adding-node)
+  - [gluster cluster installation](#gluster-cluster-installation)
+    - [add glusterfs volume with config file](#add-glusterfs-volume-with-config-file)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Installation 2017-03-07
 
 ## debian installation

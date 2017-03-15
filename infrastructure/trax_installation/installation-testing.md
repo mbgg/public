@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Guió d'instal·lació del eXOpve1](#gui%C3%B3-dinstal%C2%B7laci%C3%B3-del-exopve1)
+  - [Fitxers de configuració de xarxa i hosts](#fitxers-de-configuraci%C3%B3-de-xarxa-i-hosts)
+    - [/etc/network/interfaces {#interfaces}](#etcnetworkinterfaces-interfaces)
+    - [/etc/hosts {#hosts}](#etchosts-hosts)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Servidors
 
 # Guió d'instal·lació del eXOpve1
