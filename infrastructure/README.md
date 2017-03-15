@@ -11,4 +11,4 @@ static yaml database:
 - [services](https://github.com/guifi-exo/public/blob/master/infrastructure/services.md)
 - [VMs](https://github.com/guifi-exo/public/blob/master/infrastructure/VMs.md)
 
-![network diagram](https://github.com/guifi-exo/public/tree/master/infrastructure/network_diagram.png)
+![network diagram](https://github.com/guifi-exo/public/raw/master/infrastructure/network_diagram.png)
