@@ -104,7 +104,7 @@ vms:
 trax_network:
   - hostname: trax1
     temp:
-      ip: 192.168.1.11/24
+      guifi: 10.38.140.230 # accessing trax via mikrotik
     gluster: gfs1
     vlan96:
       ip: 192.168.96.11/24
@@ -120,7 +120,7 @@ trax_network:
   - hostname: trax2
     ipv6_linklocal: fe80::3ad5:47ff:fec9:6b37
     temp:
-      ip: 192.168.1.12/24
+      guifi: 10.38.140.231 # accessing trax via mikrotik
     gluster: gfs2
     vlan96:
       ip: 192.168.96.12/24
@@ -141,7 +141,7 @@ support: # nodes that support the cluster
       ip: 10.253.4.28/22
       iface: vmbr0
       gateway: 10.253.4.21
-    vlan127:
+    vlan127: # vlan interna, connectada a mikrotik/trax3
       ip: 192.168.127.13/24
       iface: vmbr0
   - hostname: trax3
