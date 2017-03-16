@@ -1,3 +1,5 @@
+put this as an static db file
+
 Note: Inverse chronological order
 
 # Migration going on
