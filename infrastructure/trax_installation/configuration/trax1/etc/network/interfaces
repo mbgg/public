@@ -24,11 +24,7 @@ iface bond0 inet manual
 allow-ovs vmbr0
 
 auto vmbr0
-iface vmbr0 inet static
-        # temp
-        address   192.168.1.11
-        netmask   255.255.255.0
-        gateway   192.168.1.1
+iface vmbr0 inet manual
         ovs_type  OVSBridge
         ovs_ports pve gfs ctrl bond0
 
@@ -52,8 +48,7 @@ allow-vmbr0 ctrl
 iface ctrl inet static
         address     192.168.98.11
         netmask     255.255.255.0
-# gateway definitiu, de moment estem en fase temporal
-#        gateway     192.168.98.1
+        gateway     192.168.98.1
         ovs_type    OVSIntPort
         ovs_bridge  vmbr0
         ovs_options tag=98
