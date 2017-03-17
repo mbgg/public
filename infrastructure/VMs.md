@@ -22,3 +22,9 @@ Clúster Trax. Serveis:
     - DNS (ns.exo.cat)
     - NTP (ntp.exo.cat)
     - SMTP? (mailer.exo.cat?)
+
+## HA policy
+
+Volem fer només HA del router virtual, és a dir, que en cas que caigui el Trax que conté el router virtual, arrenqui el router virtual a l'altre Trax
+
+TODO: potser hi ha altres serveis que volem aquest comportament
