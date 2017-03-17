@@ -101,6 +101,10 @@ firmware compiler. FTP directory: Images for qMp, OpenWRT, Lede, etc.
 
 would be nice to have one based on templated system of ansible
 
+## vpn.exo.cat
+
+Dial-up connection for people that wants encrypted Internet through guifi. This also could include external access to guifi.
+
 ## extra (review needed)
 
 - [HTTPS](service-https) (English) - com fer HTTPs amb Letsencrypt per als nostres serveis
@@ -109,4 +113,3 @@ would be nice to have one based on templated system of ansible
 - [speedtest](service-speedtest) - Autor: Oriol. codi font no publicat
 - [El rosco de Llorenç](http://dsg.ac.upc.edu/qmpmon) - monitor de xarxes mesh qMp. Autor: Llorenç. codi font no publicat
 - [Mapes qMp de Barcelona](http://sants.guifi.net/maps) - Autor: Oriol. codi font no publicat
-
