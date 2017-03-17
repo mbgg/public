@@ -22,4 +22,4 @@ static yaml database:
 - [storage](https://github.com/guifi-exo/public/blob/master/infrastructure/db/storage.yml): information related to physical disks, at the moment is just `/etc/fstab`
 
 
-![network diagram](https://github.com/guifi-exo/public/raw/master/infrastructure/network_diagram.png)
+![network diagram](https://github.com/guifi-exo/public/raw/master/infrastructure/diagrams/network_diagram.png)
