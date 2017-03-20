@@ -10,7 +10,7 @@
     - [time synchronization](#time-synchronization)
   - [install proxmox](#install-proxmox)
     - [first steps](#first-steps)
-    - [Create cluster](#create-cluster)
+    - [create cluster](#create-cluster)
       - [ipmi and proxmox high availability](#ipmi-and-proxmox-high-availability)
       - [extra1: start again the cluster](#extra1-start-again-the-cluster)
       - [extra2: problem adding node](#extra2-problem-adding-node)
@@ -118,7 +118,7 @@ after installing proxmox, delete the repository it creates:
 
 `rm /etc/apt/sources.list.d/pve-enterprise.list`
 
-### Create cluster
+### create cluster
 
 Create cluster proxmox, in our case (from trax1):
 
@@ -150,7 +150,7 @@ With IPMI there is high availability in proxmox cluster out of the box. (src htt
 
 By default ipmi was not working, we needed to load the modules. Check template of `/etc/modules`. This reference helped: http://serverfault.com/questions/480371/ipmitool-cant-find-dev-ipmi0-or-dev-ipmidev-0/480374#480374
 
-#### extra1: start again the cluster
+#### extra1: recreate/reinitialize cluster
 
 Sometime you will need to recreate the proxmox cluster
 
