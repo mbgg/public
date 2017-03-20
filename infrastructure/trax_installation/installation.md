@@ -11,9 +11,9 @@
     - [cluster networking](#cluster-networking)
     - [time synchronization](#time-synchronization)
   - [proxmox cluster installation](#proxmox-cluster-installation)
-  - [ipmi and proxmox high availability](#ipmi-and-proxmox-high-availability)
-  - [extra1: start again the cluster](#extra1-start-again-the-cluster)
-  - [extra2: problem adding node](#extra2-problem-adding-node)
+    - [ipmi and proxmox high availability](#ipmi-and-proxmox-high-availability)
+    - [extra1: start again the cluster](#extra1-start-again-the-cluster)
+    - [extra2: problem adding node](#extra2-problem-adding-node)
   - [gluster cluster installation](#gluster-cluster-installation)
     - [add glusterfs volume with config file](#add-glusterfs-volume-with-config-file)
 
@@ -114,7 +114,7 @@ create mount point for brick1
 
 `mkdir /brick1`
 
-get UUID (use `blkid`) of /dev/sda3 to mount it as /brick1 and add it to `/etc/fstab` (check configuration of this file in template). Be sure you don't have error with the following, fix them before your next reboot:
+get UUID (use `blkid`) of /dev/sda3 to mount it as /brick1 and add it to `/etc/fstab` (check configuration of this file in template). Test the new mount point with the following command:
 
 `mount -a`
 
@@ -170,13 +170,13 @@ pvcme status
 
 extra: https://pve.proxmox.com/wiki/Proxmox_VE_4.x_Cluster
 
-## ipmi and proxmox high availability
+### ipmi and proxmox high availability
 
 With IPMI there is high availability in proxmox cluster out of the box. (src https://pve.proxmox.com/wiki/High_Availability_Cluster_4.x)
 
 By default ipmi was not working, we needed to load the modules. Check template of `/etc/modules`. This reference helped: http://serverfault.com/questions/480371/ipmitool-cant-find-dev-ipmi0-or-dev-ipmidev-0/480374#480374
 
-## extra1: start again the cluster
+### extra1: start again the cluster
 
 Sometime you will need to recreate the proxmox cluster
 
@@ -211,7 +211,7 @@ Cannot initialize CMAP service
 
 If your problem is somehow different but similar, check official guide: https://pve.proxmox.com/wiki/Proxmox_VE_4.x_Cluster#Re-installing_a_cluster_node
 
-## extra2: problem adding node
+### extra2: problem adding node
 
 This command failed:
 
