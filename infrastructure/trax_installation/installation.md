@@ -14,7 +14,7 @@
       - [ipmi and proxmox high availability](#ipmi-and-proxmox-high-availability)
       - [extra1: recreate/reinitialize cluster](#extra1-recreatereinitialize-cluster)
       - [extra2: problem adding node](#extra2-problem-adding-node)
-  - [install gluster as redundant and share storage for proxmox](#install-gluster-as-redundant-and-share-storage-for-proxmox)
+  - [install gluster as redundant and shared storage for proxmox](#install-gluster-as-redundant-and-shared-storage-for-proxmox)
     - [first steps](#first-steps-1)
     - [join nodes](#join-nodes)
     - [add glusterfs volume with config file](#add-glusterfs-volume-with-config-file)
