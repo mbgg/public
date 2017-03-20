@@ -5,16 +5,16 @@
 - [Installation 2017-03-07](#installation-2017-03-07)
   - [debian installation](#debian-installation)
   - [first configurations](#first-configurations)
-  - [proxmox installation](#proxmox-installation)
-  - [gluster installation](#gluster-installation)
+  - [install proxmox in a single node](#install-proxmox-in-a-single-node)
+  - [install gluster in a single node](#install-gluster-in-a-single-node)
   - [previous steps before cluster installation](#previous-steps-before-cluster-installation)
     - [cluster networking](#cluster-networking)
     - [time synchronization](#time-synchronization)
-  - [proxmox cluster installation](#proxmox-cluster-installation)
+  - [install proxmox in a cluster](#install-proxmox-in-a-cluster)
     - [ipmi and proxmox high availability](#ipmi-and-proxmox-high-availability)
     - [extra1: start again the cluster](#extra1-start-again-the-cluster)
     - [extra2: problem adding node](#extra2-problem-adding-node)
-  - [gluster cluster installation](#gluster-cluster-installation)
+  - [install gluster in a cluster](#install-gluster-in-a-cluster)
     - [add glusterfs volume with config file](#add-glusterfs-volume-with-config-file)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -66,7 +66,7 @@ check sensors work
 
 `sensors`
 
-## proxmox installation
+## install proxmox in a single node
 
 add proxmox repository
 
@@ -92,7 +92,7 @@ after installing proxmox, delete the repository it creates:
 
 `rm /etc/apt/sources.list.d/pve-enterprise.list`
 
-## gluster installation
+## install gluster in a single node
 
 add gluster repository (check `/etc/apt/sources.list.d` in config)
 
@@ -144,7 +144,7 @@ Check that timesync is working, it is fundamental for proxmox and gluster cluste
 
 Try to select the closest NTP server you can
 
-## proxmox cluster installation
+## install proxmox in a cluster
 
 Create cluster proxmox, in our case (from trax1):
 
@@ -224,7 +224,7 @@ Because in `/etc/hosts` of trax2 was missing the entry for trax1:
 
 `192.168.96.11    trax1`
 
-## gluster cluster installation
+## install gluster in a cluster
 
 from one of your nodes, register the other one. For example from trax1 we register gfs2:
 
