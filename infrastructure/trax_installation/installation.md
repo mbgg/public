@@ -198,7 +198,7 @@ Because in `/etc/hosts` of trax2 was missing the entry for trax1:
 
 `192.168.96.11    trax1`
 
-## install gluster as redundant and share storage for proxmox
+## install gluster as redundant and shared storage for proxmox
 
 ### first steps
 
