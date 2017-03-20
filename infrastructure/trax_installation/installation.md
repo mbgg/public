@@ -256,7 +256,7 @@ create a replicated gluster volume, in our case:
 
 `gluster volume create vmstore replica 2 transport tcp gfs1:/brick1/vmstore gfs2:/brick1/vmstore`
 
-apply this customizations
+apply these customizations
 
 note: shard block size should be 64MB for less than 1TB. [In the other example, we used 512MB](https://github.com/guifi-exo/public/blob/master/infrastructure/trax_installation/installation-testing.md)
 
