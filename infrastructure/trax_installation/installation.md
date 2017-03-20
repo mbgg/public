@@ -5,16 +5,18 @@
 - [Installation 2017-03-07](#installation-2017-03-07)
   - [debian installation](#debian-installation)
   - [first configurations](#first-configurations)
-  - [install proxmox in a single node](#install-proxmox-in-a-single-node)
-  - [install gluster in a single node](#install-gluster-in-a-single-node)
   - [previous steps before cluster installation](#previous-steps-before-cluster-installation)
     - [cluster networking](#cluster-networking)
     - [time synchronization](#time-synchronization)
-  - [install proxmox in a cluster](#install-proxmox-in-a-cluster)
-    - [ipmi and proxmox high availability](#ipmi-and-proxmox-high-availability)
-    - [extra1: start again the cluster](#extra1-start-again-the-cluster)
-    - [extra2: problem adding node](#extra2-problem-adding-node)
-  - [install gluster in a cluster](#install-gluster-in-a-cluster)
+  - [install proxmox](#install-proxmox)
+    - [first steps](#first-steps)
+    - [Create cluster](#create-cluster)
+      - [ipmi and proxmox high availability](#ipmi-and-proxmox-high-availability)
+      - [extra1: start again the cluster](#extra1-start-again-the-cluster)
+      - [extra2: problem adding node](#extra2-problem-adding-node)
+  - [install gluster](#install-gluster)
+    - [first steps](#first-steps-1)
+    - [join nodes](#join-nodes)
     - [add glusterfs volume with config file](#add-glusterfs-volume-with-config-file)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -66,7 +68,31 @@ check sensors work
 
 `sensors`
 
-## install proxmox in a single node
+## previous steps before cluster installation
+
+### cluster networking
+
+before we start clusters check that you have `/etc/network/interfaces` and `/etc/hosts` as in configuration
+
+VLAN 96 is for proxmox service, specially, for its live migration operation
+
+VLAN 97 is for gluster service, specially for replica operation
+
+If you can reach your nodes via HTTTP check availability of proxmox web management application. Example for our trax1: https://192.168.96.11:8006
+
+This network configuration requires reboot. If you are working remotely, be sure what you do or you will loose access.
+
+### time synchronization
+
+Check that timesync is working, it is fundamental for proxmox and gluster clusters:
+
+`systemctl status time-sync.target`
+
+Try to select the closest NTP server you can
+
+## install proxmox
+
+### first steps
 
 add proxmox repository
 
@@ -92,59 +118,7 @@ after installing proxmox, delete the repository it creates:
 
 `rm /etc/apt/sources.list.d/pve-enterprise.list`
 
-## install gluster in a single node
-
-add gluster repository (check `/etc/apt/sources.list.d` in config)
-
-`wget -O - http://download.gluster.org/pub/gluster/glusterfs/LATEST/rsa.pub | apt-key add -`
-
-install latest stable version of gluster server and client (3.8 at the moment)
-
-`apt-get install glusterfs-server glusterfs-client`
-
-preparing bricks: create a primary partition. Last partition was in 20.5GB according to command `parted /dev/sda p` so we do:
-
-`parted /dev/sda mkpart primary 20.5GB 100%`
-
-and prepare new partition /dev/sda3 as brick for gluster. Format it as XFS partition with 512bytes of size for inodes for the extended attributes of gluster and blocksize of 8192 to minimize iops to access inodes
-
-`mkfs.xfs -f -i size=512 -n size=8192  /dev/sda3`
-
-create mount point for brick1
-
-`mkdir /brick1`
-
-get UUID (use `blkid`) of /dev/sda3 to mount it as /brick1 and add it to `/etc/fstab` (check configuration of this file in template). Test the new mount point with the following command:
-
-`mount -a`
-
-Check XFS is OK:
-
-`xfs_info /brick1`
-
-## previous steps before cluster installation
-
-### cluster networking
-
-before we start clusters check that you have `/etc/network/interfaces` and `/etc/hosts` as in configuration
-
-VLAN 96 is for proxmox service, specially, for its live migration operation
-
-VLAN 97 is for gluster service, specially for replica operation
-
-If you can reach your nodes via HTTTP check availability of proxmox web management application. Example for our trax1: https://192.168.96.11:8006
-
-This network configuration requires reboot. If you are working remotely, be sure what you do or you will loose access.
-
-### time synchronization
-
-Check that timesync is working, it is fundamental for proxmox and gluster clusters:
-
-`systemctl status time-sync.target`
-
-Try to select the closest NTP server you can
-
-## install proxmox in a cluster
+### Create cluster
 
 Create cluster proxmox, in our case (from trax1):
 
@@ -170,13 +144,13 @@ pvcme status
 
 extra: https://pve.proxmox.com/wiki/Proxmox_VE_4.x_Cluster
 
-### ipmi and proxmox high availability
+#### ipmi and proxmox high availability
 
 With IPMI there is high availability in proxmox cluster out of the box. (src https://pve.proxmox.com/wiki/High_Availability_Cluster_4.x)
 
 By default ipmi was not working, we needed to load the modules. Check template of `/etc/modules`. This reference helped: http://serverfault.com/questions/480371/ipmitool-cant-find-dev-ipmi0-or-dev-ipmidev-0/480374#480374
 
-### extra1: start again the cluster
+#### extra1: start again the cluster
 
 Sometime you will need to recreate the proxmox cluster
 
@@ -211,7 +185,7 @@ Cannot initialize CMAP service
 
 If your problem is somehow different but similar, check official guide: https://pve.proxmox.com/wiki/Proxmox_VE_4.x_Cluster#Re-installing_a_cluster_node
 
-### extra2: problem adding node
+#### extra2: problem adding node
 
 This command failed:
 
@@ -224,7 +198,39 @@ Because in `/etc/hosts` of trax2 was missing the entry for trax1:
 
 `192.168.96.11    trax1`
 
-## install gluster in a cluster
+## install gluster
+
+### first steps
+
+add gluster repository (check `/etc/apt/sources.list.d` in config)
+
+`wget -O - http://download.gluster.org/pub/gluster/glusterfs/LATEST/rsa.pub | apt-key add -`
+
+install latest stable version of gluster server and client (3.8 at the moment)
+
+`apt-get install glusterfs-server glusterfs-client`
+
+preparing bricks: create a primary partition. Last partition was in 20.5GB according to command `parted /dev/sda p` so we do:
+
+`parted /dev/sda mkpart primary 20.5GB 100%`
+
+and prepare new partition /dev/sda3 as brick for gluster. Format it as XFS partition with 512bytes of size for inodes for the extended attributes of gluster and blocksize of 8192 to minimize iops to access inodes
+
+`mkfs.xfs -f -i size=512 -n size=8192  /dev/sda3`
+
+create mount point for brick1
+
+`mkdir /brick1`
+
+get UUID (use `blkid`) of /dev/sda3 to mount it as /brick1 and add it to `/etc/fstab` (check configuration of this file in template). Test the new mount point with the following command:
+
+`mount -a`
+
+Check XFS is OK:
+
+`xfs_info /brick1`
+
+### join nodes
 
 from one of your nodes, register the other one. For example from trax1 we register gfs2:
 
