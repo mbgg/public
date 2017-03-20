@@ -40,6 +40,7 @@ trax1: 192.168.1.11/24
 trax2: 192.168.1.12/24
 gateway: 192.168.1.1/24
 ```
+Put jessie backports, check `/etc/apt/sources.list`
 
 check that you have `/etc/systemd/timesyncd.conf` as in configuration
 
@@ -53,7 +54,7 @@ checker:
 
 `service systemd-timesyncd status`
 
-install utilities (should we use `--no-install-recommends`?)
+install utilities:
 
 `apt-get install ipmitool inxi smartmontools ethtool ssh tcpdump iperf3 iotop iftop nmap mtr sudo parted curl tmux screen vim etckeeper`
 
@@ -67,24 +68,19 @@ check sensors work
 
 ## proxmox installation
 
-We need two repositories:
-
-- jessie backports
-- proxmox repository
+We need proxmox repository
 
 `wget -O- "http://download.proxmox.com/debian/key.asc" | apt-key add -`
 
-check that you have `/etc/apt/sources.list` as in configuration
-
-note: when you install proxmox, it will add a repository that gives error, after installing proxmox `rm /etc/apt/sources.list.d/pve-enterprise.list` or try to keep repositories as appear in this template or examples
+check that you have `/etc/apt/sources.list.d` as in configuration
 
 `apt-get update && apt-get dist-upgrade`
 
-**IMPORTANT**: change from loopback to the ip of the temporal/principal network interface in the file `/etc/hosts` this way (example): `127.0.1.1 eXOpve1` per `192.168.200.91 eXOpve1`. Check configuration of `/etc/hosts`
+**IMPORTANT**: change from loopback to the ip of the temporal/principal network interface in the file `/etc/hosts` this way (example): `127.0.1.1 trax1` per `192.168.96.11 eXOpve1`. Check configuration of `/etc/hosts`
 
 Install proxmox (mail: no configuration):
 ```
-apt-get install proxmox-ve ssh postfix ksm-control-daemon open-iscsi systemd-sysv openvswitch-switch
+apt-get install proxmox-ve ssh postfix ksm-control-daemon systemd-sysv openvswitch-switch
 
 apt-get remove os-prober
 update-grub
@@ -98,29 +94,33 @@ after installing proxmox, delete the repository it creates:
 
 ## gluster installation
 
+put gluster repository (check `/etc/apt/sources.list.d` in config)
+
+`wget -O - http://download.gluster.org/pub/gluster/glusterfs/LATEST/rsa.pub | apt-key add -`
+
 install latest stable version of gluster server and client (3.8 at the moment)
 
 `apt-get install glusterfs-server glusterfs-client`
 
-create a primary partition. Last partition was in 20.5GB according to command `parted /dev/sda p` so we do:
+preparing bricks: create a primary partition. Last partition was in 20.5GB according to command `parted /dev/sda p` so we do:
 
 `parted /dev/sda mkpart primary 20.5GB 100%`
 
-and prepare volume for gluster. Format an XFS partition with 512bytes of size for inodes forthe extended attributes of gluster and blocksize of 8192 to minimize iops to access inodes
+and prepare bricks for gluster (the virtual volume is on top of the bricks). Format an XFS partition with 512bytes of size for inodes forthe extended attributes of gluster and blocksize of 8192 to minimize iops to access inodes
 
 `mkfs.xfs -f -i size=512 -n size=8192  /dev/sda3`
 
-create mount point for brick1 (glusterfs)
+create mount point for brick1
 
 `mkdir /brick1`
 
-get UUID of /brick1 in our case /dev/sda3 and add it to `/etc/fstab` (check configuration of this file in template). Be sure you don't have error with the following, fix them before your next reboot:
+get UUID (use `blkid`) of /dev/sda3 to mount it as /brick1 to mount it in `/etc/fstab` (check configuration of this file in template). Be sure you don't have error with the following, fix them before your next reboot:
 
 `mount -a`
 
 Check XFS is OK:
 
-`xfs_info /dev/sda3`
+`xfs_info /brick1`
 
 ## previous steps before cluster installation
 
