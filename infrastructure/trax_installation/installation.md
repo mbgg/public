@@ -12,9 +12,9 @@
     - [first steps](#first-steps)
     - [create cluster](#create-cluster)
       - [ipmi and proxmox high availability](#ipmi-and-proxmox-high-availability)
-      - [extra1: start again the cluster](#extra1-start-again-the-cluster)
+      - [extra1: recreate/reinitialize cluster](#extra1-recreatereinitialize-cluster)
       - [extra2: problem adding node](#extra2-problem-adding-node)
-  - [install gluster](#install-gluster)
+  - [install gluster as redundant and share storage for proxmox](#install-gluster-as-redundant-and-share-storage-for-proxmox)
     - [first steps](#first-steps-1)
     - [join nodes](#join-nodes)
     - [add glusterfs volume with config file](#add-glusterfs-volume-with-config-file)
@@ -198,7 +198,7 @@ Because in `/etc/hosts` of trax2 was missing the entry for trax1:
 
 `192.168.96.11    trax1`
 
-## install gluster
+## install gluster as redundant and share storage for proxmox
 
 ### first steps
 
