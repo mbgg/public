@@ -245,7 +245,7 @@ gluster peer status
 gluster pool list
 ```
 
-prepare the gluster volume, in our case:
+in each node node prepare bricks for gluster volume , in our case:
 
 ```
 mkdir /brick1/vmstore
