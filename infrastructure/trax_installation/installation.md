@@ -250,7 +250,7 @@ in each node node prepare bricks for gluster volume , in our case:
 mkdir /brick1/vmstore
 ```
 
-**Note**: now gluster nodes are interconnected; hence, the next commands can be done in one of the nodes and this information will be replicated
+**Note**: now gluster nodes are interconnected; hence, the next commands can be done in one of the nodes and this information will be propagated
 
 create a replicated gluster volume, in our case:
 
