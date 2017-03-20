@@ -106,7 +106,7 @@ preparing bricks: create a primary partition. Last partition was in 20.5GB accor
 
 `parted /dev/sda mkpart primary 20.5GB 100%`
 
-and prepare new partition /dev/sda3 as brick for gluster. Format an XFS partition with 512bytes of size for inodes forthe extended attributes of gluster and blocksize of 8192 to minimize iops to access inodes
+and prepare new partition /dev/sda3 as brick for gluster. Format it as XFS partition with 512bytes of size for inodes for the extended attributes of gluster and blocksize of 8192 to minimize iops to access inodes
 
 `mkfs.xfs -f -i size=512 -n size=8192  /dev/sda3`
 
@@ -114,7 +114,7 @@ create mount point for brick1
 
 `mkdir /brick1`
 
-get UUID (use `blkid`) of /dev/sda3 to mount it as /brick1 to mount it in `/etc/fstab` (check configuration of this file in template). Be sure you don't have error with the following, fix them before your next reboot:
+get UUID (use `blkid`) of /dev/sda3 to mount it as /brick1 and add it to `/etc/fstab` (check configuration of this file in template). Be sure you don't have error with the following, fix them before your next reboot:
 
 `mount -a`
 
