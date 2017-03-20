@@ -68,7 +68,7 @@ check sensors work
 
 ## proxmox installation
 
-We need proxmox repository
+add proxmox repository
 
 `wget -O- "http://download.proxmox.com/debian/key.asc" | apt-key add -`
 
@@ -94,7 +94,7 @@ after installing proxmox, delete the repository it creates:
 
 ## gluster installation
 
-put gluster repository (check `/etc/apt/sources.list.d` in config)
+add gluster repository (check `/etc/apt/sources.list.d` in config)
 
 `wget -O - http://download.gluster.org/pub/gluster/glusterfs/LATEST/rsa.pub | apt-key add -`
 
@@ -106,7 +106,7 @@ preparing bricks: create a primary partition. Last partition was in 20.5GB accor
 
 `parted /dev/sda mkpart primary 20.5GB 100%`
 
-and prepare bricks for gluster (the virtual volume is on top of the bricks). Format an XFS partition with 512bytes of size for inodes forthe extended attributes of gluster and blocksize of 8192 to minimize iops to access inodes
+and prepare new partition /dev/sda3 as brick for gluster. Format an XFS partition with 512bytes of size for inodes forthe extended attributes of gluster and blocksize of 8192 to minimize iops to access inodes
 
 `mkfs.xfs -f -i size=512 -n size=8192  /dev/sda3`
 
