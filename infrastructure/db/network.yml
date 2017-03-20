@@ -79,8 +79,48 @@ vplan: # vlan plan
     subnet: 192.168.127.0/24
     notes: VLAN interna de IPMI
 
+# identificadors VM comencen al 20
 vms:
+  - hostname: rproxy
+    vlan90:
+      ip: 10.38.140.232/27
+      iface: eth0
+    vlan94: 
+      ip: 109.69.10.112/27
+      gateway: 109.69.10.126
+      iface: eth1
+    vlan95:
+      ip: 192.168.95.21/24
+      iface: eth2
+  - hostname: publica
+    vlan95:
+      ip: 192.168.95.22/24
+      iface: eth0
+  - hostname: privada
+    vlan95:
+      ip: 192.168.95.23/24
+      iface: eth0
+    vlan98:
+      ip: 192.168.98.23/24
+      gateway: 192.168.98.1
+  - hostname: core
+    vlan90:
+      ip: 10.38.140.233/27
+      iface: eth0
+    vlan94:
+      ip: 109.69.10.123/27
+      iface: eth1
+    vlan95:
+      ip: 192.168.95.24/24
+      iface: eth2
+  - hostname: rt
+    vlan94:
+      ip: 109.69.10.119/27
+      iface: eth0
   - hostname: vrouter
+    vlan90:
+      ip: 10.38.140.225/27
+      iface: vmbr0 # dintre del bridge anirà la vlan 90 (?). al final del projecte no hauria d'existir el bridge
     vlan94:
       ip: 109.69.10.126/27 
     vlan98:
@@ -88,19 +128,14 @@ vms:
     vlan102:
       ip: 10.253.4.28/22
       gateway: 10.253.4.21
-  - hostname: rproxy
-    vlan94:
-      ip: 109.69.10.113/27 
-      gateway: 109.69.10.126
-    vlan95:
-      ip: 192.168.95.20/24
-  - hostname: ctrlvpn
-    vlan95:
-      ip: 192.168.95.21/24
-    vlan98:
-      ip: 192.168.98.21/24
-      gateway: 192.168.98.1
 
+#    vlan90:
+#    ip: 109.69.10.119/27 ?
+
+hangar:
+
+
+# identificadors trax en el domini de 10
 trax_network:
   - hostname: trax1
     temp:
