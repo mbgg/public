@@ -8,6 +8,6 @@ For IPs we have this flexibility: http://docs.ansible.com/ansible/playbooks_filt
 
 # TODO
 
-- [ ] Use a closer NTP server [https://github.com/guifi-exo/public/blob/master/infrastructure/trax_installation/configuration/template/etc/systemd/timesyncd.conf](current)
-- [ ] Use a closer DNS server [https://github.com/guifi-exo/public/blob/master/infrastructure/trax_installation/configuration/template/etc/resolv.conf](current)
+- [ ] Use a closer NTP server [current](https://github.com/guifi-exo/public/blob/master/infrastructure/trax_installation/configuration/template/etc/systemd/timesyncd.conf)
+- [ ] Use a closer DNS server [current](https://github.com/guifi-exo/public/blob/master/infrastructure/trax_installation/configuration/template/etc/resolv.conf)
 - [ ] Proxmox HA
