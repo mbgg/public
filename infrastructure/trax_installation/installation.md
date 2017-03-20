@@ -251,30 +251,27 @@ in each node node prepare bricks for gluster volume , in our case:
 mkdir /brick1/vmstore
 ```
 
-create gluster volume, in our case:
+replicate gluster volume, in our case:
 
 `gluster volume create vmstore replica 2 transport tcp gfs1:/brick1/vmstore gfs2:/brick1/vmstore`
 
 apply this customizations
 
-note: shard block size should be 64 for less than 1TB. In the other example, we used 512MB
+note: shard block size should be 64 for less than 1TB. [In the other example, we used 512MB](https://github.com/guifi-exo/public/blob/master/infrastructure/trax_installation/installation-testing.md)
 
 ```
-# is preferred to use nfs from linux kernel
-# note: if nfs is enabled you cannot mount gluster on proxmox interface
+# is preferred to use the nfs from linux kernel
 gluster volume set vmstore nfs.disable on
 # sharding to manage balanced big files and fast self-heal
 gluster volume set vmstore features.shard enable
 gluster volume set vmstore features.shard-block-size 64MB
 gluster volume set vmstore data-self-heal-algorithm full
 # parameters to optimize virtualization
-gluster volume set vmstore performance.readdir-ahead off
-gluster volume set vmstore performance.quick-read off
-gluster volume set vmstore performance.read-ahead off
 gluster volume set vmstore cluster.readdir-optimize on
-gluster volume set vmstore performance.quick-read off
-gluster volume set vmstore performance.read-ahead off
 gluster volume set vmstore performance.io-cache off
+gluster volume set vmstore performance.quick-read off
+gluster volume set vmstore performance.readdir-ahead off
+gluster volume set vmstore performance.read-ahead off
 gluster volume set vmstore performance.stat-prefetch off
 ```
 
@@ -290,11 +287,7 @@ start gluster volume, in our case:
 
 `gluster volume status`
 
-Now you can **define vmstore as GlusterFS in proxmox through its web interface**. If you perform this, you cannot change gluster parameters unless you destroy the gluster cluster
-
-### add glusterfs volume with config file
-
-if you disable nfs on gluster, you have to configure storage by config file
+as you disabled nfs on gluster, you have to configure storage by config file
 
 put this in `/etc/pve/storage.cfg`
 
