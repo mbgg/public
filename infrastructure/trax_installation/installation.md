@@ -258,7 +258,7 @@ create a replicated gluster volume, in our case:
 
 apply this customizations
 
-note: shard block size should be 64 for less than 1TB. [In the other example, we used 512MB](https://github.com/guifi-exo/public/blob/master/infrastructure/trax_installation/installation-testing.md)
+note: shard block size should be 64MB for less than 1TB. [In the other example, we used 512MB](https://github.com/guifi-exo/public/blob/master/infrastructure/trax_installation/installation-testing.md)
 
 ```
 # is preferred to use the nfs from linux kernel
