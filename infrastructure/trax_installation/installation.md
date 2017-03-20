@@ -14,7 +14,7 @@
       - [ipmi and proxmox high availability](#ipmi-and-proxmox-high-availability)
       - [extra1: recreate/reinitialize cluster](#extra1-recreatereinitialize-cluster)
       - [extra2: problem adding node](#extra2-problem-adding-node)
-  - [install gluster as redundant and shared storage for proxmox](#install-gluster-as-redundant-and-shared-storage-for-proxmox)
+  - [install gluster as redundant d shared storage for proxmox](#install-gluster-as-redundant-and-shared-storage-for-proxmox)
     - [first steps](#first-steps-1)
     - [join nodes](#join-nodes)
 
@@ -197,7 +197,7 @@ Because in `/etc/hosts` of trax2 was missing the entry for trax1:
 
 `192.168.96.11    trax1`
 
-## install gluster as redundant and shared storage for proxmox
+## install gluster as redundant shared storage for proxmox
 
 ### first steps
 
@@ -250,7 +250,7 @@ in each node node prepare bricks for gluster volume , in our case:
 mkdir /brick1/vmstore
 ```
 
-**Note**: now gluster nodes are interconnected; hence the next commands can be done in one of the nodes
+**Note**: now gluster nodes are interconnected; hence, the next commands can be done in one of the nodes and this information will be replicated
 
 create a replicated gluster volume, in our case:
 
@@ -290,7 +290,7 @@ start gluster volume, in our case:
 
 as you disabled nfs on gluster, you have to configure storage by config file
 
-put this in `/etc/pve/storage.cfg`
+put next text as `/etc/pve/storage.cfg` in one of the nodes. As `/etc/pve` is distributed amonst proxmox nodes, this information will be replicated immediately.
 
 ```
 dir: local
