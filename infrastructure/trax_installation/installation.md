@@ -17,7 +17,6 @@
   - [install gluster as redundant and shared storage for proxmox](#install-gluster-as-redundant-and-shared-storage-for-proxmox)
     - [first steps](#first-steps-1)
     - [join nodes](#join-nodes)
-    - [add glusterfs volume with config file](#add-glusterfs-volume-with-config-file)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
