@@ -8,5 +8,4 @@ For IPs we have this flexibility: http://docs.ansible.com/ansible/playbooks_filt
 
 # TODO
 
-- [ ] Use a closer DNS server. [current](https://github.com/guifi-exo/public/blob/master/infrastructure/trax_installation/configuration/template/etc/resolv.conf)
 - [ ] Proxmox HA
