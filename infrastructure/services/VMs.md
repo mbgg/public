@@ -115,9 +115,6 @@ echo UUID=$(blkid -s UUID -o value /dev/vdb) none swap sw 0 0 >> /etc/fstab`
 mkswap /dev/vdb
 swapon -a
 ```
-
-check swap is there with `free -h`
-
 ### Resize
 
 #### Root
@@ -141,12 +138,6 @@ resize disk when is a regular disk (assuming a mounted xfs disk), directly:
 
 `xfs_grow /path/to/mounted/disk`
 
-disk resize is showed in kernel log: `dmesg | tail` or `tailf /var/log/messages`
-
-with `parted /dev/vda p` you can see the size of the disk and the size of the partition
-
-with `df -h` you can see the size of the filesystem
-
 #### Swap
 
 resize disk when is for swap:
@@ -156,11 +147,20 @@ swapoff -a
 mkswap -U $(blkid -s UUID -o value /dev/vdb) /dev/vdb
 swapon -a
 ```
+### Checkers
 
-#### Checkers
+Disks:
+
+disk resize is showed in kernel log: `dmesg | tail` or `tailf /var/log/messages`
+
+with `parted /dev/vda p` you can see the size of the disk and the size of the partition
+
+with `df -h` you can see the size of the filesystem
 
 
+Swap:
 
+`free -h`
 
 ## HA policy
 
