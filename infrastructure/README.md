@@ -7,6 +7,9 @@ Work in progress with services and VMs
 
 - [services](https://github.com/guifi-exo/public/blob/master/infrastructure/services.md)
 - [VMs](https://github.com/guifi-exo/public/blob/master/infrastructure/VMs.md)
+    - allocate services in VMs
+    - disk policy
+    - ha policy
 
 # Info
 
