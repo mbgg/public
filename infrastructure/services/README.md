@@ -1,3 +1,28 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Serveis](#serveis)
+  - [virtual routing](#virtual-routing)
+  - [reverse proxy](#reverse-proxy)
+  - [academia.exo.cat](#academiaexocat)
+  - [exo.cat](#exocat)
+  - [public.exo.cat](#publicexocat)
+  - [db.exo.cat](#dbexocat)
+  - [noc.exo.cat](#nocexocat)
+  - [privat.exo.cat](#privatexocat)
+  - [data.exo.cat](#dataexocat)
+  - [shop.exo.cat](#shopexocat)
+  - [meet.guifi.net](#meetguifinet)
+  - [xat.guifi.net](#xatguifinet)
+  - [matrix.exo.cat](#matrixexocat)
+  - [fw.exo.cat](#fwexocat)
+  - [vpn.exo.cat](#vpnexocat)
+  - [apt.exo.cat](#aptexocat)
+  - [extra (review needed)](#extra-review-needed)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 Work in progress with services and VMs
 
 - [VMs](https://github.com/guifi-exo/public/blob/master/infrastructure/vms/VMs.md)

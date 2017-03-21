@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Info](#info)
+- [Security](#security)
+  - [Requeriments](#requeriments)
+- [Backup](#backup)
+- [Chaos info](#chaos-info)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Info
 
 eXO infrastructure is Hyper-converged infrastructure (HCI [[1](https://en.wikipedia.org/wiki/Hyper-converged_infrastructure)] [[2](http://www.helixstorm.com/hyperconverged-infrastructure/)] [[3](https://www.prowesscorp.com/hyper-converged-infrastructure-the-next-data-center-evolution/)]).
@@ -14,16 +26,6 @@ static yaml database:
 
 ![network diagram](https://github.com/guifi-exo/public/raw/master/infrastructure/diagrams/network_diagram.png)
 
-# Chaos info
-
-Cada trax té 3 interfícies:
-
-- eth0 es dirigeix a un switch
-- eth1 es dirigeix a un altre switch
-- gestió està connectada a mikrotik/trax3 (ipmi)
-
-eth0 i eth1 fan un bonding, la redundància funciona, i és 1 Gbps round robin (balance-tcp)
-
 # Security
 
 ## Requeriments
@@ -38,3 +40,13 @@ eth0 i eth1 fan un bonding, la redundància funciona, i és 1 Gbps round robin (
 # Backup
 
 backups de trax1, trax2 cap a trax3 amb nfs per la vlan de pve
+
+# Chaos info
+
+Cada trax té 3 interfícies:
+
+- eth0 es dirigeix a un switch
+- eth1 es dirigeix a un altre switch
+- gestió està connectada a mikrotik/trax3 (ipmi)
+
+eth0 i eth1 fan un bonding, la redundància funciona, i és 1 Gbps round robin (balance-tcp)
