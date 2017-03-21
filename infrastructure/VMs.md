@@ -75,7 +75,7 @@ resize other virtual disks (assuming a mounted xfs disk)
 
 ## HA policy
 
-Most important machines:
+Most important machines that require High Availability:
 
 - VM #4 **core**
 - VM #5 **vrouter**
