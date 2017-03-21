@@ -3,9 +3,16 @@
 **Table of Contents**
 
 - [Allocate services in VMs](#allocate-services-in-vms)
+- [Resource policy](#resource-policy)
 - [Disk policy](#disk-policy)
   - [Create](#create)
+    - [Regular disk](#regular-disk)
+    - [Swap](#swap)
   - [Resize](#resize)
+    - [Root](#root)
+    - [Regular disk](#regular-disk-1)
+    - [Swap](#swap-1)
+    - [Checkers](#checkers)
 - [HA policy](#ha-policy)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
