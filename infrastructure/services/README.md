@@ -1,3 +1,12 @@
+Work in progress with services and VMs
+
+- [VMs](https://github.com/guifi-exo/public/blob/master/infrastructure/vms/VMs.md)
+    - allocate services in VMs
+    - disk policy
+    - ha policy
+    
+# Serveis
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -22,15 +31,6 @@
   - [extra (review needed)](#extra-review-needed)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-Work in progress with services and VMs
-
-- [VMs](https://github.com/guifi-exo/public/blob/master/infrastructure/vms/VMs.md)
-    - allocate services in VMs
-    - disk policy
-    - ha policy
-    
-# Serveis
 
 ## virtual routing
 
