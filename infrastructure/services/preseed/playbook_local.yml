@@ -1,0 +1,9 @@
+- hosts: all
+  remote_user: root
+  vars_files:
+    - "hosts.yml"
+  tasks:
+
+  - name: preseed
+    template: src="./preseed.txt.j2" dest="./{{ item.hostname }}.txt"
+    with_items: "{{ hosts }}"

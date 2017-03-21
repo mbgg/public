@@ -1,5 +1,7 @@
 Work in progress with services and VMs
 
+preseed is a way to automate initial installations
+
 - [VMs](https://github.com/guifi-exo/public/blob/master/infrastructure/vms/VMs.md)
     - allocate services in VMs
     - disk policy
