@@ -1,18 +1,8 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
-
-- [Info](#info)
-- [Security](#security)
-  - [Requeriments](#requeriments)
-- [Backup](#backup)
-- [Chaos info](#chaos-info)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Info
 
-eXO infrastructure is Hyper-converged infrastructure (HCI [[1](https://en.wikipedia.org/wiki/Hyper-converged_infrastructure)] [[2](http://www.helixstorm.com/hyperconverged-infrastructure/)] [[3](https://www.prowesscorp.com/hyper-converged-infrastructure-the-next-data-center-evolution/)]).
+Go to [services](https://github.com/guifi-exo/public/tree/master/infrastructure/services) if you want to know what services and how they are hosted with virtual machines
+
+eXO uses hyper-converged infrastructure (HCI [[1](https://en.wikipedia.org/wiki/Hyper-converged_infrastructure)] [[2](http://www.helixstorm.com/hyperconverged-infrastructure/)] [[3](https://www.prowesscorp.com/hyper-converged-infrastructure-the-next-data-center-evolution/)]).
 
 - [hardware](https://github.com/guifi-exo/public/blob/master/infrastructure/hardware.md). Migrate this info to yaml?
 
