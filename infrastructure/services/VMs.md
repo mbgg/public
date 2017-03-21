@@ -78,30 +78,82 @@ Expected creations:
 - Create new mountpoint, examples: /tmp, /var, /home
 - Create new swap
 
+
 In all this cases start with a disk of 2 GB and use it entirely without defining a msdos partition table.
 
 xfs is recommended, format it this way:
 
 `mkfs.xfs /dev/vdb`
 
-add it to `/etc/fstab`, for example, for disk `/dev/vdb`:
+add it to `/etc/fstab`
+
+note: root is already created
+
+#### Regular disk
+
+if is a regular disk, for example, `/dev/vdb` that mounts `/tmp`:
 
 `echo UUID=$(blkid -s UUID -o value /dev/vdb) /tmp xfs defaults 0 0 >> /etc/fstab`
 
+`mount -a`
+
+check filesystem is there with `df -h`
+
+#### Swap
+
+if is swap:
+
+```
+echo UUID=$(blkid -s UUID -o value /dev/vdb) none swap sw 0 0 >> /etc/fstab`
+mkswap /dev/vdb
+swapon -a
+```
+
+check swap is there with `free -h`
+
 ### Resize
 
-resize root partition
+#### Root
+
+The first operation is to resize the disk using proxmox, after that you require to put some commands depending on purpose on that disk
+
+resize disk when is a root partition
 
 ```
 # sometimes this command is required to force kernel update partition table
 #partprobe /dev/vda
 parted /dev/vda resizepart 1 Yes 100%
+# alternatively
+# parted /dev/vda resizepart 1 Yes -1
 xfs_grow /path/to/mounted/disk
 ```
 
-resize other virtual disks (assuming a mounted xfs disk)
+#### Regular disk
+
+resize disk when is a regular disk (assuming a mounted xfs disk), directly:
 
 `xfs_grow /path/to/mounted/disk`
+
+disk resize is showed in kernel log: `dmesg | tail` or `tailf /var/log/messages`
+
+with `parted /dev/vda p` you can see the size of the disk and the size of the partition
+
+with `df -h` you can see the size of the filesystem
+
+#### Swap
+
+resize disk when is for swap:
+
+```
+swapoff -a
+mkswap -U $(blkid -s UUID -o value /dev/vdb) /dev/vdb
+swapon -a
+```
+
+#### Checkers
+
+
+
 
 ## HA policy
 
