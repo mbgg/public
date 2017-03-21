@@ -118,6 +118,7 @@ vms:
       ip: 109.69.10.119/27
       iface: eth0
   - hostname: vrouter
+    iface_type: Intel E1000 # si no, no funciona
     vlan90:
       ip: 10.38.140.225/27
       iface: vmbr0 # dintre del bridge anirà la vlan 90 (?). al final del projecte no hauria d'existir el bridge
@@ -128,6 +129,14 @@ vms:
     vlan102:
       ip: 10.253.4.28/22
       gateway: 10.253.4.21
+  - hostname: vrouter2
+    vlan95:
+      ip: 192.168.95.26/24
+      iface: eth0
+    vlan98:
+      ip: 192.168.98.26/24
+      gateway: 192.168.98.1
+      iface: eth1
 
 #    vlan90:
 #    ip: 109.69.10.119/27 ?

@@ -30,16 +30,46 @@ Clúster Trax. Serveis:
     - NTP (ntp.exo.cat)
     - SMTP? (mailer.exo.cat?)
 - VM #5 **vrouter** (Mikrotik)
-- VM #6 **rt** (Real-Time)
+- VM #6 **vrouter2** (VyOS)
+    - give VMs temp access to Internet
+    - research routing capabilities of VyOS (if it can replace mikrotik)
+- VM #7 **rt** (Real-Time)
     - meet.guifi.net (jitsi)
     - xat.guifi.net (rocketchat)
     - matrix.exo.cat (matrix)
     - streaming (?) - pública
 - VM **shop.exo.cat** (Prestashop)
 
+other IDs:
+
+- proxmox: 1 -> 121
+- IPs: 1 -> 192.168.x.21
+
+## Resource policy
+
+types of VM:
+- default VM (debian) 1 GB RAM, 4 GB storage, 1 core
+- router VM. 512 MB RAM, 2 GB storage, 1 core
+  - src mikrotik https://wiki.mikrotik.com/wiki/Manual:CHR#System_Requirements
+  - src vyos https://wiki.vyos.net/wiki/User_Guide#Installation
+
+storage options:
+- qcow2
+- virtio
+- writeback
+
+cpu options:
+- host
+
+ram options:
+- ballooning?
+
+network options:
+- virtio
+
 ## Disk policy
 
-VMs start with a virtio disk with writeback of 4 GB with a msdos partition table and a root partition in `/dev/vda`, no swap. This root partition use xfs. Through this automated [debian preseed installer](https://TODO)
+VMs start with a virtio disk with a qcow2 writeback of 4 GB with a msdos partition table and a root partition in `/dev/vda`, no swap. This root partition use xfs. Through this automated [debian preseed installer](https://TODO)
 
 ### Create
 

@@ -105,6 +105,12 @@ would be nice to have one based on templated system of ansible
 
 Dial-up connection for people that wants encrypted Internet through guifi. This also could include external access to guifi.
 
+## apt.exo.cat
+
+objective: save internet bandwidth
+
+apt cacher, this way you download each debian package one time
+
 ## extra (review needed)
 
 - [HTTPS](service-https) (English) - com fer HTTPs amb Letsencrypt per als nostres serveis
