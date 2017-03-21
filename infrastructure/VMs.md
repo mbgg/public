@@ -1,3 +1,5 @@
+## Allocate services in VMs
+
 Clúster Trax. Serveis:
 - VM #1 **rproxy** (HAProxy o nginx?)
 - VM #2 **public**

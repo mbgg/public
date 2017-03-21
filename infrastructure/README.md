@@ -23,3 +23,13 @@ static yaml database:
 
 
 ![network diagram](https://github.com/guifi-exo/public/raw/master/infrastructure/diagrams/network_diagram.png)
+
+# Chaos info
+
+Cada trax té 3 interfícies:
+
+- eth0 es dirigeix a un switch
+- eth1 es dirigeix a un altre switch
+- gestió està connectada a mikrotik/trax3 (ipmi)
+
+eth0 i eth1 fan un bonding, la redundància funciona, i és 1 Gbps round robin (balance-tcp)
