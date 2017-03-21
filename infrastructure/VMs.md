@@ -23,8 +23,45 @@ Clúster Trax. Serveis:
     - streaming (?) - pública
 - VM **shop.exo.cat** (Prestashop)
 
+## Disk policy
+
+VMs start with a virtio disk with writeback of 4 GB with a msdos partition table and a root partition in `/dev/vda`, no swap. This root partition use xfs. Through this automated [debian preseed installer](https://TODO)
+
+### Create
+
+Expected creations:
+- Create new disk
+- Create new mountpoint, examples: /tmp, /var, /home
+- Create new swap
+
+In all this cases start with a disk of 2 GB and use it entirely without defining a msdos partition table.
+
+xfs is recommended, format it this way:
+
+`mkfs.xfs /dev/vdb`
+
+add it to `/etc/fstab`, for example, for disk `/dev/vdb`:
+
+`echo UUID=$(blkid -s UUID -o value /dev/vdb) /tmp xfs defaults 0 0 >> /etc/fstab`
+
+### Resize
+
+resize root partition
+
+```
+# sometimes this command is required to force kernel update partition table
+#partprobe /dev/vda
+parted /dev/vda resizepart 1 Yes 100%
+xfs_grow /path/to/mounted/disk
+```
+
+resize other virtual disks (assuming a mounted xfs disk)
+
+`xfs_grow /path/to/mounted/disk`
+
 ## HA policy
 
-Volem fer només HA del router virtual, és a dir, que en cas que caigui el Trax que conté el router virtual, arrenqui el router virtual a l'altre Trax
+Most important machines:
 
-TODO: potser hi ha altres serveis que volem aquest comportament
+- VM #4 **core**
+- VM #5 **vrouter**
