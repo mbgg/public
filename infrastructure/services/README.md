@@ -1,3 +1,10 @@
+Work in progress with services and VMs
+
+- [VMs](https://github.com/guifi-exo/public/blob/master/infrastructure/vms/VMs.md)
+    - allocate services in VMs
+    - disk policy
+    - ha policy
+    
 # Serveis
 
 ## virtual routing
