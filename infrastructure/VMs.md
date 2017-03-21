@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Allocate services in VMs](#allocate-services-in-vms)
+- [Disk policy](#disk-policy)
+  - [Create](#create)
+  - [Resize](#resize)
+- [HA policy](#ha-policy)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Allocate services in VMs
 
 Clúster Trax. Serveis:
