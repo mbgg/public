@@ -21,7 +21,7 @@
 
 Clúster Trax. Serveis:
 - VM #1 **rproxy** (HAProxy o nginx?)
-- VM #2 **public**
+- VM #2 **publica**
     - academia.exo.cat (Drupal)
     - exo.cat (Wordpress)
     - public.exo.cat (gogs.io)
