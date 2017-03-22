@@ -213,8 +213,8 @@ d-i partman-auto/method string regular
 # (logical) line. This example creates a small /boot partition, suitable
 # swap, and uses the rest of the space for the root partition:
 
-# create a single partition with a minimum size of 1000 MB. 
-# The -1 indicates the maximum size (infinite), 
+# create a single partition with a minimum size of 1000 MB.
+# The -1 indicates the maximum size (infinite),
 # which makes partman grow the partition to the size of the disk.
 d-i partman-auto/expert_recipe string \
       boot-root :: \
@@ -265,7 +265,7 @@ d-i partman/confirm_nooverwrite boolean true
 # so this will only work if the disks are the same size.
 #d-i partman-auto/disk string /dev/sda /dev/sdb
 
-# Next you need to specify the physical partitions that will be used. 
+# Next you need to specify the physical partitions that will be used.
 #d-i partman-auto/expert_recipe string \
 #      multiraid ::                                         \
 #              1000 5000 4000 raid                          \
