@@ -96,11 +96,12 @@ vms:
     vlan95:
       ip: 192.168.95.22/24
       iface: eth0
+    #?????
   - hostname: privada
     vlan95:
       ip: 192.168.95.23/24
       iface: eth0
-    vlan98:
+    vlan98: #????
       ip: 192.168.98.23/24
       gateway: 192.168.98.1
   - hostname: core
