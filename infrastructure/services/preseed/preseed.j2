@@ -1,7 +1,7 @@
 #### Contents of the preconfiguration file (for jessie)
 ### Localization
 # Preseeding only locale sets language, country and locale.
-d-i debian-installer/locale string en_US
+d-i debian-installer/locale string {{ item.locale }}
 
 # The values can also be preseeded individually for greater flexibility.
 #d-i debian-installer/language string en
@@ -11,10 +11,9 @@ d-i debian-installer/locale string en_US
 #d-i localechooser/supported-locales multiselect en_US.UTF-8, nl_NL.UTF-8
 
 # Keyboard selection.
-d-i keyboard-configuration/xkb-keymap select es
+d-i keyboard-configuration/xkb-keymap select {{ item.keyboard }}
 # d-i keyboard-configuration/toggle select No toggling
 
-### Network configuration
 # Disable network configuration entirely. This is useful for cdrom
 # installations on non-networked devices where the network questions,
 # warning and long timeouts are a nuisance.
@@ -25,7 +24,7 @@ d-i keyboard-configuration/xkb-keymap select es
 #d-i netcfg/choose_interface select auto
 
 # To pick a particular interface instead:
-d-i netcfg/choose_interface select eth0
+#d-i netcfg/choose_interface select eth0
 
 # To set a different link detection timeout (default is 3 seconds).
 # Values are interpreted as seconds.
@@ -34,11 +33,33 @@ d-i netcfg/choose_interface select eth0
 # If you have a slow dhcp server and the installer times out waiting for
 # it, this might be useful.
 #d-i netcfg/dhcp_timeout string 60
-d-i netcfg/dhcpv6_timeout string 0
+#d-i netcfg/dhcpv6_timeout string 60
 
 # If you prefer to configure the network manually, uncomment this line and
 # the static network configuration below.
 #d-i netcfg/disable_autoconfig boolean true
+
+# if ip is not defined, dhcp config
+{% if item.ip is defined and item.gateway is defined and item.dns is defined %}
+# src https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=703747
+#d-i netcfg/disable_dhcp boolean true
+
+# Although preseeding the network configuration is normally not possible when using network preseeding (using “preseed/url”), you can use the following hack to work around that, for example if you'd like to set a static address for the network interface. The hack is to force the network configuration to run again after the preconfiguration file has been loaded by creating a “preseed/run” script containing the following commands:
+# src https://www.debian.org/releases/stable/amd64/apbs04.html.en
+# src https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=755848
+# tries to do dhcp, but after that, overrides with static config
+d-i preseed/early_command string kill-all-dhcp; netcfg
+d-i netcfg/disable_autoconfig boolean true
+
+# src https://bugs.launchpad.net/ubuntu/+source/debian-installer/+bug/1572607
+#d-i netcfg/use_autoconfig boolean false
+
+d-i netcfg/get_ipaddress string {{ item.ip }}
+d-i netcfg/get_gateway string {{ item.gateway }}
+d-i netcfg/get_nameservers string {{ item.dns }}
+d-i netcfg/confirm_static boolean true
+{% else %}{% endif %}
+
 
 # If you want the preconfiguration file to work on systems both with and
 # without a dhcp server, uncomment these lines and the static network
@@ -71,7 +92,7 @@ d-i netcfg/dhcpv6_timeout string 0
 # If you want to force a hostname, regardless of what either the DHCP
 # server returns or what the reverse DNS entry for the IP is, uncomment
 # and adjust the following line.
-d-i netcfg/hostname string rproxy
+d-i netcfg/hostname string {{ item.hostname }}
 
 # Disable that annoying WEP key dialog.
 d-i netcfg/wireless_wep string
@@ -96,7 +117,7 @@ d-i netcfg/wireless_wep string
 # If you select ftp, the mirror/country string does not need to be set.
 #d-i mirror/protocol string ftp
 d-i mirror/country string manual
-d-i mirror/http/hostname string http://ftp2.de.debian.org
+d-i mirror/http/hostname string {{ repository }}
 d-i mirror/http/directory string /debian
 d-i mirror/http/proxy string
 
@@ -113,17 +134,17 @@ d-i mirror/http/proxy string
 #d-i passwd/make-user boolean false
 
 # Root password, either in clear text
-d-i passwd/root-password password temp
-d-i passwd/root-password-again password temp
+d-i passwd/root-password password {{ item.root_password }}
+d-i passwd/root-password-again password {{ item.root_password }}
 # or encrypted using an MD5 hash.
 #d-i passwd/root-password-crypted password [MD5 hash]
 
 # To create a normal user account.
-d-i passwd/user-fullname string exo
-d-i passwd/username string exo
+d-i passwd/user-fullname string {{ item.user_fullname }}
+d-i passwd/username string {{ item.user }}
 # Normal user's password, either in clear text
-d-i passwd/user-password password temp
-d-i passwd/user-password-again password temp
+d-i passwd/user-password password {{ item.user_password }}
+d-i passwd/user-password-again password {{ item.user_password }}
 # or encrypted using an MD5 hash.
 #d-i passwd/user-password-crypted password [MD5 hash]
 # Create the first user with the specified UID instead of the default.
@@ -139,7 +160,7 @@ d-i clock-setup/utc boolean true
 
 # You may set this to any valid setting for $TZ; see the contents of
 # /usr/share/zoneinfo/ for valid values.
-d-i time/zone string Europe/Madrid
+d-i time/zone string {{ timezone }}
 
 # Controls whether to use NTP to set the clock during the install
 d-i clock-setup/ntp boolean true
@@ -157,13 +178,13 @@ d-i clock-setup/ntp boolean true
 # name must be given in traditional, non-devfs format (so e.g. /dev/sda
 # and not e.g. /dev/discs/disc0/disc).
 # For example, to use the first SCSI/SATA hard disk:
-#d-i partman-auto/disk string /dev/sda
+d-i partman-auto/disk string {{ item.dev }}
 # In addition, you'll need to specify the method to use.
 # The presently available methods are:
 # - regular: use the usual partition types for your architecture
 # - lvm:     use LVM to partition the disk
 # - crypto:  use LVM within an encrypted partition
-#d-i partman-auto/method string regular
+d-i partman-auto/method string regular
 
 # # If one of the disks that are going to be automatically partitioned
 # # contains an old LVM configuration, the user will normally receive a
@@ -179,6 +200,7 @@ d-i clock-setup/ntp boolean true
 # - atomic: all files in one partition
 # - home:   separate /home partition
 # - multi:  separate /home, /var, and /tmp partitions
+# if you use expert recipe, don't use this automated one
 #d-i partman-auto/choose_recipe select atomic
 
 # Or provide a recipe of your own...
@@ -186,9 +208,6 @@ d-i clock-setup/ntp boolean true
 # just point at it.
 #d-i partman-auto/expert_recipe_file string /hd-media/recipe
 
-# src https://superuser.com/questions/458672/ubuntu-preseed-use-whole-disk-space-but-no-swap/920957#920957
-# disables the partman warning about a missing swap partition
-d-i partman-basicfilesystems/no_swap boolean false
 
 # If not, you can put an entire recipe into the preconfiguration file in one
 # (logical) line. This example creates a small /boot partition, suitable
@@ -197,17 +216,13 @@ d-i partman-basicfilesystems/no_swap boolean false
 # create a single partition with a minimum size of 1000 MB. 
 # The -1 indicates the maximum size (infinite), 
 # which makes partman grow the partition to the size of the disk.
-d-i partman-auto/expert_recipe string                                  \
-      root ::                                                     \
-              1000 50 -1 xfs                                 \
-                      $primary{ } $bootable{ }                         \
-                      method{ format } format{ }                       \
-                      use_filesystem{ } filesystem{ xfs }    \
-                      mountpoint{ / }                                  \
-               .
-
-d-i partman-auto/choose_recipe select root
-
+d-i partman-auto/expert_recipe string \
+      boot-root :: \
+              1000 50 -1 {{ item.fs }} \
+                      $primary{ } $bootable{ } \
+                      method{ format } format{ } \
+                      use_filesystem{ } filesystem{ {{ item.fs }} } \
+                      mountpoint{ / } .
 
 #      boot-root ::                                            \
 #              40 50 100 ext3                                  \
@@ -224,6 +239,11 @@ d-i partman-auto/choose_recipe select root
 #              64 512 300% linux-swap                          \
 #                      method{ swap } format{ }                \
 #              .
+
+# src https://superuser.com/questions/458672/ubuntu-preseed-use-whole-disk-space-but-no-swap/920957#920957
+# src http://forums.debian.net/viewtopic.php?f=17&t=117667
+# disables the partman warning about a missing swap partition
+d-i partman-basicfilesystems/no_swap boolean false
 
 # The full recipe format is documented in the file partman-auto-recipe.txt
 # included in the 'debian-installer' package or available from D-I source
@@ -337,11 +357,11 @@ d-i partman/confirm_nooverwrite boolean true
 
 ### Package selection
 #tasksel tasksel/first multiselect standard, web-server, kde-desktop
-tasksel tasksel/first multiselect standard, ssh-server
+{{ item.tasksel }}
 
 # Individual additional packages to install
 #d-i pkgsel/include string openssh-server build-essential
-d-i pkgsel/include string vim tmux
+d-i pkgsel/include string {{ item.pkgsel }}
 
 # Whether to upgrade packages after debootstrap.
 # Allowed values: none, safe-upgrade, full-upgrade
@@ -448,9 +468,11 @@ d-i finish-install/reboot_in_progress note
 #d-i preseed/late_command string apt-install zsh; in-target chsh -s /bin/zsh
 # how to do latecommand correctly -> src http://stackoverflow.com/questions/33113363/debian-preseed-late-command-not-executed/33156227#33156227
 # when sshkeys is not defined or array is empty -> src http://stackoverflow.com/questions/10503981/check-if-an-array-is-empty-in-jinja2
+{% if item.sshkeys is defined and item.sshkeys %}
 d-i preseed/late_command string \
 in-target mkdir -p /root/.ssh; \
-in-target sh -c "printf 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCws2aUQiiw9woP6QIxsHYHBTlkiIGfj4PfaFPTEMCTEGX6Z9bNP+DaqmvrXNayCpzpM1VNoCIbg2bnnv2NKFO9vclNO/O+shTzSVNP3k5ZJ2iV0AQg/K4ONDoWdoaFO8Uje8/DitPNgUXkameAFM9Osw8GeZKR5/yhUtVM7MRbrACFQzYMjmXH/XKgLkHliy6Ab2xzQOKY7hQnrsplMx4cuvSXA4d6BE01in+WHuoW8JEc0TcG+Pvf3Tw7CJNl7TMm1jhnsyg6mhHWNYFqc2092kbCPW83mKCJ8B99kM473/9Vnp4fHo65uCc6Qb5CFYzBigIUzKq6uXJfcakwKvyEsOqeTZVT/ys1D5PxHpQ6aQl90mfwElUVrJ7K+Tjr87QweskB2yokJ00VNXSncryqNw9BVEaBhpOJrp4hbBH/mxKfaaw6v4sYVwdSn5N2E6/g1HSFoy4fYEj5iKXaqH8mNHs5AhkZGuh0NLPl3bzfoMbru2M4SpcFh5tyxPmuiwgZOvjj1kgYsVdOOVMHJ8c4TcwEW9lRYUFJTh9mDfXrNx/kdEnZrBvNNRMq9A8eGq3j8xpV9qpKAmQ0Nq7lMteqYX93nln4qdUo5VrZ6+V1ZFNxsQDpLbNQmAh/JoRcJDUTBV/FzJxrp3zPOPj7KKgd66fpXfCR6RjYn3LC0eDexw== pedro@exo\nssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEApVRWW6tHBKEoK2+QJ3but2tsqdJjwSCdhNO+2aLAaOV17bggWB1mRF51oaky6RFdZPqpeM8XejKoMyGYt8xDbRCAtW7SGzHW5SwTiQ8LLMAyZCAyf47k5YGdHZu0z3kZfSKzX6D9hO2JgJrrwz+MBpExS2h9HxINWafCKEcoi4WFaviwHuDfwNpqCQnojZc7K9KPP356RyytEDKlXcp88Ov+WnvzuEQ+ybEaQxroqRy5yX3n3cV0RxanBGleqLkdHqoN5VVFI4nS4bMcICtCCZMEEN9v9hahNqSU41wzBOQArZPsZssBH6OBHpAevKqzMyPkr8tG0qY+kvNsFiI+Aw== victor@cube' >> /root/.ssh/authorized_keys"; \
+in-target sh -c "printf '{% for key in item.sshkeys %}{{ key }}{% if not loop.last %}\n{% endif %}{% endfor %}' >> /root/.ssh/authorized_keys"; \
 in-target chown -R root:root /root/.ssh; \
 in-target chmod 0700 /root/.ssh; \
 in-target chmod 0600 /root/.ssh/authorized_keys
+{% else %}{% endif %}
