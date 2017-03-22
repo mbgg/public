@@ -84,14 +84,14 @@ vms:
   - hostname: rproxy
     vlan90:
       ip: 10.38.140.232/27
-      iface: eth0
+      iface: eth1
     vlan94: 
       ip: 109.69.10.112/27
       gateway: 109.69.10.126
-      iface: eth1
+      iface: eth2
     vlan95:
       ip: 192.168.95.21/24
-      iface: eth2
+      iface: eth0
   - hostname: publica
     vlan95:
       ip: 192.168.95.22/24
