@@ -69,7 +69,7 @@ cpu options:
 - host
 
 ram options:
-- ballooning?
+- ballooning? [discussion required] enabled by default by proxmox. but disabled at the moment
 
 network options:
 - virtio
