@@ -160,7 +160,7 @@ with `df -h` you can see the size of the filesystem
 
 Swap:
 
-`free -h`
+`swapon -s` or `free -h`
 
 ## HA policy
 
