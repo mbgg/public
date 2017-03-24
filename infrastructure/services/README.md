@@ -151,4 +151,4 @@ apt cacher, this way you download each debian package one time
 - [meet-jitsi](service-meet-jitsi) - com fer un meet jitsi
 - [speedtest](service-speedtest) - Autor: Oriol. codi font no publicat
 - [El rosco de Llorenç](http://dsg.ac.upc.edu/qmpmon) - monitor de xarxes mesh qMp. Autor: Llorenç. codi font no publicat
-- [Mapes qMp de Barcelona](http://sants.guifi.net/maps) - Autor: Oriol. codi font no publicat
+- [Mapes qMp de Barcelona](http://sants.guifi.net/maps) - Autor: Oriol. [codi font](https://github.com/xarbot/guifimaps)
