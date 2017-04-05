@@ -1,0 +1,23 @@
+$ORIGIN 8.69.109.in-addr.arpa.
+$TTL 86400
+@	IN	SOA	dns1.exo.cat.		root.exo.cat. (
+			2017040501 ; serial
+			21600      ; refresh after 6 hours
+			3600       ; retry after 1 hour
+			604800     ; expire after 1 week
+			86400 )    ; minimum TTL of 1 day
+;
+@	IN	NS	ns1.exo.cat.
+;
+
+; això no funciona, no s'actualitzarà més: https://github.com/guifi-exo/doc/blob/master/knowledge/dns.md#resolució-inversa-de-dnss
+
+65 IN PTR hub.exo.cat.
+66 IN PTR erebes.exo.cat.
+75 IN PTR jmoles.exo.cat.
+80 IN PTR p.exo.cat.
+87 IN PTR tomir.exo.cat.
+122 IN PTR vpn.exo.cat.
+123 IN PTR wiki.exo.cat.
+125 IN PTR radio.exo.cat.
+133 IN PTR llistes.exo.cat.

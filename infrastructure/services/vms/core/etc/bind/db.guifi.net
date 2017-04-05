@@ -1,0 +1,87 @@
+$TTL    3600
+@       IN      SOA     ns1.exo.cat. root.exo.cat. (
+                   2017040404           ; Serial
+                         3600           ; Refresh [1h]
+                          600           ; Retry   [10m]
+                        86400           ; Expire  [1d]
+                          600 )         ; Negative Cache TTL [1h]
+
+@       IN      NS      ns1.exo.cat.
+
+; ____________________________________________________________________
+
+; DNS server
+
+ns1.exo.cat. IN A 109.69.10.123
+;TODO
+;ns1.exo.cat. IN AAAA 2a00:1508:100:ffff::4
+
+; ____________________________________________________________________
+
+; organització eXO
+
+exo.cat. IN A 109.69.8.123			; web page
+exo.cat. IN AAAA 2a00:1508:100:ffff::3		; wiki. i web. exo.cat
+www.exo.cat. IN CNAME exo.cat			; alias web page
+
+exo.cat. IN MX 1 mail.pangea.org.		; mail
+exo.cat. IN MX 2 mail2.pangea.org.		; mail
+llistes.exo.cat. IN A 109.69.8.133		; mailing list
+llistes.exo.cat. IN MX 1 mail.pangea.org.	; mailing list
+llistes.exo.cat. IN MX 2 mail2.pangea.org.	; mailing list
+
+; ____________________________________________________________________
+
+; organització eXO (NOUS)
+
+noc.exo.cat. IN A 109.69.10.112			; monitor
+
+; ____________________________________________________________________
+
+; projectes
+
+guifiradio.exo.cat. IN A 109.69.10.116
+guifiradio.exo.cat. IN AAAA 2a00:1508:100:ffff::b
+labipv6.exo.cat. IN A 109.69.10.118
+labipv6.exo.cat. IN AAAA 2a00:1508:100:ffff::9
+academia.exo.cat. IN A 109.69.10.121
+academia.exo.cat. IN AAAA 2a00:1508:100:ffff::6
+shop.exo.cat. IN CNAME academia.exo.cat.
+
+; ____________________________________________________________________
+
+; experiment / desplegament IPv6
+
+; ? IN AAAA 2a00:1508:100:ffff::1		eoip-srv_hangar
+; ? IN AAAA 2a00:1508:100:ffff::a		HangarST2
+
+; s'ha de crear zona
+; ; guifiTV
+; media.guifi.net. IN AAAA 2a00:1508:100:ffff::7
+; videos.guifi.net. IN AAAA 2a00:1508:100:ffff::c
+; 
+; xat.guifi.net. IN AAAA 2a00:1508:100:ffff::8
+
+; ____________________________________________________________________
+
+; personal
+
+erebes.exo.cat. IN A 109.69.8.66		; eloi
+p.exo.cat. IN A 109.69.8.90			; pedro
+jmoles.exo.cat. IN A 109.69.8.75
+
+; ____________________________________________________________________
+
+; TODO REVIEW
+
+; slave guifi ?
+
+hub.exo.cat. IN A 109.69.8.65
+hub.exo.cat. IN AAAA 2a00:1508:100:ffff::5
+vpn.exo.cat. IN A 109.69.8.122
+vpn.exo.cat. IN AAAA 2a00:1508:100:ffff::2
+wiki.exo.cat. IN A 109.69.8.123
+wiki.exo.cat. IN AAAA 2a00:1508:100:ffff::3
+radio.exo.cat. IN A 109.69.8.125
+rbst2.exo.cat. IN A 109.69.10.117
+tomir.exo.cat. IN A 109.69.8.87

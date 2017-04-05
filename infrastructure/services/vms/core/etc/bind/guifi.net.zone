@@ -1,0 +1,4 @@
+zone "guifi.net" {
+        type master;
+        file "/etc/bind/db.guifi.net";
+};
