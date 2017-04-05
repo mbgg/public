@@ -6,7 +6,7 @@ At the moment, each exposed public IP has its own firewall
 
 - [Commands to operate](#commands-to-operate)
 - [Details](#details)
-  - [Clean iptables-save](#clean-iptables-save)
+  - [Clean iptables-save output](#clean-iptables-save-output)
   - [Testing new firewall rules](#testing-new-firewall-rules)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -103,7 +103,7 @@ COMMIT
 
 This is what we are going to put in a file to make iptables persistent
 
-## Clean iptables-save
+## Clean iptables-save output
 
 iptables-save > /etc/firewall
 
