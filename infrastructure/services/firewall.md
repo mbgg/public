@@ -105,11 +105,14 @@ This is what we are going to put in a file to make iptables persistent
 
 ## Clean iptables-save output
 
-Clean output of `iptables-save > /etc/firewall` without loosing functionality
+Clean output of `iptables-save > /etc/firewall` without loosing functionality apply:
 
-- `sed -i '/^#/d' /etc/firewall`
+```
+sed -i '/^#/d' /etc/firewall
+sed -i 's/\[.*\]//g' /etc/firewall
+```
 
-- `sed -i 's/\[.*\]//g' /etc/firewall`
+The result is:
 
 ```
 *mangle
