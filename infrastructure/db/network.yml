@@ -108,7 +108,7 @@ vms:
       ip: 192.168.95.24/24
       iface: eth0
     vlan90:
-      # AQUESTA IP NO FUNCIONARÀ
+      # AQUESTA IP NO FUNCIONARÀ: està mapejada temporalment contra el vrouter2
       ip: 10.38.140.233/27
       iface: eth1
     vlan94:
@@ -122,7 +122,7 @@ vms:
       ip: 109.69.10.119/27
       iface: eth0
   - hostname: vrouter
-    iface_type: Intel E1000 # si no, no funciona
+    iface_type: Intel E1000 # de moment està en virtio i funciona; provar més temps i avaluar
     vlan90:
       ip: 10.38.140.225/27
       iface: vmbr0 # dintre del bridge anirà la vlan 90 (?). al final del projecte no hauria d'existir el bridge
