@@ -84,6 +84,7 @@ vms:
   - hostname: rproxy
     vlan90:
       ip: 10.38.140.232/27
+      static_route_guifi: 10.38.140.225
       iface: eth1
     vlan94: 
       ip: 109.69.10.112/27
@@ -95,24 +96,26 @@ vms:
   - hostname: publica
     vlan95:
       ip: 192.168.95.22/24
+      gateway: 192.168.95.26
       iface: eth0
-    #?????
   - hostname: privada
     vlan95:
       ip: 192.168.95.23/24
+      gateway: 192.168.95.26
       iface: eth0
-    vlan98: #????
-      ip: 192.168.98.23/24
-      gateway: 192.168.98.1
   - hostname: core
-    vlan90:
-      ip: 10.38.140.233/27
-      iface: eth0
-    vlan94:
-      ip: 109.69.10.123/27
-      iface: eth1
     vlan95:
       ip: 192.168.95.24/24
+      iface: eth0
+    vlan90:
+      # AQUESTA IP NO FUNCIONARÀ
+      ip: 10.38.140.233/27
+      iface: eth1
+    vlan94:
+      ip: 109.69.10.123/27
+      gateway: 109.69.10.126
+      ip6: 2a00:1508:100:ffff::d
+      gateway6: 2a00:1508:100:ffff::1
       iface: eth2
   - hostname: rt
     vlan94:
