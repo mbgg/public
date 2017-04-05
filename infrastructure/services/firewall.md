@@ -1,5 +1,16 @@
 At the moment, each exposed public IP has its own firewall
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Commands to operate](#commands-to-operate)
+- [Details](#details)
+  - [Clean iptables-save](#clean-iptables-save)
+  - [Testing new firewall rules](#testing-new-firewall-rules)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Commands to operate
 
 save config current config: `iptables-save > /etc/firewall`
