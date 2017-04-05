@@ -176,7 +176,9 @@ COMMIT
 COMMIT
 ```
 
-after applying `iptables-restore < /etc/firewall.test`, `iptables -L -v` says:
+apply `iptables-restore < /etc/firewall.test`
+
+then `iptables -L -v` says:
 
 ```
 Chain INPUT (policy ACCEPT 80 packets, 16701 bytes)
