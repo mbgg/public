@@ -12,6 +12,13 @@
 #   - Assignada: aplicada per XFOLN; preparada per utilitzar
 #   - En producció: en ús
 
+network_ranges:
+  range1: 109.69.8.64/26
+  range2: 109.69.10.64/26
+  range3: 2a00:1508:100:ffff::/64
+    nota: on tenim els servers de la exo
+  range4: 2a00:1508:100::/40
+    nota: tot lo que tenim
 
 vplan: # vlan plan
   vlan90:
