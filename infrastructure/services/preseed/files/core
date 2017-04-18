@@ -53,7 +53,7 @@ d-i netcfg/disable_autoconfig boolean true
 # src https://bugs.launchpad.net/ubuntu/+source/debian-installer/+bug/1572607
 #d-i netcfg/use_autoconfig boolean false
 
-d-i netcfg/get_ipaddress string 192.168.95.23/24
+d-i netcfg/get_ipaddress string 192.168.95.24/24
 d-i netcfg/get_gateway string 192.168.95.26
 d-i netcfg/get_nameservers string 8.8.8.8
 d-i netcfg/confirm_static boolean true
@@ -90,7 +90,7 @@ d-i netcfg/confirm_static boolean true
 # If you want to force a hostname, regardless of what either the DHCP
 # server returns or what the reverse DNS entry for the IP is, uncomment
 # and adjust the following line.
-d-i netcfg/hostname string privada
+d-i netcfg/hostname string core
 
 # Disable that annoying WEP key dialog.
 d-i netcfg/wireless_wep string
@@ -211,8 +211,8 @@ d-i partman-auto/method string regular
 # (logical) line. This example creates a small /boot partition, suitable
 # swap, and uses the rest of the space for the root partition:
 
-# create a single partition with a minimum size of 1000 MB. 
-# The -1 indicates the maximum size (infinite), 
+# create a single partition with a minimum size of 1000 MB.
+# The -1 indicates the maximum size (infinite),
 # which makes partman grow the partition to the size of the disk.
 d-i partman-auto/expert_recipe string \
       boot-root :: \
@@ -263,7 +263,7 @@ d-i partman/confirm_nooverwrite boolean true
 # so this will only work if the disks are the same size.
 #d-i partman-auto/disk string /dev/sda /dev/sdb
 
-# Next you need to specify the physical partitions that will be used. 
+# Next you need to specify the physical partitions that will be used.
 #d-i partman-auto/expert_recipe string \
 #      multiraid ::                                         \
 #              1000 5000 4000 raid                          \
