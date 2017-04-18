@@ -1,26 +1,30 @@
 $TTL    3600
 @       IN      SOA     ns1.exo.cat. root.exo.cat. (
-                   2017040404           ; Serial
+                   2017041801           ; Serial
                          3600           ; Refresh [1h]
                           600           ; Retry   [10m]
                         86400           ; Expire  [1d]
                           600 )         ; Negative Cache TTL [1h]
 
 @       IN      NS      ns1.exo.cat.
+@       IN      NS      ns2.exo.cat.
+@       IN      NS      ns3.exo.cat.
 
 ; ____________________________________________________________________
 
 ; DNS server
 
-ns1.exo.cat. IN A 109.69.10.123
-;TODO
-;ns1.exo.cat. IN AAAA 2a00:1508:100:ffff::4
+ns1.exo.cat. IN A 109.69.10.123			; trax-dns
+ns1.exo.cat. IN AAAA 2a00:1508:100:ffff::4	; trax-dns
+ns2.exo.cat. IN A 192.146.172.104		; datalab
+ns3.exo.cat. IN A 109.69.10.118			; hangar
 
 ; ____________________________________________________________________
 
 ; organització eXO
 
 exo.cat. IN A 109.69.8.123			; web page
+exo.cat. IN A 109.69.8.124			; web page
 exo.cat. IN AAAA 2a00:1508:100:ffff::3		; wiki. i web. exo.cat
 www.exo.cat. IN CNAME exo.cat			; alias web page
 
@@ -47,6 +51,8 @@ labipv6.exo.cat. IN AAAA 2a00:1508:100:ffff::9
 academia.exo.cat. IN A 109.69.10.121
 academia.exo.cat. IN AAAA 2a00:1508:100:ffff::6
 shop.exo.cat. IN CNAME academia.exo.cat.
+
+secon.exo.cat. IN A 109.69.10.97
 
 ; ____________________________________________________________________
 

@@ -32,3 +32,8 @@ iface eth2 inet static
 	address 109.69.10.123
 	netmask 255.255.255.224
 	gateway 109.69.10.126
+
+iface eth2 inet6 static
+        address 2a00:1508:100:ffff::4
+        netmask 64
+        gateway 2a00:1508:100:ffff::1
