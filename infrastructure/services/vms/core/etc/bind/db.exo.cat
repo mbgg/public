@@ -75,6 +75,7 @@ secon.exo.cat. IN A 109.69.10.97
 erebes.exo.cat. IN A 109.69.8.66		; eloi
 p.exo.cat. IN A 109.69.8.90			; pedro
 jmoles.exo.cat. IN A 109.69.8.75
+tomir.exo.cat. IN A 109.69.8.87                 ; llorenç
 
 ; ____________________________________________________________________
 
@@ -90,4 +91,3 @@ wiki.exo.cat. IN A 109.69.8.123
 wiki.exo.cat. IN AAAA 2a00:1508:100:ffff::3
 radio.exo.cat. IN A 109.69.8.125
 rbst2.exo.cat. IN A 109.69.10.117
-tomir.exo.cat. IN A 109.69.8.87
