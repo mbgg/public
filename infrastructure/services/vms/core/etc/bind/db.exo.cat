@@ -16,7 +16,7 @@ $TTL    3600
 
 ns1.exo.cat. IN A 109.69.10.123			; trax-dns
 ns1.exo.cat. IN AAAA 2a00:1508:100:ffff::4	; trax-dns
-ns2.exo.cat. IN A 192.146.172.104		; datalab
+ns2.exo.cat. IN A 192.146.172.104		; datalab (bcn.guifi.net) editar aquí -> https://guifi.net/node/55044 (guifi barcelonès -> serveis -> servidor de noms castillejos)
 ns3.exo.cat. IN A 109.69.10.118			; hangar
 
 ; ____________________________________________________________________
@@ -53,13 +53,14 @@ academia.exo.cat. IN AAAA 2a00:1508:100:ffff::6
 shop.exo.cat. IN CNAME academia.exo.cat.
 
 secon.exo.cat. IN A 109.69.10.97
+acs.exo.cat. IN A 109.69.10.97
 
 ; ____________________________________________________________________
 
 ; experiment / desplegament IPv6
 
-; ? IN AAAA 2a00:1508:100:ffff::1		eoip-srv_hangar
-; ? IN AAAA 2a00:1508:100:ffff::a		HangarST2
+; ? IN AAAA 2a00:1508:100:ffff::1		; eoip-srv_hangar
+; ? IN AAAA 2a00:1508:100:ffff::a		; HangarST2
 
 ; s'ha de crear zona
 ; ; guifiTV
@@ -75,7 +76,7 @@ secon.exo.cat. IN A 109.69.10.97
 erebes.exo.cat. IN A 109.69.8.66		; eloi
 p.exo.cat. IN A 109.69.8.90			; pedro
 jmoles.exo.cat. IN A 109.69.8.75
-tomir.exo.cat. IN A 109.69.8.87                 ; llorenç
+tomir.exo.cat. IN A 109.69.8.87			; llorenç
 
 ; ____________________________________________________________________
 

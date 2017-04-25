@@ -1,0 +1,65 @@
+# __________________________________________________________________________________
+
+server {
+        listen 80;
+        server_name exo.cat www.exo.cat;
+
+        location / {
+                return 301 https://exo.cat$request_uri;
+        }
+}
+
+server {
+        listen 127.0.0.1:443 ssl;
+        server_name exo.cat www.exo.cat;
+
+        ssl_certificate /etc/haproxy/ssl/fullchain.pem;
+        ssl_certificate_key /etc/haproxy/ssl/privkey.pem;
+
+        client_max_body_size 5G;
+
+        location / {
+                proxy_pass http://192.168.95.22;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+        }
+}
+
+# __________________________________________________________________________________
+
+server {
+        listen 80;
+        server_name noc.exo.cat;
+
+        location /.well-known {
+                default_type "text/plain";
+                allow all;
+                root /var/www/html;
+        }
+
+        location / {
+                return 301 https://noc.exo.cat$request_uri;
+        }
+}
+
+server {
+        listen 127.0.0.1:443 ssl;
+        server_name noc.exo.cat;
+
+        ssl_certificate /etc/letsencrypt/live/noc.exo.cat/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/noc.exo.cat/privkey.pem;
+        #ssl_certificate /etc/haproxy/ssl/fullchain.pem;
+        #ssl_certificate_key /etc/haproxy/ssl/privkey.pem;
+
+        location / {
+                proxy_pass http://192.168.95.23;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+        }
+}
+
+# __________________________________________________________________________________
