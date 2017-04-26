@@ -125,9 +125,12 @@ vms:
       gateway6: 2a00:1508:100:ffff::1
       iface: eth2
   - hostname: rt
+    vlan95:
+      ip: 192.168.95.27/24
+      iface: eth0
     vlan94:
       ip: 109.69.10.119/27
-      iface: eth0
+      iface: eth1
   - hostname: vrouter
     iface_type: Intel E1000 # de moment està en virtio i funciona; provar més temps i avaluar
     vlan90:
@@ -148,11 +151,29 @@ vms:
       ip: 192.168.98.26/24
       gateway: 192.168.98.1
       iface: eth1
+  - hostname: secon # client 1
+    vlan95:
+      ip: 192.168.95.28/24
+      iface: eth0
+    vlan94:
+      ip: 109.69.10.97/27
+      iface: eth1
+    vlan90:
+      ip: 10.38.140.250/27
+      iface: eth2
 
 #    vlan90:
 #    ip: 109.69.10.119/27 ?
 
-hangar:
+# tant de bo provisional
+atom:
+  - ip: 109.69.8.122/29
+    comentari: ip de l'atom
+  - ip: 10.38.140.254/27
+    tipus: mapeig
+    comentari: contra 109.69.8.122 (servidor atom) # per tal que tingui ip de guifi
+
+hangar: #?
 
 
 # identificadors trax en el domini de 10
