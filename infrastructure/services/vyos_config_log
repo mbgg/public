@@ -37,3 +37,5 @@ set system host-name vrouter2
 set service dhcp-server shared-network-name temp subnet 192.168.95.0/24 start 192.168.95.100 stop 192.168.95.150
 set service dhcp-server shared-network-name temp subnet 192.168.95.0/24 default-router 192.168.95.26
 set service dhcp-server shared-network-name temp subnet 192.168.95.0/24 dns-server 8.8.8.8
+
+# configured VPN as following this article: https://jasonschaefer.com/openvpn-on-vyos/

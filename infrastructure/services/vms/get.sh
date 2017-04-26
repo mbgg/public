@@ -5,6 +5,8 @@ scp core:/etc/systemd/system/bind9.service core/etc/systemd/system/
 scp -r core:/etc/bind/ core/etc/
 scp core:/etc/firewall4 core/etc/
 scp core:/etc/firewall6 core/etc/
+scp core:/etc/firewall6 core/etc/
+scp core:/etc/ntp.conf core/etc/
 
 scp rproxy:/etc/network/interfaces rproxy/etc/network/
 scp rproxy:/etc/haproxy/haproxy.cfg rproxy/etc/haproxy/

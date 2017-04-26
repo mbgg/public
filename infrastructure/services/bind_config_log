@@ -1,0 +1,43 @@
+https://wiki.debian.org/Bind9
+https://www.brennan.id.au/08-Domain_Name_System_BIND.html
+
+root@core:/etc/bind# touch /var/log/bind.log /var/log/security_info.log /var/log/update_debug.log
+root@core:/etc/bind# chown bind:bind /var/log/bind.log /var/log/security_info.log /var/log/update_debug.log
+
+check confg:
+named-checkconf -z
+named-checkzone exo.cat db.exo.cat
+
+flush bind9 (force update)
+rndc flush
+http://serverfault.com/questions/41018/dns-any-way-to-force-a-nameserver-to-update-the-record-of-a-domain
+no, it's better to use:
+service bind9 reload
+
+
+why no recursion?
+https://help.fasthosts.co.uk/app/answers/detail/a_id/1276/~/what-is-recursive-dns-and-why-is-it-not-recommended%3F
+
+stop recursion bind9
+http://askubuntu.com/questions/170728/how-to-disable-external-dns-recursion
+
+bind9 by default uses recursion:
+
+check with dig RD and RA flags
+http://serverfault.com/questions/371774/how-do-you-check-if-a-nameserver-responds-to-recursive-queries
+
+bind checkers:
+named-checkconf -z
+
+online checkers:
+http://openresolver.com/
+https://intodns.com/
+http://serverfault.com/questions/371774/how-do-you-check-if-a-nameserver-responds-to-recursive-queries
+
+comments with # can do servfail
+
+
+# useful for PTR reverse (not supported)
+http://rdns6.com/zone
+# useful to know how to put AAAA records (IPv6)
+http://seoroot.com/blog/computing/systems-administration/setup-dns-server-for-ipv6-and-ipv4-queries-using-bind9-in-centos-linux.html

@@ -1,0 +1,45 @@
+stop cronjobs, mysqldump and put .sql in the new server as suggested by http://xmodulo.com/migrate-cacti-server.html
+
+in new machine
+
+apt-get install cacti cacti-spine 
+(everything default)
+
+```
+mysql
+
+DROP DATABASE cacti;
+CREATE DATABASE cacti;
+GRANT ALL PRIVILEGES ON cacti.* TO cacti@localhost IDENTIFIED BY "passwordhere";
+FLUSH PRIVILEGES;
+```
+
+`passwordhere` must match with auth for cacti: /usr/share/cacti/site/include/config.php
+
+after that: `mysql -u cacti -p cacti < cactidump.sql`
+inspired by restore procedure -> src https://www.urban-software.com/cacti-howtos/cacti/backup-guide-for-cacti/
+
+access via web, select "upgrade from"
+
+continue with RDD backup/restore as specified in http://xmodulo.com/migrate-cacti-server.html
+
+
+
+
+
+
+
+
+
+extra: http://www.cacti.net/downloads/docs/html/upgrade.html
+
+
+l'únic error que he tingut
+
+root@core:/var/lib/cacti/rra# for i in `find -name "*.xml"`; do rrdtool restore $i `echo $i |sed s/.xml//g`; done
+ERROR: creating './localhost_load_1min_5.rrd': File exists
+ERROR: creating './localhost_mem_buffers_3.rrd': File exists
+ERROR: creating './localhost_mem_swap_4.rrd': File exists
+ERROR: creating './localhost_proc_7.rrd': File exists
+ERROR: creating './localhost_users_6.rrd': File exists
+
