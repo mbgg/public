@@ -43,3 +43,7 @@ ERROR: creating './localhost_mem_swap_4.rrd': File exists
 ERROR: creating './localhost_proc_7.rrd': File exists
 ERROR: creating './localhost_users_6.rrd': File exists
 
+
+
+apache log file error (strange/dangerous)
+[Wed Apr 26 13:39:11 2017] [error] [client 37.14.19.186] PHP Notice:  Undefined index: IP_ADDRESS in /usr/share/cacti/site/include/csrf/csrf-magic.php on line 220

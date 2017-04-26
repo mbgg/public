@@ -1,26 +1,6 @@
-rproxy
-
-apt-get install haproxy
-
-apply config
-
-(show)
-
-
-
-
 publica
 
 
 src https://www.linode.com/docs/websites/cms/how-to-install-and-configure-wordpress/
 
 src https://www.linode.com/docs/websites/lamp/lamp-on-debian-8-jessie
-
-
-
-
-privada
-
-apt-get install cacti
-
-next next next...
