@@ -5,5 +5,5 @@
   tasks:
 
   - name: preseed
-    template: src="./preseed.j2" dest="./{{ item.hostname }}"
+    template: src="./preseed.j2" dest="./files/{{ item.hostname }}"
     with_items: "{{ hosts }}"
