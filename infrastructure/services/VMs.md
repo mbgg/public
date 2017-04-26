@@ -27,25 +27,26 @@ Clúster Trax. Serveis:
     - public.exo.cat (gogs.io)
 - VM #3 **privada**
     - db.exo.cat (Django Admin)
-    - auth.exo.cat LDAP (slapd)
-    - OpenVPN (admins)
-    - noc.exo.cat/cacti Cacti
     - privat.exo.cat (gogs.io)
     - data.exo.cat
 - VM #4 **core**
-    - DNS (ns.exo.cat)
+    - DNS (ns1.exo.cat)
     - NTP (ntp.exo.cat)
     - SMTP? (mailer.exo.cat?)
+    - noc.exo.cat/cacti Cacti
+    - auth.exo.cat LDAP (slapd)
 - VM #5 **vrouter** (Mikrotik)
 - VM #6 **vrouter2** (VyOS)
     - give VMs temp access to Internet
+    - OpenVPN (admins)
     - research routing capabilities of VyOS (if it can replace mikrotik)
 - VM #7 **rt** (Real-Time)
     - meet.guifi.net (jitsi)
     - xat.guifi.net (rocketchat)
     - matrix.exo.cat (matrix)
     - streaming (?) - pública
-- VM **shop.exo.cat** (Prestashop)
+- VM #8 **secon** (Client1)
+- VM #9 **shop.exo.cat** (Prestashop)
 
 other IDs:
 
