@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - name: I'm in with default password?
+      debug:
+        msg: "Yes x("
