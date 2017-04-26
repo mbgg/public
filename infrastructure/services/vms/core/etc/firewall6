@@ -1,0 +1,20 @@
+*nat
+COMMIT
+*filter
+:INPUT ACCEPT
+:FORWARD ACCEPT
+:OUTPUT ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT ! -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT -m comment --comment "diferent de eth0"
+-A INPUT -i lo -j ACCEPT
+-A INPUT -i eth0 -j ACCEPT
+-A INPUT -i eth1 -p tcp -m multiport --dports 53 -j ACCEPT -m comment --comment "DNS internet"
+-A INPUT -i eth1 -p udp -m multiport --dports 53 -j ACCEPT -m comment --comment "DNS internet"
+-A INPUT -i eth2 -p tcp -m multiport --dports 53 -j ACCEPT -m comment --comment "DNS guifi"
+-A INPUT -i eth2 -p udp -m multiport --dports 53 -j ACCEPT -m comment --comment "DNS guifi"
+-A INPUT -i eth1 -p udp -m multiport --dports 123 -j ACCEPT -m comment --comment "NTP internet"
+-A INPUT -i eth2 -p udp -m multiport --dports 123 -j ACCEPT -m comment --comment "NTP guifi"
+-A INPUT -j DROP
+COMMIT
+*mangle
+COMMIT
