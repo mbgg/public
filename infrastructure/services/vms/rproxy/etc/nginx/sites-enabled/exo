@@ -4,6 +4,12 @@ server {
         listen 80;
         server_name exo.cat www.exo.cat;
 
+        location /.well-known {
+                default_type "text/plain";
+                allow all;
+                root /var/www/html;
+        }
+
         location / {
                 return 301 https://exo.cat$request_uri;
         }
@@ -13,8 +19,10 @@ server {
         listen 127.0.0.1:443 ssl;
         server_name exo.cat www.exo.cat;
 
-        ssl_certificate /etc/haproxy/ssl/fullchain.pem;
-        ssl_certificate_key /etc/haproxy/ssl/privkey.pem;
+        #ssl_certificate /etc/haproxy/ssl/fullchain.pem;
+        #ssl_certificate_key /etc/haproxy/ssl/privkey.pem;
+        ssl_certificate /etc/letsencrypt/live/exo.cat/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/exo.cat/privkey.pem;
 
         client_max_body_size 5G;
 
@@ -40,7 +48,7 @@ server {
         }
 
         location / {
-                return 301 https://noc.exo.cat$request_uri;
+                return 301 https://$host$request_uri;
         }
 }
 
@@ -54,7 +62,7 @@ server {
         #ssl_certificate_key /etc/haproxy/ssl/privkey.pem;
 
         location / {
-                proxy_pass http://192.168.95.23;
+                proxy_pass http://192.168.95.24;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -63,3 +71,85 @@ server {
 }
 
 # __________________________________________________________________________________
+
+server {
+        listen 80;
+        server_name wiki.exo.cat;
+
+        location /.well-known {
+                default_type "text/plain";
+                allow all;
+                root /var/www/html;
+        }
+
+        location / {
+                return 301 https://$host$request_uri;
+        }
+}
+
+server {
+        listen 127.0.0.1:443 ssl;
+        server_name wiki.exo.cat;
+
+        ssl_certificate /etc/letsencrypt/live/wiki.exo.cat/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/wiki.exo.cat/privkey.pem;
+
+        client_max_body_size 5G;
+
+        location / {
+                proxy_pass http://192.168.95.22;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+        }
+}
+
+# __________________________________________________________________________________
+
+server {
+        listen 80;
+        server_name speedtest.exo.cat;
+
+        location /.well-known {
+                default_type "text/plain";
+                allow all;
+                root /var/www/html;
+        }
+
+        location / {
+                #allow 10.0.0.0/8;
+                #deny all;
+                proxy_pass http://192.168.95.22;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+        }
+#        location / {
+#                return 301 https://$host$request_uri;
+#        }
+}
+
+server {
+        listen 127.0.0.1:443 ssl;
+        server_name speedtest.exo.cat;
+
+        ssl_certificate /etc/letsencrypt/live/speedtest.exo.cat/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/speedtest.exo.cat/privkey.pem;
+        #ssl_certificate /etc/haproxy/ssl/fullchain.pem;
+        #ssl_certificate_key /etc/haproxy/ssl/privkey.pem;
+
+        client_max_body_size 100M;
+
+        location / {
+                #allow 10.0.0.0/8;
+                #deny all;
+                proxy_pass http://192.168.95.22;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+        }
+}
+

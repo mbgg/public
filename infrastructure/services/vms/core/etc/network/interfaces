@@ -22,7 +22,7 @@ iface eth0 inet static
 
 auto eth1
 iface eth1 inet static
-	address 10.38.140.233/27
+	address 10.38.140.233
 	netmask 255.255.255.224
         up ip route add 10.0.0.0/8 via 10.38.140.225 dev eth1
         down ip route del 10.0.0.0/8 via 10.38.140.225 dev eth1

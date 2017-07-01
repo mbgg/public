@@ -1,6 +1,6 @@
 $TTL    3600
 @       IN      SOA     ns1.exo.cat. root.exo.cat. (
-                   2017041801           ; Serial
+                   2017042701           ; Serial
                          3600           ; Refresh [1h]
                           600           ; Retry   [10m]
                         86400           ; Expire  [1d]
@@ -18,42 +18,51 @@ ns1.exo.cat. IN A 109.69.10.123			; trax-dns
 ns1.exo.cat. IN AAAA 2a00:1508:100:ffff::4	; trax-dns
 ns2.exo.cat. IN A 192.146.172.104		; datalab (bcn.guifi.net) editar aquí -> https://guifi.net/node/55044 (guifi barcelonès -> serveis -> servidor de noms castillejos)
 ns3.exo.cat. IN A 109.69.10.118			; hangar
+ns3.exo.cat. IN AAAA 2a00:1508:100:ffff::9	; hangar
 
 ; ____________________________________________________________________
 
 ; organització eXO
 
-exo.cat. IN A 109.69.8.123			; web page
-exo.cat. IN A 109.69.8.124			; web page
+exo.cat. IN A 109.69.10.112                     ; web page
+;exo.cat. IN A 109.69.8.123			; web page (old server, deprecating)
 exo.cat. IN AAAA 2a00:1508:100:ffff::3		; wiki. i web. exo.cat
-www.exo.cat. IN CNAME exo.cat			; alias web page
+www.exo.cat. IN CNAME exo.cat.			; alias web page
+wiki.exo.cat. IN CNAME exo.cat.                 ; wiki migrated
 
 exo.cat. IN MX 1 mail.pangea.org.		; mail
 exo.cat. IN MX 2 mail2.pangea.org.		; mail
 llistes.exo.cat. IN A 109.69.8.133		; mailing list
+lists.exo.cat. IN CNAME llistes.exo.cat.	; mailing list
 llistes.exo.cat. IN MX 1 mail.pangea.org.	; mailing list
 llistes.exo.cat. IN MX 2 mail2.pangea.org.	; mailing list
+
+meet.exo.cat. IN A 109.69.10.114		; meet jitsi
+meet.exo.cat. IN AAAA 2a00:1508:100:ffff::d	; meet jitsi
+
+dev.exo.cat. IN MX 10 dev.exo.cat.		; test mailserver
+dev.exo.cat. IN A 109.69.10.123			; test mailserver
+dev.exo.cat. IN AAAA 2a00:1508:100:ffff::4      ; test mailserver
 
 ; ____________________________________________________________________
 
 ; organització eXO (NOUS)
 
-noc.exo.cat. IN A 109.69.10.112			; monitor
+noc.exo.cat. IN CNAME exo.cat.			; monitor
 
 ; ____________________________________________________________________
 
 ; projectes
 
 guifiradio.exo.cat. IN A 109.69.10.116
+radio.exo.cat. IN CNAME guifiradio.exo.cat.
 guifiradio.exo.cat. IN AAAA 2a00:1508:100:ffff::b
 labipv6.exo.cat. IN A 109.69.10.118
 labipv6.exo.cat. IN AAAA 2a00:1508:100:ffff::9
 academia.exo.cat. IN A 109.69.10.121
 academia.exo.cat. IN AAAA 2a00:1508:100:ffff::6
 shop.exo.cat. IN CNAME academia.exo.cat.
-
-secon.exo.cat. IN A 109.69.10.97
-acs.exo.cat. IN A 109.69.10.97
+speedtest.exo.cat. IN A 109.69.10.112
 
 ; ____________________________________________________________________
 
@@ -74,8 +83,10 @@ acs.exo.cat. IN A 109.69.10.97
 ; personal
 
 erebes.exo.cat. IN A 109.69.8.66		; eloi
+erebes.exo.cat. IN AAAA 2a00:1508:100:4::2
 p.exo.cat. IN A 109.69.8.90			; pedro
 jmoles.exo.cat. IN A 109.69.8.75
+jmoles.exo.cat. IN AAAA 2a00:1508:100:3::2
 tomir.exo.cat. IN A 109.69.8.87			; llorenç
 
 ; ____________________________________________________________________
@@ -85,10 +96,9 @@ tomir.exo.cat. IN A 109.69.8.87			; llorenç
 ; slave guifi ?
 
 hub.exo.cat. IN A 109.69.8.65
+intranet.exo.cat. IN CNAME hub.exo.cat.
 hub.exo.cat. IN AAAA 2a00:1508:100:ffff::5
 vpn.exo.cat. IN A 109.69.8.122
 vpn.exo.cat. IN AAAA 2a00:1508:100:ffff::2
-wiki.exo.cat. IN A 109.69.8.123
-wiki.exo.cat. IN AAAA 2a00:1508:100:ffff::3
 radio.exo.cat. IN A 109.69.8.125
 rbst2.exo.cat. IN A 109.69.10.117
