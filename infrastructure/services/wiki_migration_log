@@ -1,0 +1,7 @@
+scp /var/www/wiki -> /var/www/html/wiki
+
+this error in apache:
+http://stackoverflow.com/questions/10144634/htaccess-invalid-command-rewriteengine-perhaps-misspelled-or-defined-by-a-m
+
+VM publica
+a2enmod rewrite

@@ -1,0 +1,22 @@
+https://wiki.debian.org/LaMp
+https://www.facturascripts.com/documentacion
+
+apt-get install php5 php5-mysql libapache2-mod-php5 mysql-server mysql-client apache2
+
+cd /var/www/html
+wget https://github.com/NeoRazorX/facturascripts_2015/archive/master.zip
+unzip master.zip
+mv facturascripts_2015-master/ facturascripts
+chown -R www-data:www-data /var/www/html/facturascripts
+
+crear base de datos
+
+service apache2 restart
+
+si pierdes el instalador:
+http://192.168.25.254/facturascripts/index.php?page=base_wizard
+
+
+----
+
+este servicio no se va a usar

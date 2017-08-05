@@ -1,0 +1,12 @@
+https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md
+
+apt-get install apt-transport-https
+
+echo 'deb https://download.jitsi.org stable/' >> /etc/apt/sources.list.d/jitsi-stable.list
+wget -qO -  https://download.jitsi.org/jitsi-key.gpg.key | apt-key add -
+apt-get update
+apt-get -y install jitsi-meet
+self-signed certificate
+
+apt-get update && apt-get install -t jessie-backports certbot
+

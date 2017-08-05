@@ -9,11 +9,9 @@ Work in progress with services and VMs
     
 each exposed public IP has its own [firewall](https://github.com/guifi-exo/public/blob/master/infrastructure/services/firewall.md)
 
-# Serveis
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**
 
 - [virtual routing](#virtual-routing)
 - [reverse proxy](#reverse-proxy)
@@ -35,13 +33,46 @@ each exposed public IP has its own [firewall](https://github.com/guifi-exo/publi
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## virtual routing
+# Actiu
 
-es decideix que no VRRP, s'utilitza HA del cluster proxmox
+## meet.guifi.net
+
+software: jitsi-meet
+
+- configurat amb compartició de pantalla des de Google Chrome
+
+## meet.exo.cat
+
+software: jitsi-meet
+
+- configuració per defecte
+
+## xat.guifi.net
+
+software: rocketchat
+
+## wiki.exo.cat
+
+software: dokuwiki
+
+- hi ha informació antiga i desactualitzada
+
+## noc.exo.cat
+
+software: cacti
+
+- en un futur es pot plantejar tenir també weathermap, smokeping
+
+## exo.cat
+
+software: wordpress
+
+- reduïr número de plugins; que sigui fàcil tenir-lo a la última versió
+- agafar el calendari de data.exo.cat i incrustar-lo
 
 ## reverse proxy
 
-reverse proxy: haproxy
+reverse proxy: nginx
 
 gestió de certificats: certbot (letsencrypt)
 
@@ -65,16 +96,15 @@ només gestió de certificats (a revisar)
 - xat.guifi.net
 - matrix.exo.cat
 
+# Projectat
+
+## virtual routing
+
+es decideix que no VRRP, s'utilitza HA del cluster proxmox
+
 ## academia.exo.cat
 
 software: drupal
-
-## exo.cat
-
-software: wordpress
-
-- reduïr número de plugins; que sigui fàcil tenir-lo a la última versió
-- agafar el calendari de data.exo.cat i incrustar-lo
 
 ## public.exo.cat
 
@@ -89,12 +119,6 @@ software: django admin
 informació integrada
 
 https://github.com/guifi-org/exoadmin
-
-## noc.exo.cat
-
-software: cacti
-
-- en un futur es pot plantejar tenir també weathermap, smokeping
 
 ## privat.exo.cat
 
@@ -113,15 +137,7 @@ software: nextcloud
 
 software: prestashop
 
-## meet.guifi.net
-
-software: jitsi-meet
-
-## xat.guifi.net
-
-software: rocketchat
-
-## matrix.exo.cat
+## matrix.exo.cat i riot.exo.cat
 
 software: matrix + riot
 
