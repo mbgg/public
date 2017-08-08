@@ -35,7 +35,7 @@ Clúster Trax. Serveis:
     - SMTP? (mailer.exo.cat?)
     - noc.exo.cat/cacti Cacti
     - auth.exo.cat LDAP (slapd)
-- VM #5 **vrouter** (Mikrotik)
+- VM #5 **vrouter1** (Mikrotik)
 - VM #6 **vrouter2** (VyOS)
     - give VMs temp access to Internet
     - OpenVPN (admins)
