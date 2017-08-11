@@ -236,6 +236,7 @@ trax_network:
       iface: vmbr0
     vlan98:
       ip: 192.168.98.11/24
+      ipmi: 192.168.98.21/24
       gateway: 192.168.98.1
     vlan127: # vlan interna, connectada a mikrotik/trax3
       ipmi: 192.168.127.11/24
@@ -252,6 +253,7 @@ trax_network:
       iface: vmbr0
     vlan98:
       ip: 192.168.98.12/24
+      ipmi: 192.168.98.22/24
       iface: vmbr0
       gateway: 192.168.98.1
     vlan127: # vlan interna, connectada a mikrotik/trax3
