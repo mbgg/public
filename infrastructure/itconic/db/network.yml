@@ -271,6 +271,9 @@ support: # nodes that support the cluster
     vlan96:
       ip: 192.168.96.13/24
       iface: vmbr0
+    vlan97:
+      ip: 192.168.97.13/24
+      iface: vmbr0
     vlan98:
       ip: 192.168.98.13/24
       iface: vmbr0
