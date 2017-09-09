@@ -7,7 +7,7 @@
 
 - Rang dinàmiques `10.1.193.50-10.1.193.254`
 
-Draft: Deixem les 111, 112 per els BMC. I les .11 .12 per cada segment del serveis
+Draft: Pels maquinaris cluster, deixem les .111, .112 pels BMC. I les .11 .12 per l'altre IP de l'equipament cluster
 
 # Maquinari
 
