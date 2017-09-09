@@ -7,6 +7,8 @@
 
 - Rang dinàmiques `10.1.193.50-10.1.193.254`
 
+Draft: Deixem les 111, 112 per els BMC. I les .11 .12 per cada segment del serveis
+
 # Maquinari
 
 | màquina | IP |
