@@ -38,7 +38,7 @@ Clúster Trax. Serveis:
     - matrix.exo.cat (matrix)
     - streaming (?) - pública
 - VM #8 **secon** (Client1)
-- VM #9 **shop.exo.cat** (Prestashop)
+- VM #9 **vpn.exo.cat** (OpenVPN)
 
 other IDs:
 

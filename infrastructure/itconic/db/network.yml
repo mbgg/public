@@ -166,9 +166,18 @@ vms:
     vlan90:
       ip: 10.38.140.250/27
       iface: eth2
-
 #    vlan90:
 #    ip: 109.69.10.119/27 ?
+  - hostname: vpn
+    vlan95:
+      ip: 192.168.95.29/24
+      iface: eth0
+    vlan94:
+      ip: 109.69.10.124
+      iface: eth1
+    vlan90:
+      ip: 10.38.140.234/27
+      iface: eth2
 
 # tant de bo provisional
 atom:
