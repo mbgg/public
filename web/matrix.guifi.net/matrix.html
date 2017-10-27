@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>matrix.guifi.net</title>
+    <style media="screen">
+    body {
+      padding: 1em 3em 4em 4em;
+      background-color: rgb(234, 234, 234);
+    }
+    .ca, .es, .en { display:none; } /* hide all elements with a language class */
+    .ca:lang(ca), .es:lang(es), .en:lang(en) { display:block; } /* show those elements that match their language class */
+
+
+    .app-links-list,
+    .app-links-list-mob {
+    text-align: center;
+    margin: 0 -15px;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    padding-top: 30px;
+    padding-bottom: 21px;
+    transition: all .55s ease;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+    </style>
+    <!-- orig https://unpkg.com/i18next/i18next.js -->
+    <script type='text/javascript' src="js/i18next.js"></script>
+    <!-- orig https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js -->
+    <script type='text/javascript' src='js/i18nextBrowserLanguageDetector.js'></script>
+    <script type="text/javascript">
+    i18next
+    .use(i18nextBrowserLanguageDetector)
+    .init({
+      fallbackLng: 'en',
+      //debug: true,
+    }, function(err, t) {
+      // init set content
+      updateContent();
+    });
+    function updateContent() {
+    document.body.setAttribute('lang', i18next.language.substring(0,2));
+    }
+    function changeLng(lng) {
+      i18next.changeLanguage(lng);
+      updateContent();
+    }
+    </script>
+  </head>
+  <body>
+
+  <div style="height: 100px">
+    <button onclick="changeLng('ca')">
+    Català
+    </button>
+    <button onclick="changeLng('es')">
+    Castellano
+    </button>
+    <button onclick="changeLng('en')">
+    English
+    </button>
+    <div id="output" />
+
+  <!-- <div class="ca">Català</div>
+  <div class="es">Castellano</div>
+  <div class="en">English</div> -->
+
+  <ul class="app-links-list">
+
+    <li style="font-size: 44px;font-style: italic; font-weight: bold; font-family: Helvetica,Arial,sans-serif;">matrix.guifi.<span style="color:#ff3300">net</span>&nbsp;&nbsp;</li>
+    <!-- orig https://about.riot.im/wp-content/themes/riot/img/link1.png -->
+    <li><a target="_blank" href="https://riot.guifi.net/#/directory"><img src="img/1.png" alt=""></a></li>
+    <!-- orig https://about.riot.im/wp-content/themes/riot/img/link2.png -->
+    <li><a target="_blank" href="https://itunes.apple.com/us/app/vector.im/id1083446067"><img src="img/2.png" alt=""></a></li>
+    <!-- orig https://about.riot.im/wp-content/themes/riot/img/link3.png -->
+    <li><a target="_blank" href="https://play.google.com/store/apps/details?id=im.vector.alpha"><img src="img/3.png" alt=""></a></li>
+    <!-- orig https://about.riot.im/wp-content/themes/riot/img/link4.png -->
+    <li><a target="_blank" href="https://f-droid.org/repository/browse/?fdid=im.vector.alpha"><img src="img/4.png" alt=""></a></li>
+    <!-- orig https://about.riot.im/wp-content/themes/riot/img/distr.png -->
+    <li><a target="_blank" href="https://riot.im/desktop.html"><img src="img/5.png" alt=""></a></li>
+  </ul>
+
+  <h2 class="ca">ACCÉS</h2>
+  <h2 class="es">ACCESO</h2>
+  <h2 class="en">ACCESS</h2>
+
+  <!-- <img src="https://guifi.net/files/guifi.net_logo.gif"> -->
+
+  <p class="ca">Utilitza el teu usuari de <a href="https://guifi.net" target="_blank">guifi</a>, si no en tens <a href="https://guifi.net/user/register" target="_blank">registra't</a> i espera 24 hores</p>
+
+  <p class="es">Utiliza tu usuario de <a href="https://guifi.net" target="_blank">guifi</a>, si no tienes <a href="https://guifi.net/user/register" target="_blank">regístrate</a> y espera 24 horas</p>
+
+  <p class="en">Login with your <a href="https://guifi.net" target="_blank">guifi</a> user, if you don't have one, <a href="https://guifi.net/user/register" target="_blank">register</a> and wait 24 hours</p>
+
+  <p class="ca">Si no tens usuari pots <a href="https://riot.guifi.net/#/directory" target="_blank">entrar</a> en alguns canals</p>
+
+  <p class="es">Si no tienes usuario puedes <a href="https://riot.guifi.net/#/directory" target="_blank">entrar</a> en algunos canales</p>
+
+  <p class="en">If you don't have user you can <a href="https://riot.guifi.net/#/directory" target="_blank">enter</a> in some channels</p>
+
+  <h2>INFO</h2>
+
+  <h3 class="ca">Informació sobre la seguretat</h3>
+
+  <p class="ca">La comunicació entre aquest servidor i el teu client és segura (https) però els administradors d'aquest servei poden llegir tots els missatges que no estiguin xifrats extrem a extrem. El client <a href="https://riot.guifi.net" target="_blank">riot</a> té la possibilitat de xifrar converses individuals i de grups de forma asíncrona amb el <a href="https://en.wikipedia.org/wiki/Double_Ratchet_Algorithm" target="_blank">Double Ratchet Algorithm</a>. Les teves metadades (emisor, receptor, quan, etc.) continuen exposades, <a href="https://www.youtube.com/watch?v=3gJvABEi3wQ" target="_blank">"We kill people based on metadata"</a> diuen alguns. Si creus que el que has de dir pot perjudicar-te greument a tu o als teus utilitza altres medis, si no saps quins prova amb <a href="https://retroshare.net/" target="_blank">retroshare</a>.</p>
+
+  <p class="ca">Matrix és descentralitzat: No cal que confiïs en aquest servei, anima't i <a href="https://github.com/guifi-exo/wiki/blob/master/howto/matrix-riot.md" target="_blank">instal·la't el teu propi servidor matrix igual que aquest</a></p>
+
+  <h3 class="es">Información sobre la seguridad</h3>
+
+  <p class="es">La comunicación entre este servidor y tu cliente es segura (https) pero los administradores de este servicio pueden leer todos los mensajes que no sean cifrados extremo a extremo. El cliente <a href="https://riot.guifi.net">riot</a> te da la posibilidad de cifrar conversaciones individuales y de grupos de forma asíncrona con el <a href="https://en.wikipedia.org/wiki/Double_Ratchet_Algorithm" target="_blank">Double Ratchet Algorithm</a>. Tus metadatos (emisor, receptor, cuándo, etc.) continúan expuestos, <a href="https://www.youtube.com/watch?v=3gJvABEi3wQ" target="_blank">"We kill people based on metadata"</a> dicen algunos. Si crees que lo que tienes que decir puede perjudicarte gravemente a ti o a los tuyos utiliza otros medios, si no sabes cuáles prueba con <a href="https://retroshare.net/" target="_blank">retroshare</a>.</p>
+
+  <p class="es">Matrix es descentralizado: No hace falta que confíes en este servicio, anímate e <a href="https://github.com/guifi-exo/wiki/blob/master/howto/matrix-riot.md" target="_blank">instálate tu propio servidor de matrix igual que este</a></p>
+
+  <h3 class="en">Security information</h3>
+
+  <p class="en">Communication between server and your client is secure (https) but the admins of this service can read all non end-to-end encrypted messages. On <a href="https://riot.guifi.net" target="_blank">Riot</a> provides you asynchronous encryption capabilities for individual and group roomsthrough <a href="https://en.wikipedia.org/wiki/Double_Ratchet_Algorithm" target="_blank">Double Ratchet Algorithm</a>. Your metadata (emisor, receptor, cuándo, etc.) is still exposed, <a href="https://www.youtube.com/watch?v=3gJvABEi3wQ" target="_blank">"We kill people based on metadata"</a> said someone. If you think that what you have to say could be dangerous for you or your people use other tools to communicate, if you don't know what to use try with <a href="https://retroshare.net/">retroshare</a>.</p>
+
+  <p class="en">Matrix is decentralized: You don't need to trust this service, come on! <a href="https://github.com/guifi-exo/wiki/blob/master/howto/matrix-riot.md" target="_blank">install your own matrix server like this one</a></p>
+
+  <h3>Extra</h3>
+
+  <p>Guifi IPv4: <a href="http://10.139.94.123" target="_blank">10.139.94.123</a>
+  <br/>
+  Internet IPv4: <a href="http://109.69.10.114" target="_blank">109.69.10.114</a>
+  <br/>
+  Internet IPv6: <a href="http://[2a00:1508:100:ffff::d]" target="_blank">2a00:1508:100:ffff::d</a></p>
+
+  <h2 class="ca">QUI</h2>
+  <h2 class="es">QUIÉN</h2>
+  <h2 class="en">WHO</h2>
+
+  <p class="ca">Servei oferit per <a href="http://exo.cat" target="_blank">eXO</a>. <a href="http://exo.cat/associar-se/" target="_blank">Associa't</a> o <a href="http://exo.cat/com-patrocinar/" target="_blank">patrocina</a> aquest servei.</p>
+
+  <p class="es">Servicio ofrecido por <a href="http://exo.cat" target="_blank">eXO</a>. <a href="http://exo.cat/associar-se/" target="_blank">Asóciate</a> o <a href="http://exo.cat/com-patrocinar/" target="_blank">patrocína</a> este servicio.</p>
+
+  <p class="en">Service offered by <a href="http://exo.cat" target="_blank">eXO</a>. <a href="http://exo.cat/associar-se/" target="_blank">Associate</a> or <a href="http://exo.cat/com-patrocinar/" target="_blank">promote</a> this service.</p>
+
+  <img height="110" width="auto" src="img/exo.png"></p>
+
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+  <input type="hidden" name="cmd" value="_s-xclick">
+  <input type="hidden" name="hosted_button_id" value="BV3XYUV7DMVJA">
+  <!-- orig http://exo.cat/wp-content/uploads/2016/12/btn_donate_LG -->
+  <input type="image" src="img/dona.gif" border="0" name="submit" alt="PayPal. Forma de pagar en Internet.">
+  </form>
+
+  <!-- orig http://data.whicdn.com/images/60331056/large.gif -->
+  <img src="img/patata.gif" alt="">
+
+</body>
+</html>
