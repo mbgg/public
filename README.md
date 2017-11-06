@@ -6,6 +6,14 @@ eXO es una associació sin ánimo de lucro y una operadora de telecomunicación.
 
 eXO is a non-profit association and a telecomunicaction operator acting within the social and solidarity economy framework. We promote and expand the community-based telecommunications network guifi.net using it as a tool against the digital divide. We organize weekly "guifilabs" in Barcelona and offer training, dissimination content, installation and maintenance of infrastructure, wifi coverage for events, and provide free, open and neutral access to internet.
 
+# Wiki
+
+eXO promotes documentation of guifi.net project through its [wiki git repository](https://github.com/guifi-exo/wiki)
+
+# Llicència
+
+[Creative Commons Attribution-ShareAlike 4.0 International](https://github.com/guifi-exo/public/blob/master/LICENSE)
+
 # The same in other places
 
 eXO is for Barcelona, similar to eXO in other places:
@@ -21,11 +29,3 @@ eXO is for Barcelona, similar to eXO in other places:
 - [Leipzig](https://en.wikipedia.org/wiki/Leipzig) - https://reudnetz.org/
 - [Austria](https://en.wikipedia.org/wiki/Austria) - https://www.funkfeuer.at/
 - what else?
-
-# Wiki
-
-eXO promotes documentation of guifi.net project through its [wiki git repository](https://github.com/guifi-exo/wiki)
-
-# Llicència
-
-[Creative Commons Attribution-ShareAlike 4.0 International](https://github.com/guifi-exo/public/blob/master/LICENSE)
