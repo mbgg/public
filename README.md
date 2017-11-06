@@ -4,7 +4,7 @@ eXO és una associació sense ànim de lucre i operador de telecomunicacions. En
 
 eXO es una associació sin ánimo de lucro y una operadora de telecomunicación. En el marco de la economía social y solidaria, difundimos y extendemos guifi.net, una red de telecomunicaciones procomún y una herramienta contra la exclusión digital. Llevamos a cabo actividades diversas: encuentros semanales "guifilabs", contenidos formativos y divulgativos, mantenimientos e instalaciones de infraestructuras, cobertura wifi para eventos y provisión de acceso a Internet.
 
-eXO is a non-profit association and a telecomunicaction operator acting within the social and solidarity economy framework. We promote and expand the community-based telecommunications network guifi.net using it as a tool against the digital divide. We organize weekly "guifilabs" in Barcelona and offer training, dissimination content, installation and maintenance of infrastructure, wifi coverage for events, and provide free, open and neutral access to internet.
+eXO is a non-profit association and a telecomunicaction operator acting within the social and solidarity economy framework. We promote and expand the community-based telecommunications network guifi.net using it as a tool against the digital divide. We organize weekly "guifilabs" in Barcelona and offer training, dissimination content, installation and maintenance of infrastructure, wifi coverage for events, and provide access to internet.
 
 # Wiki
 
