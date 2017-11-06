@@ -15,6 +15,7 @@ eXO is for Barcelona, similar to eXO in other places:
 - [Elx](https://en.wikipedia.org/wiki/Elche) https://elx.guifi.net
 - [?](?) https://www.gisa-elkartea.org/
 - [Leipzig](https://en.wikipedia.org/wiki/Leipzig) https://reudnetz.org/
+- Austria https://www.funkfeuer.at/
 - what else?
 
 # Wiki
