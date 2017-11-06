@@ -10,12 +10,16 @@ eXO is a non-profit association and a telecomunicaction operator acting within t
 
 eXO is for Barcelona, similar to eXO in other places:
 
-- [Bages](https://ca.wikipedia.org/wiki/Bages) http://guifibages.cat/
+- [Bages](https://en.wikipedia.org/wiki/Bages) http://guifibages.cat/
+- [Baix Llobregat](https://en.wikipedia.org/wiki/Baix_Llobregat) http://guifibaix.coop/
+- [Terres de l'Ebre](https://en.wikipedia.org/wiki/Terres_de_l%27Ebre) http://www.augute.org/
 - [Ribagorza / Ribagorça](https://en.wikipedia.org/wiki/Ribagorza/Ribagor%C3%A7a) https://ribaguifi.wordpress.com/
 - [Elx](https://en.wikipedia.org/wiki/Elche) https://elx.guifi.net
-- [?](?) https://www.gisa-elkartea.org/
+- [Sevilla](https://en.wikipedia.org/wiki/Seville) http://sevilla.guifi.net/
+- [Gipuzkoa](https://en.wikipedia.org/wiki/Gipuzkoa) https://www.gisa-elkartea.org/
+- [Asturias](https://en.wikipedia.org/wiki/Asturias) http://sestaferia.net/
 - [Leipzig](https://en.wikipedia.org/wiki/Leipzig) https://reudnetz.org/
-- Austria https://www.funkfeuer.at/
+- [Austria](https://en.wikipedia.org/wiki/Austria) https://www.funkfeuer.at/
 - what else?
 
 # Wiki
