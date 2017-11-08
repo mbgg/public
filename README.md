@@ -20,6 +20,7 @@ eXO is for Barcelona, similar to eXO in other places:
 
 - [Bages](https://en.wikipedia.org/wiki/Bages) - http://guifibages.cat/
 - [Baix Llobregat](https://en.wikipedia.org/wiki/Baix_Llobregat) - http://guifibaix.coop/
+- [Mataró](https://en.wikipedia.org/wiki/Matar%C3%B3A) - http://matarosensefils.net/
 - [Terres de l'Ebre](https://en.wikipedia.org/wiki/Terres_de_l%27Ebre) - http://www.augute.org/
 - [Ribagorza / Ribagorça](https://en.wikipedia.org/wiki/Ribagorza/Ribagor%C3%A7a) - https://ribaguifi.wordpress.com/
 - [Elx](https://en.wikipedia.org/wiki/Elche) - https://elx.guifi.net
