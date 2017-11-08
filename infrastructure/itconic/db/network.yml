@@ -55,12 +55,12 @@ vplan: # vlan plan
     type: fxoln
     code: dmz
     subnet: 192.168.94.0/24
-    notes: servers accessibles des d'Internet
+    notes: servers accessibles des d'Internet amb IP pública
   vlan95:
     type: fxoln
-    code: rproxy
+    code: vctrl
     subnet: 192.168.95.0/24
-    notes: concentrador de HTTPS (reverse proxy, etc)
+    notes: vlan de control de màquines virtuals i tràfic entre màquines virtuals
   vlan96:
     type: fxoln
     code: pve
@@ -73,9 +73,9 @@ vplan: # vlan plan
     notes: tràfic clúster gluster
   vlan98:
     type: fxoln
-    code: ctrl
+    code: hctrl
     subnet: 192.168.98.0/24
-    notes: control, gestió
+    notes: control·la les màquines físiques: trax[123]
   vlan127:
     type: internal
     code: ipmi
