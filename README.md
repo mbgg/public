@@ -24,7 +24,7 @@ eXO is for Barcelona, similar to eXO in other places:
 - [Ribagorza / Ribagorça](https://en.wikipedia.org/wiki/Ribagorza/Ribagor%C3%A7a) - https://ribaguifi.wordpress.com/
 - [Elx](https://en.wikipedia.org/wiki/Elche) - https://elx.guifi.net
 - [Sevilla](https://en.wikipedia.org/wiki/Seville) - http://sevilla.guifi.net/
-- [Gipuzkoa](https://en.wikipedia.org/wiki/Gipuzkoa) - https://www.gisa-elkartea.org/
+- [Donostialdea](https://en.wikipedia.org/wiki/Donostialdea) - https://www.gisa-elkartea.org/
 - [Asturias](https://en.wikipedia.org/wiki/Asturias) - http://sestaferia.net/
 - [Leipzig](https://en.wikipedia.org/wiki/Leipzig) - https://reudnetz.org/
 - [Austria](https://en.wikipedia.org/wiki/Austria) - https://www.funkfeuer.at/
