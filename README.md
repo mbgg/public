@@ -18,15 +18,17 @@ eXO promotes documentation of guifi.net project through its [wiki git repository
 
 eXO is for Barcelona, similar to eXO in other places:
 
-- [Bages](https://en.wikipedia.org/wiki/Bages) - http://guifibages.cat/
-- [Baix Llobregat](https://en.wikipedia.org/wiki/Baix_Llobregat) - http://guifibaix.coop/
-- [Mataró](https://en.wikipedia.org/wiki/Matar%C3%B3A) - http://matarosensefils.net/
-- [Terres de l'Ebre](https://en.wikipedia.org/wiki/Terres_de_l%27Ebre) - http://www.augute.org/
-- [Ribagorza / Ribagorça](https://en.wikipedia.org/wiki/Ribagorza/Ribagor%C3%A7a) - https://ribaguifi.wordpress.com/
-- [Elx](https://en.wikipedia.org/wiki/Elche) - https://elx.guifi.net
-- [Sevilla](https://en.wikipedia.org/wiki/Seville) - http://sevilla.guifi.net/
-- [Donostialdea](https://en.wikipedia.org/wiki/Donostialdea) - https://www.gisa-elkartea.org/
-- [Asturias](https://en.wikipedia.org/wiki/Asturias) - http://sestaferia.net/
-- [Leipzig](https://en.wikipedia.org/wiki/Leipzig) - https://reudnetz.org/
-- [Austria](https://en.wikipedia.org/wiki/Austria) - https://www.funkfeuer.at/
-- what else?
+| Place | Website |
+| ----- | ------- |
+| [Bages](https://en.wikipedia.org/wiki/Bages) | http://guifibages.cat/ |
+| [Baix Llobregat](https://en.wikipedia.org/wiki/Baix_Llobregat) | http://guifibaix.coop/ |
+| [Mataró](https://en.wikipedia.org/wiki/Matar%C3%B3A) | http://matarosensefils.net/ |
+| [Terres de l'Ebre](https://en.wikipedia.org/wiki/Terres_de_l%27Ebre) | http://www.augute.org/ |
+| [Ribagorza / Ribagorça](https://en.wikipedia.org/wiki/Ribagorza/Ribagor%C3%A7a) | https://ribaguifi.wordpress.com/ |
+| [Elx](https://en.wikipedia.org/wiki/Elche) | https://elx.guifi.net |
+| [Sevilla](https://en.wikipedia.org/wiki/Seville) | http://sevilla.guifi.net/ |
+| [Donostialdea](https://en.wikipedia.org/wiki/Donostialdea) | https://www.gisa-elkartea.org/ |
+| [Asturias](https://en.wikipedia.org/wiki/Asturias) | http://sestaferia.net/ |
+| [Leipzig](https://en.wikipedia.org/wiki/Leipzig) | https://reudnetz.org/ |
+| [Austria](https://en.wikipedia.org/wiki/Austria) | https://www.funkfeuer.at/ |
+| what else?
