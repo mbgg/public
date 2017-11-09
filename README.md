@@ -31,4 +31,4 @@ eXO is for Barcelona, similar to eXO in other places:
 | [Asturias](https://en.wikipedia.org/wiki/Asturias) | http://sestaferia.net/ |
 | [Leipzig](https://en.wikipedia.org/wiki/Leipzig) | https://reudnetz.org/ |
 | [Austria](https://en.wikipedia.org/wiki/Austria) | https://www.funkfeuer.at/ |
-| what else?
+| what else? | - |
