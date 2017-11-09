@@ -18,7 +18,7 @@ eXO promotes documentation of guifi.net project through its [wiki git repository
 
 eXO is for Barcelona, similar to eXO in other places:
 
-| Place | Website |
+| Zone | Website |
 | ----- | ------- |
 | [Bages](https://en.wikipedia.org/wiki/Bages) | http://guifibages.cat/ |
 | [Baix Llobregat](https://en.wikipedia.org/wiki/Baix_Llobregat) | http://guifibaix.coop/ |
@@ -31,4 +31,4 @@ eXO is for Barcelona, similar to eXO in other places:
 | [Asturias](https://en.wikipedia.org/wiki/Asturias) | http://sestaferia.net/ |
 | [Leipzig](https://en.wikipedia.org/wiki/Leipzig) | https://reudnetz.org/ |
 | [Austria](https://en.wikipedia.org/wiki/Austria) | https://www.funkfeuer.at/ |
-| what else? | - |
+| what else? | ... |
