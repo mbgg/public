@@ -14,9 +14,9 @@
    inkscape:version="0.92.1 r15371"
    width="793.70081"
    height="1122.5197"
-   sodipodi:docname="logo-armilla-guifi-blanc-alternate.svg"
+   sodipodi:docname="logo-armilla-guifi-blanc.svg"
    inkscape:export-xdpi="66.553688"
-   inkscape:export-ydpi="66.553688"
+   inkscape:export-ydpi="66.553688">
   <metadata
      id="metadata3920">
     <rdf:RDF>
@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -45,8 +45,8 @@
      id="namedview3916"
      showgrid="true"
      inkscape:zoom="0.91907703"
-     inkscape:cx="226.84924"
-     inkscape:cy="551.03577"
+     inkscape:cx="254.38549"
+     inkscape:cy="503.11608"
      inkscape:window-x="0"
      inkscape:window-y="18"
      inkscape:window-maximized="0"
@@ -72,11 +72,15 @@
      x="164.10106"
      y="327.35269"
      rx="0.24992248"
-     ry="0.9553557" />
+     ry="0.9553557"
+     inkscape:export-xdpi="93.726006"
+     inkscape:export-ydpi="93.726006" />
   <g
-     transform="matrix(0.94879369,0,0,1.0539699,-25.225331,-35.434939)"
+     transform="matrix(0.94879369,0,0,1.0539699,-24.433038,-33.588107)"
      style="font-style:normal;font-weight:bold;font-size:30.33142662px;line-height:125%;font-family:Sans;-inkscape-font-specification:'LucidaTypewriter Bold';letter-spacing:0px;word-spacing:0px;fill:#ff4e00;fill-opacity:1;stroke:none"
-     id="text4012">
+     id="text4012"
+     inkscape:export-xdpi="93.726006"
+     inkscape:export-ydpi="93.726006">
     <path
        d="m 344.81328,452.14158 v 6.71398 H 281.7018 c 0.59677,9.44935 3.43157,16.66066 8.50439,21.63397 5.12248,4.92359 12.23432,7.38538 21.33555,7.38538 5.27167,0 10.36932,-0.64653 15.29297,-1.9396 4.97325,-1.29305 9.89684,-3.23264 14.77077,-5.81879 v 12.98038 c -4.92367,2.0888 -9.97158,3.68025 -15.14376,4.77439 -5.17232,1.09413 -10.41918,1.64119 -15.74058,1.64119 -13.32854,0 -23.89684,-3.87919 -31.70494,-11.63757 -7.75839,-7.75837 -11.63758,-18.25207 -11.63758,-31.48114 0,-13.67659 3.68026,-24.51842 11.04078,-32.52554 7.41023,-8.0567 17.38173,-12.08508 29.91455,-12.08518 11.23965,10e-5 20.11703,3.63061 26.63214,10.89158 6.56472,7.21139 9.8471,17.0337 9.84719,29.46695 m -13.72638,-4.0284 c -0.0995,-7.50966 -2.21319,-13.5025 -6.34098,-17.97856 -4.07819,-4.47592 -9.4991,-6.71392 -16.26277,-6.71399 -7.65896,7e-5 -13.80101,2.16347 -18.42617,6.49019 -4.57548,4.32685 -7.21134,10.41917 -7.90758,18.27697 l 48.9375,-0.0746"
        style="font-variant:normal;font-weight:500;font-stretch:normal;font-size:143.23171997px;font-family:Sans;-inkscape-font-specification:'LucidaTypewriter Medium';fill:#ffffff;stroke-width:1.06666672"
@@ -96,23 +100,21 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:12.80000019px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff4e00;fill-opacity:1;stroke:none;stroke-width:1.06666672"
-     x="236.45378"
-     y="668.2406"
+     x="237.28308"
+     y="677.35553"
      id="text4012-7"
      transform="scale(0.95538806,1.0466951)"
      inkscape:export-xdpi="93.726006"
      inkscape:export-ydpi="93.726006"><tspan
        sodipodi:role="line"
        id="tspan4014-0"
-       x="236.45378"
-       y="668.2406"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:50.70520401px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'Lucida Medium';fill:#ff4e00;fill-opacity:1;stroke-width:1.06666672">xarxa <tspan
-   style="fill:#ff4e00"
-   id="tspan4505">oberta</tspan></tspan></text>
+       x="237.28308"
+       y="677.35553"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:50.70520401px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'Lucida Medium';fill:#ff4e00;fill-opacity:1;stroke-width:1.06666672">xarxa oberta</tspan></text>
   <g
      style="overflow:visible;fill:#ffffff;fill-opacity:1"
      id="g4119"
-     transform="matrix(0.13198046,0,0,0.1390731,231.35239,504.96725)"
+     transform="matrix(0.13198046,0,0,0.1390731,232.14468,506.81409)"
      inkscape:export-filename="/home/victor/Dropbox/eXO/Documents/logo/logo/fondo blanco/text4012-7-3.png"
      inkscape:export-xdpi="93.726006"
      inkscape:export-ydpi="93.726006">
@@ -132,7 +134,7 @@
        inkscape:connector-curvature="0"
        style="clip-rule:evenodd;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:1.06666672" />
     <polygon
-       points="820.442,144.371 757.957,486.965 684.663,486.965 747.155,144.371 "
+       points="747.155,144.371 820.442,144.371 757.957,486.965 684.663,486.965 "
        id="polygon15"
        style="clip-rule:evenodd;fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
        transform="scale(1.0666667)" />
@@ -183,15 +185,15 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:12.80000019px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.06666672"
-     x="276.16583"
-     y="617.52423"
+     x="277.80045"
+     y="618.55371"
      id="text4012-7-3"
      transform="scale(0.95538806,1.0466951)"
      inkscape:export-xdpi="93.726006"
      inkscape:export-ydpi="93.726006"><tspan
        sodipodi:role="line"
        id="tspan4014-0-6"
-       x="276.16583"
-       y="617.52423"
+       x="277.80045"
+       y="618.55371"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:53.59912109px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'Lucida Medium';fill:#ffffff;fill-opacity:1;stroke-width:1.06666672">expansió</tspan></text>
 </svg>
