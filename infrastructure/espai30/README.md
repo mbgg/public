@@ -22,3 +22,4 @@ Draft: Pels maquinaris cluster, deixem les .111, .112 pels BMC. I les .11 .12 pe
 | e30pve3 | 10.1.193.13 |
 | e30pve4 | 10.1.193.14 |
 | servidor vell espai30 | 10.1.193.21 |
+| switch | 10.1.193.49
