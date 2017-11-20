@@ -11,15 +11,14 @@ Draft: Pels maquinaris cluster, deixem les .111, .112 pels BMC. I les .11 .12 pe
 
 # Maquinari
 
-| màquina | IP |
-| ------- | -- |
-| qMp | 10.1.193.1 |
-| switch | 10.1.193.2 |
-| APC | 10.1.193.10 |
-| e30pve1 | 10.1.193.11 |
-| e30pve1 | 10.1.193.11 |
-| e30pve2 | 10.1.193.12 |
-| e30pve3 | 10.1.193.13 |
-| e30pve4 | 10.1.193.14 |
-| servidor vell espai30 | 10.1.193.21 |
-| switch | 10.1.193.49
+| màquina | IP | model |
+| ------- | -- | ----- |
+| qMp | 10.1.193.1 | Nanostation M5 ? |
+| LEDE? | 10.1.193.2 | VM ? |
+| APC | 10.1.193.10 | SMX2200RMHV2U |
+| e30pve1 | 10.1.193.11 | ? |
+| e30pve2 | 10.1.193.12 | ? |
+| e30pve3 | 10.1.193.13 | ? |
+| e30pve4 | 10.1.193.14 | ? |
+| servidor vell espai30 | 10.1.193.21 | VM |
+| switch | 10.1.193.49 | tplink |
