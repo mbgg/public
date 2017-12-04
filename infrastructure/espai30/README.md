@@ -23,3 +23,4 @@ Draft: Pels maquinaris cluster, deixem les .111, .112 pels BMC. I les .11 .12 pe
 | servidor vell espai30 | 10.1.193.21 | VM |
 | SW1 | 10.1.193.49 | tplink T1600G-28TS 1.0 |
 | SW2 | 10.1.193.47 | tplink TL-SG2424 2.0 |
+| SW3 | 10.1.193.48 | DELL |
