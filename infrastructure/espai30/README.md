@@ -13,8 +13,8 @@ Draft: Pels maquinaris cluster, deixem les .111, .112 pels BMC. I les .11 .12 pe
 
 | màquina | IP | model |
 | ------- | -- | ----- |
-| qMp | 10.1.193.1 | Nanostation M5 ? |
-| LEDE? | 10.1.193.2 | VM ? |
+| qMp | 10.1.193.1 | Nanostation M5 Loco |
+| LEDE? | 10.1.193.2 | Unifi LiteAC |
 | APC | 10.1.193.10 | SMX2200RMHV2U |
 | e30pve1 | 10.1.193.11 | ? |
 | e30pve2 | 10.1.193.12 | ? |
