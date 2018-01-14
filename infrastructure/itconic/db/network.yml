@@ -97,6 +97,8 @@ vms:
       ip: 109.69.10.112/27
       gateway: 109.69.10.126
       iface: eth2
+      ip6: 2a00:1508:100:ffff::3
+      gateway6: 2a00:1508:100:ffff::1
     vlan95:
       ip: 192.168.95.21/24
       iface: eth0
@@ -121,7 +123,7 @@ vms:
     vlan94:
       ip: 109.69.10.123/27
       gateway: 109.69.10.126
-      ip6: 2a00:1508:100:ffff::d
+      ip6: 2a00:1508:100:ffff::4
       gateway6: 2a00:1508:100:ffff::1
       iface: eth2
   - hostname: rt
@@ -168,16 +170,42 @@ vms:
       iface: eth2
 #    vlan90:
 #    ip: 109.69.10.119/27 ?
+# vpn trax admins
   - hostname: vpn
-    vlan95:
-      ip: 192.168.95.29/24
-      iface: eth0
-    vlan94:
-      ip: 109.69.10.124
-      iface: eth1
     vlan90:
       ip: 10.38.140.234/27
+      iface: eth0
+    vlan94:
+      ip: 109.69.10.124/32
+      iface: eth1
+    vlan95:
+      ip: 192.168.95.29/24
       iface: eth2
+    vlan98:
+      ip: 192.168.98.29/24
+      iface: eth3
+  - hostname: ttn
+    vlan90:
+      ip: 10.38.140.235/27
+      iface: eth0
+    vlan94:
+      ip: 109.69.10.98/32
+      iface: eth1
+    vlan95:
+      ip: 192.168.95.30/24
+      iface: eth2
+  - hostname: gradio
+    vlan90:
+      ip: 10.38.140.236/27
+      iface: eth0
+    vlan94:
+      ip: 109.69.10.99/32
+      iface: eth1
+    vlan95:
+      ip: 192.168.95.31/24
+      iface: eth2
+# next: free guifi IPs: 10.38.140.237 10.38.140.238
+
 
 # tant de bo provisional
 atom:

@@ -24,7 +24,7 @@ Clúster Trax. Serveis:
 - VM #4 **core**
     - DNS (ns1.exo.cat)
     - NTP (ntp.exo.cat)
-    - SMTP? (mailer.exo.cat?)
+    - SMTP? (dev.exo.cat)
     - noc.exo.cat/cacti Cacti
     - auth.exo.cat LDAP (slapd)
 - VM #5 **vrouter1** (Mikrotik)
@@ -39,6 +39,9 @@ Clúster Trax. Serveis:
     - streaming (?) - pública
 - VM #8 **secon** (Client1)
 - VM #9 **vpn.exo.cat** (OpenVPN)
+- VM #10 **?** (ttn)
+    - router
+- VM #11 **?** (gradio)
 
 other IDs:
 
