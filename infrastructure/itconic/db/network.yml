@@ -191,9 +191,6 @@ vms:
     vlan94:
       ip: 109.69.10.98/32
       iface: eth1
-    vlan95:
-      ip: 192.168.95.30/24
-      iface: eth2
   - hostname: gradio
     vlan90:
       ip: 10.38.140.236/27
@@ -201,9 +198,6 @@ vms:
     vlan94:
       ip: 109.69.10.99/32
       iface: eth1
-    vlan95:
-      ip: 192.168.95.31/24
-      iface: eth2
 # next: free guifi IPs: 10.38.140.237 10.38.140.238
 
 
