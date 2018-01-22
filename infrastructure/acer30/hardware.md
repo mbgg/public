@@ -23,7 +23,6 @@ Each node (2):
 
 # As of 2017-02-21
 
-Telvent
 - Router: [Mikrotik RB1100AHx2](https://routerboard.com/RB1100AHx2)
 - Server
     - CPU: [Intel Atom D525](https://ark.intel.com/products/49490)

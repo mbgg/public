@@ -1,13 +1,13 @@
 Work in progress with services and VMs
 
-[preseed](https://github.com/guifi-exo/public/tree/master/infrastructure/itconic/services/preseed) is a way to automate initial installations
+[preseed](https://github.com/guifi-exo/public/tree/master/infrastructure/acer30/services/preseed) is a way to automate initial installations
 
-- [VMs](https://github.com/guifi-exo/public/blob/master/infrastructure/itconic/vms/VMs.md)
+- [VMs](https://github.com/guifi-exo/public/blob/master/infrastructure/acer30/vms/VMs.md)
     - allocate services in VMs
     - disk policy
     - ha policy
     
-each exposed public IP has its own [firewall](https://github.com/guifi-exo/public/blob/master/infrastructure/itconic/services/firewall.md)
+each exposed public IP has its own [firewall](https://github.com/guifi-exo/public/blob/master/infrastructure/acer30/services/firewall.md)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->

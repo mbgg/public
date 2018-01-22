@@ -25,7 +25,7 @@ vplan: # vlan plan
     type: fxoln
     code: gfilan
     subnet: 10.38.140.224/27
-    notes: prefix guifi de la eXO assignat al lloc itconic
+    notes: prefix guifi de la eXO assignat al lloc acer30
   vlan91:
     type: fxoln
     code: gfiptp1

@@ -1,20 +1,20 @@
 # Info
 
-Go to [services](https://github.com/guifi-exo/public/tree/master/infrastructure/itconic/services) if you want to know what services and how they are hosted with virtual machines
+Go to [services](https://github.com/guifi-exo/public/tree/master/infrastructure/acer30/services) if you want to know what services and how they are hosted with virtual machines
 
 eXO uses hyper-converged infrastructure (HCI [[1](https://en.wikipedia.org/wiki/Hyper-converged_infrastructure)] [[2](http://www.helixstorm.com/hyperconverged-infrastructure/)] [[3](https://www.prowesscorp.com/hyper-converged-infrastructure-the-next-data-center-evolution/)]).
 
-- [hardware](https://github.com/guifi-exo/public/blob/master/infrastructure/itconic/hardware.md). Migrate this info to yaml?
+- [hardware](https://github.com/guifi-exo/public/blob/master/infrastructure/acer30/hardware.md). Migrate this info to yaml?
 
 static yaml database:
 
-- [network](https://github.com/guifi-exo/public/blob/master/infrastructure/itconic/db/network.yml)
+- [network](https://github.com/guifi-exo/public/blob/master/infrastructure/acer30/db/network.yml)
     - vlan plan
     - IPs of devices
-- [storage](https://github.com/guifi-exo/public/blob/master/infrastructure/itconic/db/storage.yml): information related to physical disks, at the moment is just `/etc/fstab`
+- [storage](https://github.com/guifi-exo/public/blob/master/infrastructure/acer30/db/storage.yml): information related to physical disks, at the moment is just `/etc/fstab`
 
 
-![network diagram](https://github.com/guifi-exo/public/raw/master/infrastructure/itconic/diagrams/network_diagram.png)
+![network diagram](https://github.com/guifi-exo/public/raw/master/infrastructure/acer30/diagrams/network_diagram.png)
 
 # Security
 
