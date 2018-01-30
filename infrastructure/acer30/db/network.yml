@@ -269,6 +269,9 @@ trax_network:
       ip: 192.168.98.11/24
       ipmi: 192.168.98.21/24
       gateway: 192.168.98.1
+    loopback: 185.32.16.110/32 # TODO confirmar si loopback
+    vlan102:
+      ip: 10.253.4.x/22 # miquel diu la x
     vlan127: # vlan interna, connectada a mikrotik/trax3
       ipmi: 192.168.127.11/24
   - hostname: trax2
@@ -287,20 +290,12 @@ trax_network:
       ipmi: 192.168.98.22/24
       iface: vmbr0
       gateway: 192.168.98.1
+    loopback: 185.32.16.111/32 # TODO confirmar si loopback
+    vlan102:
+      ip: 10.253.4.x/22 # miquel diu la x
     vlan127: # vlan interna, connectada a mikrotik/trax3
       ipmi: 192.168.127.12/24
-
-support: # nodes that support the cluster
-  - hostname: mikrotik # provisional
-    vlan102:
-      ip: 10.253.4.28/22
-      iface: vmbr0
-      gateway: 10.253.4.21
-    vlan127: # vlan interna, connectada a mikrotik/trax3
-      ip: 192.168.127.13/24
-      iface: vmbr0
   - hostname: trax3
-    loopback: 109.69.10.96
     vlan96:
       ip: 192.168.96.13/24
       iface: vmbr0
@@ -311,13 +306,21 @@ support: # nodes that support the cluster
       ip: 192.168.98.13/24
       iface: vmbr0
       gateway: 192.168.98.13
-    vlan102: # pendent de confirmar amb FXOLN
-      ip: 10.253.4.29/22
-      iface: vmbr0
-      gateway: 10.253.4.21
+    loopback: 185.32.16.112/32 # TODO confirmar si loopback
+    vlan102:
+      ip: 10.253.4.x/22 # miquel diu la x
     vlan127: # vlan interna, connectada a mikrotik/trax3
       ipmi: 192.168.127.13/24
 
+support: # nodes that support the cluster
+  - hostname: mikrotik # provisional
+    vlan102:
+      ip: 10.253.4.28/22
+      iface: vmbr0
+      gateway: 10.253.4.21
+    vlan127: # vlan interna, connectada a mikrotik/trax3
+      ip: 192.168.127.13/24
+      iface: vmbr0
 
 ### VMs?
 
