@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [2018-02](#2018-02)
+  - [trax1 and trax2](#trax1-and-trax2)
+  - [trax3](#trax3)
+  - [router](#router)
+- [rest of 2017](#rest-of-2017)
+  - [trax1 and trax2](#trax1-and-trax2-1)
+  - [trax3](#trax3-1)
+  - [router](#router-1)
+- [As of 2017-02-21](#as-of-2017-02-21)
+  - [router](#router-2)
+  - [server](#server)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 put this as an static db file
 
 Note: Inverse chronological order
@@ -25,7 +43,6 @@ Each node (2):
 - Extra: Module [ASMB8-iKVM IPMI 2.0 Management Upgrade Kit with KVM](https://www.asus.com/us/Commercial-Servers-Workstations/ASMB7IKVM/) for IPMI access
     - Manual: http://dlcdnet.asus.com/pub/ASUS/server/accessory/ASMB8/E10970_ASMB8-iKVM_UM_V2_WEB.pdf?_ga=1.24437948.746187932.1462889111
 
-- Router: [Mikrotik RB1100AHx2](https://routerboard.com/RB1100AHx2)
 
 ## trax3
 
@@ -38,6 +55,10 @@ trax 3 differs on processor, disks and chassis:
 - CPU Fan: [Dynatron K199G 115X Rack 1U Activo](http://www.dynatron-corp.com/?product=k199)
 - Extra: Module [ASMB8-iKVM IPMI 2.0 Management Upgrade Kit with KVM](https://www.asus.com/us/Commercial-Servers-Workstations/ASMB7IKVM/) for IPMI access
     - Manual: http://dlcdnet.asus.com/pub/ASUS/server/accessory/ASMB8/E10970_ASMB8-iKVM_UM_V2_WEB.pdf?_ga=1.24437948.746187932.1462889111
+
+## router
+
+[Mikrotik RB1100AHx2](https://routerboard.com/RB1100AHx2)
 
 # rest of 2017
 
@@ -60,19 +81,27 @@ Each node (2):
 - Extra: Module [ASMB8-iKVM IPMI 2.0 Management Upgrade Kit with KVM](https://www.asus.com/us/Commercial-Servers-Workstations/ASMB7IKVM/) for IPMI access
     - Manual: http://dlcdnet.asus.com/pub/ASUS/server/accessory/ASMB8/E10970_ASMB8-iKVM_UM_V2_WEB.pdf?_ga=1.24437948.746187932.1462889111
 
-- Router: [Mikrotik RB1100AHx2](https://routerboard.com/RB1100AHx2)
-- Server
-    - CPU: [Intel Atom D525](https://ark.intel.com/products/49490)
-    - RAM: 4 GiB
-    - Motherboard: [Intel D525MW](http://ark.intel.com/products/48952/Intel-Desktop-Board-D525MW)
-    - Disks: HGST 465 GiB and WDC 465 GiB
+## trax3
+
+- CPU: [Intel Atom D525](https://ark.intel.com/products/49490)
+- RAM: 4 GiB
+- Motherboard: [Intel D525MW](http://ark.intel.com/products/48952/Intel-Desktop-Board-D525MW)
+- Disks: HGST 465 GiB and WDC 465 GiB
+
+## router
+
+[Mikrotik RB1100AHx2](https://routerboard.com/RB1100AHx2)
 
 
 # As of 2017-02-21
 
-- Router: [Mikrotik RB1100AHx2](https://routerboard.com/RB1100AHx2)
-- Server
-    - CPU: [Intel Atom D525](https://ark.intel.com/products/49490)
-    - RAM: 4 GiB
-    - Motherboard: [Intel D525MW](http://ark.intel.com/products/48952/Intel-Desktop-Board-D525MW)
-    - Disks: HGST 465 GiB and WDC 465 GiB
+## router
+
+[Mikrotik RB1100AHx2](https://routerboard.com/RB1100AHx2)
+
+## server
+
+- CPU: [Intel Atom D525](https://ark.intel.com/products/49490)
+- RAM: 4 GiB
+- Motherboard: [Intel D525MW](http://ark.intel.com/products/48952/Intel-Desktop-Board-D525MW)
+- Disks: HGST 465 GiB and WDC 465 GiB
