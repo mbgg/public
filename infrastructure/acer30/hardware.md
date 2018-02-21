@@ -48,7 +48,7 @@ Each node (2):
 
 trax 3 differs on processor, disks and chassis:
 
-- Chassis: [SC505-1U](http://www.supermicro.com/manuals/chassis/1U/SC505.pdf) Supermicro SuperChassis 505-203B 9.8" depth small form factor 1U, 200W. Gold level power supply, Optimized for Mini-ITX (6.75"x 6.75"), Motherboard, Front I/O Ports
+- Chassis: [SC505-1U](http://www.supermicro.com/products/chassis/1U/505/SC505-203B) [manual](http://www.supermicro.com/manuals/chassis/1U/SC505.pdf) Supermicro SuperChassis 505-203B 9.8" depth small form factor 1U, 200W. Gold level power supply, Optimized for Mini-ITX (6.75"x 6.75"), Motherboard, Front I/O Ports
 - Motherboard: [Asus P10S-I](http://dlcdnet.asus.com/pub/ASUS/mb/socket1151/P10S-I/Manual/E13687_P10S-I_UM_V5_WEB.pdf). Socket 1151. Mini-ITX
 - CPU: [Intel Xeon E3-1220V6](https://ark.intel.com/products/88172/Intel-Xeon-Processor-E3-1220-v6-8M-Cache-3_00-GHz) 4CORE BOX 3.0GHZ 8MB LGA1151
 - RAM: 16GB 2Rx8 2G x 64-Bit PC4-2133 CL15 288-Pin DIMM 115,00 4 460,00
