@@ -304,6 +304,7 @@ trax_network:
       iface: vmbr0
     vlan98:
       ip: 192.168.98.13/24
+      ipmi: 192.168.98.113/24
       iface: vmbr0
       gateway: 192.168.98.13
     loopback: 185.32.16.112/32 # TODO confirmar si loopback
