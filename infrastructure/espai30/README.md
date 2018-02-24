@@ -19,6 +19,7 @@ Draft: Pels maquinaris cluster, deixem les .111, .112 pels BMC. I les .11 .12 pe
 | SW2 | 10.1.193.4 | tplink TL-SG2424 2.0 |
 | SW3 | 10.1.193.48 | DELL (pendent de passar a 10.1.193.5) |
 | APC | 10.1.193.10 | SMX2200RMHV2U |
+| trax3 temp | 10.1.193.9 | ? |
 | e30pve1 | 10.1.193.11 | ? |
 | e30pve2 | 10.1.193.12 | ? |
 | e30pve3 | 10.1.193.13 | ? |
