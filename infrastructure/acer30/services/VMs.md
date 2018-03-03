@@ -37,7 +37,6 @@ Clúster Trax. Serveis:
     - xat.guifi.net (rocketchat)
     - matrix.exo.cat (matrix)
     - streaming (?) - pública
-- VM #8 **secon** (Client1)
 - VM #9 **vpn.exo.cat** (OpenVPN)
 - VM #10 **?** (ttn)
     - router

@@ -126,6 +126,9 @@ vms:
       ip6: 2a00:1508:100:ffff::4
       gateway6: 2a00:1508:100:ffff::1
       iface: eth2
+      # ñapa policy routing ns2
+      ip2: 109.69.10.97/27
+      iface2: eth3
   - hostname: rt
     vlan95:
       ip: 192.168.95.27/24
